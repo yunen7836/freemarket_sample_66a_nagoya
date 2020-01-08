@@ -34,16 +34,16 @@ Things you may want to cover:
 |last_name|string|index: true, null: false|
 |first_name_kana|string|index: true, null: false|
 |last_name_kana|string|index: true, null: false|
-|birthday|string|null: false|
+|birthday|datatime|null: false|
 |provider|stribg||
 |uid|string||
 |postal_code|string|null: false|
 |prefecture_id|string|null: false|
 |address_city|string|null: false|
 |address_street|string|null: false|
-|address_building|string||
+|address_building|string|
 |phone_number|string|null: false|
-|self_introduction|string||
+|self_introduction|string|
 
 
 ### Association
@@ -64,8 +64,8 @@ Things you may want to cover:
 |prefecture_id|string|null: false|
 |address_city|string|null: false|
 |address_street|string|null: false|
-|address_building|string||
-|phone_number|string||
+|address_building|string|
+|phone_number|string|
 
 ### Association
 - belongs_to :user
@@ -86,9 +86,9 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|index: true, null: false, foreign_key: true|
-|provider|stribg||
-|uid|string||
+|user_id|references|null: false, foreign_key: true|
+|provider|stribg|
+|uid|string|
 
 ### Association
 - belongs_to :user
@@ -111,8 +111,6 @@ Things you may want to cover:
 |payment_status|integer|null: false|
 |sending_status|integer|null: false|
 |receiving_status|integer|null: false|
-|buyer_id|reference|foreign_key:{to_table::users}|
-|seiler_id|string|foreign_key:{to_table::users}|
 |payment_method|integer|null: false|
 
 ### Association
