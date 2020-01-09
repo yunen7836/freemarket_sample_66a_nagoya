@@ -112,7 +112,7 @@ Things you may want to cover:
 |price|integer|null: false|
 |description|text|null: false|
 |catagory_id|references|null: false, foreign_key:true|
-|size_id|references|foreign_key:true|
+|size|int|null: false|
 |brand_id|integer|
 |condition|integer|null: false|
 |shipping_charge|integer|null: false|
@@ -126,7 +126,6 @@ Things you may want to cover:
 ### Association
 - has_many :item_images
 - belongs_to :category
-- belongs_to :size
 - belongs_to :brand
 - belongs_to :user
 
@@ -146,15 +145,6 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |ancestry|string|
-
-### Association
-- has_many :items
-
-## sizesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique:true|
 
 ### Association
 - has_many :items
