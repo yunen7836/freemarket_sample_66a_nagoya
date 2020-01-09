@@ -124,7 +124,7 @@ Things you may want to cover:
 |payment_method|integer|null: false|
 
 ### Association
-- has_many :itemimages
+- has_many :item_images
 - belongs_to :category
 - belongs_to :size
 - belongs_to :brand
