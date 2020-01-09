@@ -38,19 +38,29 @@ Things you may want to cover:
 |provider|stribg||
 |uid|string||
 |postal_code|string|null: false|
+|phone_number|string|null: false|
+|self_introduction|string|
+
+### Association
+- has_one :delivery
+- hasone :creditcard
+- has_one :snscredential
+- has_many :items
+- has_one :useradresss
+
+## useraddresssテーブル
+
+|Column|Type|Options|
+|------|----|-------|
 |prefecture_id|string|null: false|
 |address_city|string|null: false|
 |address_street|string|null: false|
 |address_building|string|
-|phone_number|string|null: false|
-|self_introduction|string|
 
 
 ### Association
-- belongs_to :delivery
-- belongs_to :creditcard
-- belongs_to :snscredential
-- has_many :items
+- has_one :user
+
 
 ## deliverysテーブル
 
