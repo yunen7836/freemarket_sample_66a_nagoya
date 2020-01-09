@@ -37,7 +37,6 @@ Things you may want to cover:
 |birthday|datatime|null: false|
 |provider|stribg||
 |uid|string||
-|postal_code|string|null: false|
 |phone_number|string|null: false|
 |self_introduction|string|
 
@@ -46,15 +45,15 @@ Things you may want to cover:
 - has_one :credit_card
 - has_one :sns_credential
 - has_many :items
-- has_one :user_adresss
+- has_one :user_adress
 
-## user_addresssテーブル
+## user_addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|index: true, null: false, foreign_key: true|
 |prefecture_id|string|null: false|
-|prefecture_id|string|null: false|
+|postal_code|string|null: false|
 |city|string|null: false|
 |street|string|null: false|
 |building|string|
