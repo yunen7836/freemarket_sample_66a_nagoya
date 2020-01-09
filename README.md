@@ -41,11 +41,11 @@ Things you may want to cover:
 |self_introduction|string|
 
 ### Association
-- has_one :delivery
-- has_one :credit_card
-- has_one :sns_credential
+- has_one :delivery dependent::destroy
+- has_one :credit_card dependent::destroy
+- has_one :sns_credential dependent::destroy
 - has_many :items
-- has_one :user_address
+- has_one :user_address dependent::destroy
 
 ## user_addressesテーブル
 
@@ -123,7 +123,7 @@ Things you may want to cover:
 |payment_method|integer|null: false|
 
 ### Association
-- has_many :item_images
+- has_many :item_images dependent::destroy
 - belongs_to :category
 - belongs_to :brand
 - belongs_to :user
