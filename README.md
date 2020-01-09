@@ -43,24 +43,24 @@ Things you may want to cover:
 
 ### Association
 - has_one :delivery
-- hasone :creditcard
-- has_one :snscredential
+- has_one :credit_card
+- has_one :sns_credential
 - has_many :items
-- has_one :useradresss
+- has_one :user_adresss
 
-## useraddresssテーブル
+## user_addresssテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|index: true, null: false, foreign_key: true|
 |prefecture_id|string|null: false|
-|address_city|string|null: false|
-|address_street|string|null: false|
-|address_building|string|
-
+|prefecture_id|string|null: false|
+|city|string|null: false|
+|street|string|null: false|
+|building|string|
 
 ### Association
-- has_one :user
-
+- belongs_to :user
 
 ## deliverysテーブル
 
@@ -72,6 +72,7 @@ Things you may want to cover:
 |last_name_kana|string|index: true, null: false|
 |postal_code|string|null: false|
 |prefecture_id|string|null: false|
+|user_id|integer|index: true, null: false, foreign_key: true|
 |address_city|string|null: false|
 |address_street|string|null: false|
 |address_building|string|
@@ -80,7 +81,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-## creditcardsテーブル
+## credit_cardsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -92,7 +93,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-## snscredentialsテーブル
+## sns_credentialsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -102,7 +103,6 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-
 
 ## itemsテーブル
 
@@ -130,11 +130,11 @@ Things you may want to cover:
 - belongs_to :brand
 - belongs_to :user
 
-## itemimagesテーブル
+## item_imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|product_id|references|null: false, foreign_key:true|
+|item_id|references|null: false, foreign_key:true|
 |image|string|
 
 ### Association
