@@ -1,0 +1,211 @@
+%body
+  .body
+    #app
+      %header.head
+        .head__wrapper
+          .head__top
+            %a.head__top__logo{:href => ""}
+              = image_tag 'fmarket_logo_red.svg', class: "head__top__logo__img"
+            %form.head__top__form
+              %input.head__top__form__search{:name => "word-search", :placeholder => "何かお探しですか？", :type => "search"}/
+              %button.head__top__form__btn
+                %i.fab.fa-sistrix.fa-2x
+          .head__bottom
+            .head__bottom__left
+              .head__bottom__left__category
+                %a.head__bottom__category__link{:href => ""}
+                  %i.fas.fa-bars.fa-spin
+                  カテゴリーから探す
+              .head__bottom__left__brand
+                %a.head__bottom__brand__link{:href => ""}
+                  %i.fas.fa-tags.fa-spin
+                  ブランドから探す
+            .head__bottom__right
+              .head__bottom__right__sign
+                %a.left__btn{:href => "#"}
+                  新規会員登録
+              .head__bottom__right__rogin
+                %a.right__btn{:href => "#"}
+                  ログイン
+      .mypage-main
+        .mypage-main__body
+          %section.mypage-main__body__top
+            = link_to '' '#', class: "" do
+              %p ユーザー名
+              %p 評価　出品数
+          %section.mypage-main__body__news
+            %ul.mypage-main__body__news__tabs
+              %li.active
+                %h3
+                  = link_to 'お知らせ' '#', class: "swich-tab" do
+              %li
+                %h3
+                  = link_to 'やることリスト' '#', class: "swich-tab" do
+            .mypage-main__body__news__tab-content
+              %ul.mypage-main__body__news__tab-content__lists.active
+                %li.mypage-main__body__news__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__news__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__news__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__news__tab-content__lists__go-list
+                  = link_to '一覧を見る' '#', class: "" do
+              %ul.mypage-main__body__news__tab-content__lists
+                %li.mypage-main__body__news__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__news__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__news__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__news__tab-content__lists__go-list
+                  = link_to '一覧を見る' '#', class: "" do
+          %section.mypage-main__body__items
+            %h2.mypage-main__body__items__head 購入した商品
+            %ul.mypage-main__body__items__tabs
+              %li.active
+                %h3
+                  = link_to '取引中' '#', class: "swich-tab" do
+              %li
+                %h3
+                  = link_to '過去の取引' '#', class: "swich-tab" do
+            .mypage-main__body__items__tab-content
+              %ul.mypage-main__body__items__tab-content__lists.active
+                %li.mypage-main__body__items__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__items__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__items__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__items__tab-content__lists__go-list
+                  = link_to '一覧を見る' '#', class: "" do
+              %ul.mypage-main__body__items__tab-content__lists
+                %li.mypage-main__body__items__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__items__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__items__tab-content__lists__list
+                  = link_to '' '#', class: "" do
+                %li.mypage-main__body__items__tab-content__lists__go-list
+                  = link_to '一覧を見る' '#', class: "" do
+      %aside.aside
+        .bottom
+          .bottom__content
+            .bottom__content__left
+              .bottom__content__left__message
+                スマホでも難しいフリマアプリ
+              .bottom__content__left__text
+                今すぐ有料ダウンロード！
+              .bottom__logo
+                = image_tag 'logo_red.svg', class: "bottom__logo__merucari"
+                %a.bottom__logo__apple{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"}
+                  %img.bottom__logo__apple__img{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}/
+                %a.bottom__logo__google{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"}
+                  %img.bottom__logo__google__img{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}/
+            .bottom__content__right
+              %img.bottom__content__right__img{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}/
+      %footer.foot
+        .foot__top
+          .company
+            %h2.company__merucari
+              メル○リについて
+            %ul.conpany__tag
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  会社概要（運営会社）
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  採用情報
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  プレスリリース
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  公式ブログ
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  メル○リロゴ利用ガイドライン
+              %a.company__tag__twitter{:href => ""}
+                %i.fab.fa-twitter.fa-3x
+              %a.company__tag__face-book{:href => ""}
+                %i.fab.fa-facebook-square.fa-3x
+          .company
+            %h2.company__merucari ヘルプ＆ガイド
+            %ul.conpany__tag
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  メル○リガイド
+            %ul.conpany__tag
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  らくらくメル○リ便
+            %ul.conpany__tag
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  ゆうゆうメル○リ便
+            %ul.conpany__tag
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  大型メル○リ便
+            %ul.conpany__tag
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  車体取引ガイド
+            %ul.conpany__tag
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  メル○リあんしん・あんぜん宣言！
+            %ul.conpany__tag
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  偽ブランド品撲滅への取り組み
+            %ul.conpany__tag
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  メル○リボックス
+          .company__privacy
+            %h2.company__privacy__text
+              プライバシーと利用規約
+            .company__privacy__policy
+              %ul.conpany__tag
+                %li.company__tag__list
+                  %a.company__tag__list__link{:href => ""}
+                    プライバシーポリシー
+                %li.company__tag__list
+                  %a.company__tag__list__link{:href => ""}
+                    メル○リ利用規約
+                %li.company__tag__list
+                  %a.company__tag__list__link{:href => ""}
+                    あんしんスマホサポート制度に関する利用特約
+                %li.company__tag__list
+                  %a.company__tag__list__link{:href => ""}
+                    コンプライアンスポリシー
+            .company__privacy__data
+              %ul.conpany__tag
+                %li.company__tag__list
+                  %a.company__tag__list__link{:href => ""}
+                    個人データの安全管理に係る係る基本方針
+                %li.company__tag__list
+                  %a.company__tag__list__link{:href => ""}
+                    特定商取引に関する表記
+                %li.company__tag__list
+                  %a.company__tag__list__link{:href => ""}
+                    資金決済方法に基基づく表示
+                %li.company__tag__list
+                  %a.company__tag__list__link{:href => ""}
+                    法令遵守と犯罪抑止のために
+          .company
+            %h2.company__merucari
+              国
+            %ul.conpany__tag
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  日本
+              %li.company__tag__list
+                %a.company__tag__list__link{:href => ""}
+                  United States
+        .foot__bottom
+          %a.foot__bottom__link{:href => ""}
+            = image_tag 'logo_gray.svg', class:"foot__bottom__link__img"
+          %span.foot__bottom__text
+            © Me*ca*i, Inc.
