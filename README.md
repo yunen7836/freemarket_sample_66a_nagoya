@@ -27,16 +27,14 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|index: true, null: false|
+|nickname|string|null: false, index:true|
 |email|string|null: false|
 |password|string|null: false|
-|first_name|string|index: true, null: false|
-|last_name|string|index: true, null: false|
-|first_name_kana|string|index: true, null: false|
-|last_name_kana|string|index: true, null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
 |birthday|datatime|null: false|
-|provider|stribg||
-|uid|string||
 |phone_number|string|null: false|
 |self_introduction|string|
 
@@ -65,10 +63,10 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|first_name|string|index: true, null: false|
-|last_name|string|index: true, null: false|
-|first_name_kana|string|index: true, null: false|
-|last_name_kana|string|index: true, null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
 |postal_code|string|null: false|
 |prefecture_id|string|null: false|
 |user_id|integer|index: true, null: false, foreign_key: true|
@@ -107,11 +105,11 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index:true|
 |price|integer|null: false|
 |description|text|null: false|
 |catagory_id|references|null: false, foreign_key:true|
-|size|int|null: false|
+|size|integer|null: false|
 |brand_id|integer|
 |condition|integer|null: false|
 |shipping_charge|integer|null: false|
