@@ -4,40 +4,40 @@
       %header.head
         .head__wrapper
           .head__top
-            %a.head__top__logo{:href => ""}
+            = link_to '' '#', class: "head__top__logo" do
               = image_tag 'fmarket_logo_red.svg', class: "head__top__logo__img"
             %form.head__top__form
-              %input.head__top__form__search{:name => "word-search", :placeholder => "何かお探しですか？", :type => "search"}/
+              %input.head__top__form__search{name: "word-search", placeholder: "何かお探しですか？", type: "search"}/
               %button.head__top__form__btn
                 %i.fab.fa-sistrix.fa-2x
           .head__bottom
             .head__bottom__left
               .head__bottom__left__category
-                %a.head__bottom__category__link{:href => ""}
+                = link_to '' '#', class: "head__bottom__category__link" do
                   %i.fas.fa-bars.fa-spin
                   カテゴリーから探す
               .head__bottom__left__brand
-                %a.head__bottom__brand__link{:href => ""}
+                = link_to '' '#', class: "head__bottom__brand__link" do
                   %i.fas.fa-tags.fa-spin
                   ブランドから探す
             .head__bottom__right
               .head__bottom__right__sign
-                %a.left__btn{:href => "#"}
+                = link_to '' '#', class: "left__btn" do
                   新規会員登録
               .head__bottom__right__rogin
-                %a.right__btn{:href => "#"}
+                = link_to '' '#', class: "right__btn" do
                   ログイン
       .items
         .items__wrapper
           .items__scroll
-            %a{:href => ""}
+            = link_to '' '#', class: "" do
               スクロール
             .slide
               .slide__content
                 %ul.slide__content__tag
                   %li.slide__content__tag__list
-                    %a.slide__link{:href => ""}
-                      %div{:clas => "slide"}
+                    = link_to '' '#', class: "slide__link" do
+                      .slide
               .slide__content__left
                 .slide__content__left__arrow
               .slide__content__right
@@ -45,23 +45,28 @@
               .slide__position
                 .slide__position__item
                   %span.slide__position__item__icon
-              :css
-
           .items__category
             %h2 人気のカテゴリー
             .item
               %ul.item__tag
-                %li{:clss => "item__tag__list"}
-                  %a.item__tag__list__link{:href => "#"} 釣具
-                  %a.item__tag__list__link{:href => "#"} 車
-                  %a.item__tag__list__link{:href => "#"} ゲーム・ホビー
-                  %a.item__tag__list__link{:href => "#"} 家電・スマホ
+                %li.item__tag__list
+                  = link_to '' '#', class: "item__tag__list__link" do
+                    釣具
+                %li.item__tag__list  
+                  = link_to '' '#', class: "item__tag__list__link" do
+                    釣具
+                %li.item__tag__list  
+                  = link_to '' '#', class: "item__tag__list__link" do
+                    釣具
+                %li.item__tag__list  
+                  = link_to '' '#', class: "item__tag__list__link" do
+                    釣具             
           .category
             .category__items
               .category__items__title
                 %h3.category__items__title__type
                   レディース新着アイテム
-                %a.category__items__title__link{:href => ""}
+                = link_to '' '#', class: "category__items__title__link" do
                   もっと見る
                   %i.fas.fa-chevron-right
               .category__items__contents
@@ -69,111 +74,111 @@
                   %ul.products
                     %li.product
                       .product__style
-                        %a.product__link{:href => "#"}
+                        = link_to '' '#', class: "product__link" do
                           .product__link__item
                             .product__item__details
                               %span.product__item__details__price
                                 20$
-                              %img.product__item__details__img{:alt => "", :src => "https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg"}/
+                              = image_tag 'https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg', class: "product__item__details__img"
                             .product-wrapper
                               %span.product-name
                                 ぽけもん
                     %li.product
                       .product__style
-                        %a.product__link{:href => "#"}
+                        = link_to '' '#', class: "product__link" do
                           .product__link__item
                             .product__item__details
                               %span.product__item__details__price
                                 20$
-                              %img{:src => "https://www.famitsu.com/images/000/173/758/z_5c9873cb27948.jpg"}/
+                              = image_tag 'https://www.famitsu.com/images/000/173/758/z_5c9873cb27948.jpg', class: ""
                             .product-wrapper
                               %span.product-name
                                 ぽけもん
                     %li.product
                       .product__style
-                        %a.product__link{:href => "#"}
+                        = link_to '' '#', class: "product__link" do
                           .product__link__item
                             .product__item__details
                               %span.product__item__details__price
                                 20$
-                              %img.product__item__details__img{:alt => "", :src => "https://www.famitsu.com/images/000/173/758/z_5c9873cb382ea.jpg"}/
+                              = image_tag 'https://www.famitsu.com/images/000/173/758/z_5c9873cb382ea.jpg', class: "product__item__details__img"
                             .product-wrapper
                               %span.product-name
                                 ぽけもん
                     %li.product
                       .product__style
-                        %a.product__link{:href => "#"}
+                        = link_to '' '#', class: "product__link" do
                           .product__link__item
                             .product__item__details
                               %span.product__item__details__price
                                 20$
-                              %img.product__item__details__img{:alt => "", :src => "コルニ.jpg"}/
+                              = image_tag '', class: "https://www.famitsu.com/images/000/173/758/z_5c9873cb27948.jpg"
                             .product-wrapper
                               %span.product-name
                                 ぽけもん
                     %li.product
                       .product__style
-                        %a.product__link{:href => "#"}
+                        = link_to '' '#', class: "product__link" do
                           .product__link__item
                             .product__item__details
                               %span.product__item__details__price
                                 20$
-                              %img.product__item__details__img{:alt => "", :src => "https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg"}/
+                              = image_tag 'https://www.famitsu.com/images/000/173/758/z_5c9873cb382ea.jpg', class: "product__item__details__img"
                             .product-wrapper
                               %span.product-name
                                 ぽけもん
                     %li.product
                       .product__style
-                        %a.product__link{:href => "#"}
+                        = link_to '' '#', class: "product__link" do
                           .product__link__item
                             .product__item__details
                               %span.product__item__details__price
                                 20$
-                              %img.product__item__details__img{:alt => "", :src => "コルニ.jpg"}/
+                              = image_tag 'https://www.famitsu.com/images/000/173/758/z_5c9873cb27948.jpg', class: ""
                             .product-wrapper
                               %span.product-name
                                 ぽけもん
                     %li.product
                       .product__style
-                        %a.product__link{:href => "#"}
+                        = link_to '' '#', class: "product__link" do
                           .product__link__item
                             .product__item__details
                               %span.product__item__details__price
                                 20$
-                              %img.product__item__details__img{:alt => "", :src => "コルニ.jpg"}/
+                              = image_tag 'https://www.famitsu.com/images/000/173/758/z_5c9873cb382ea.jpg', class: "product__item__details__img"
                             .product-wrapper
                               %span.product-name
                                 ぽけもん
                     %li.product
                       .product__style
-                        %a.product__link{:href => "#"}
+                        = link_to '' '#', class: "product__link" do
                           .product__link__item
                             .product__item__details
                               %span.product__item__details__price
                                 20$
-                              %img.product__item__details__img{:alt => "", :src => "コルニ.jpg"}/
+                              = image_tag 'https://www.famitsu.com/images/000/173/758/z_5c9873cb27948.jpg', class: ""
                             .product-wrapper
                               %span.product-name
                                 ぽけもん
                     %li.product
                       .product__style
-                        %a.product__link{:href => "#"}
+                        = link_to '' '#', class: "product__link" do
                           .product__link__item
                             .product__item__details
                               %span.product__item__details__price
                                 20$
-                              %img.product__item__details__img{:alt => "", :src => "コルニ.jpg"}/
+                              = image_tag 'https://www.famitsu.com/images/000/173/758/z_5c9873cb382ea.jpg', class: "product__item__details__img"
                             .product-wrapper
                               %span.product-name
                                 ぽけもん
                     %li.product
                       .product__style
-                        %a.product__link{:href => "#"}
+                        = link_to '' '#', class: "product__link" do
                           .product__link__item
                             .product__item__details
                               %span.product__item__details__price
                                 20$
-                              %img.product__item__details__img{:alt => "", :src => "コルニ.jpg"}/
+                              = image_tag 'https://www.famitsu.com/images/000/173/758/z_5c9873cb382ea.jpg', class: "product__item__details__img"
                             .product-wrapper
                               %span.product-name
                                 ぽけもん
@@ -188,12 +193,12 @@
                 今すぐ有料ダウンロード！
               .bottom__logo
                 = image_tag 'logo_red.svg', class: "bottom__logo__merucari"
-                %a.bottom__logo__apple{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"}
-                  %img.bottom__logo__apple__img{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"}/
-                %a.bottom__logo__google{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"}
-                  %img.bottom__logo__google__img{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"}/
+                = link_to '' '#', class: "bottom__logo__apple" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg', class: "bottom__logo__apple__img"
+                = link_to '' 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "bottom__logo__google" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg', class: "bottom__logo__google__img"
             .bottom__content__right
-              %img.bottom__content__right__img{:alt => "", :src => "https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png"}/
+              = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png', class: "bottom__content__right__img"
       %footer.foot
         .foot__top
           .company
@@ -201,57 +206,57 @@
               メル○リについて
             %ul.conpany__tag
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   会社概要（運営会社）
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   採用情報
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   プレスリリース
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   公式ブログ
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   メル○リロゴ利用ガイドライン
-              %a.company__tag__twitter{:href => ""}
+              = link_to '' '#', class: "company__tag__twitter" do
                 %i.fab.fa-twitter.fa-3x
-              %a.company__tag__face-book{:href => ""}
+              = link_to '' '#', class: "company__tag__face-book" do
                 %i.fab.fa-facebook-square.fa-3x
           .company
             %h2.company__merucari ヘルプ＆ガイド
             %ul.conpany__tag
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   メル○リガイド
             %ul.conpany__tag
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   らくらくメル○リ便
             %ul.conpany__tag
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   ゆうゆうメル○リ便
             %ul.conpany__tag
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   大型メル○リ便
             %ul.conpany__tag
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   車体取引ガイド
             %ul.conpany__tag
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   メル○リあんしん・あんぜん宣言！
             %ul.conpany__tag
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   偽ブランド品撲滅への取り組み
             %ul.conpany__tag
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   メル○リボックス
           .company__privacy
             %h2.company__privacy__text
@@ -259,43 +264,43 @@
             .company__privacy__policy
               %ul.conpany__tag
                 %li.company__tag__list
-                  %a.company__tag__list__link{:href => ""}
+                  = link_to '' '#', class: "company__tag__list__link" do
                     プライバシーポリシー
                 %li.company__tag__list
-                  %a.company__tag__list__link{:href => ""}
+                  = link_to '' '#', class: "company__tag__list__link" do
                     メル○リ利用規約
                 %li.company__tag__list
-                  %a.company__tag__list__link{:href => ""}
+                  = link_to '' '#', class: "company__tag__list__link" do
                     あんしんスマホサポート制度に関する利用特約
                 %li.company__tag__list
-                  %a.company__tag__list__link{:href => ""}
+                  = link_to '' '#', class: "company__tag__list__link" do
                     コンプライアンスポリシー
             .company__privacy__data
               %ul.conpany__tag
                 %li.company__tag__list
-                  %a.company__tag__list__link{:href => ""}
+                  = link_to '' '#', class: "company__tag__list__link" do
                     個人データの安全管理に係る係る基本方針
                 %li.company__tag__list
-                  %a.company__tag__list__link{:href => ""}
+                  = link_to '' '#', class: "company__tag__list__link" do
                     特定商取引に関する表記
                 %li.company__tag__list
-                  %a.company__tag__list__link{:href => ""}
+                  = link_to '' '#', class: "company__tag__list__link" do
                     資金決済方法に基基づく表示
                 %li.company__tag__list
-                  %a.company__tag__list__link{:href => ""}
+                  = link_to '' '#', class: "company__tag__list__link" do
                     法令遵守と犯罪抑止のために
           .company
             %h2.company__merucari
               国
             %ul.conpany__tag
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   日本
               %li.company__tag__list
-                %a.company__tag__list__link{:href => ""}
+                = link_to '' '#', class: "company__tag__list__link" do
                   United States
         .foot__bottom
-          %a.foot__bottom__link{:href => ""}
+          = link_to '' '#', class: "foot__bottom__link" do
             = image_tag 'logo_gray.svg', class:"foot__bottom__link__img"
           %span.foot__bottom__text
             © Me*ca*i, Inc.
