@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_08_022715) do
+ActiveRecord::Schema.define(version: 2020_01_10_125250) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.text "description", null: false
+    t.bigint "category_id", null: false
+    t.integer "size", null: false
+    t.integer "brand_id"
+    t.integer "condition", null: false
+    t.integer "shipping_charge", null: false
+    t.integer "ship_form", null: false
+    t.integer "shipping_days", null: false
+    t.integer "payment_status", null: false
+    t.integer "sending_status", null: false
+    t.integer "receiving_status", null: false
+    t.integer "payment_method", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["ship_form"], name: "index_items_on_ship_form"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +52,5 @@ ActiveRecord::Schema.define(version: 2020_01_08_022715) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "items", "categories"
 end
