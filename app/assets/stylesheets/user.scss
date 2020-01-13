@@ -8,6 +8,7 @@
 
 }
 
+
 .h__side {
   min-width: 300px;
   width: 300px;
@@ -21,7 +22,8 @@
   position: relative;
   display: block;
   // min-height: 48px;
-  padding: 12px;
+  padding-top: 0px;
+  padding: 0px;
   font-size: 14px;
   color: #333;
   text-decoration: none;
@@ -30,25 +32,24 @@
 
 }
 
-.mepage__nav__list {
-  box-sizing: inherit;
-  list-style: none;
-  margin-bottom: 30px;
-}
 
 
 
 .mypage__nav__list__h {
+  padding: 12px;
   background: #fff;
   margin: 2px;
   display: flex;
 }
 
 .hako3 {
-  margin: 0 0 0 auto;
+  margin: 0 120px 0;
   width: 100%;
   color: #fff;
   text-decoration: none;
+  align-items: center;
+
+
 }
 
 .right {
@@ -69,6 +70,7 @@
   height: 50px;
   background-color: red;
   color: #fff;
+  margin: 0 auto 0;
 }
 
 .hako1 {
