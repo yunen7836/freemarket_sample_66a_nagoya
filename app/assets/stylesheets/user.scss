@@ -1,0 +1,97 @@
+// Place all the styles related to the logout controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  background-color: rgb(245, 245, 245);
+  display: flex;
+
+}
+
+
+.h__side {
+  min-width: 300px;
+  width: 300px;
+  margin: 40px auto 0;
+  padding-left: 100px;
+}
+
+
+.mypage__nav__list {
+  float: right;
+  position: relative;
+  display: block;
+  // min-height: 48px;
+  padding-top: 0px;
+  padding: 0px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  width: 100%;
+  line-height: 2;
+
+}
+
+
+
+
+.mypage__nav__list__h {
+  padding: 12px;
+  background: #fff;
+  margin: 2px;
+  display: flex;
+}
+
+.hako3 {
+  margin: 0 120px 0;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+  align-items: center;
+
+
+}
+
+.right {
+  padding: 40px;
+  width:1032px;
+  position: relative;
+}
+
+.hako2 {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: 5px;
+  width: 320px;
+  height: 50px;
+  background-color: red;
+  color: #fff;
+  margin: 0 auto 0;
+}
+
+.hako1 {
+  background-color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 700px;
+  height: 179px;
+}
+
+
+.fa-angle-right {
+  color: rgb(160, 157, 157);
+}
+
+.float__test {
+  float: right;
+}
+
+
