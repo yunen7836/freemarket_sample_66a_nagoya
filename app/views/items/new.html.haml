@@ -1,55 +1,64 @@
 .gray-sell
   .fmarket-logo
-  .white-sell
-    .header-content
-      商品の情報を入力
-    .image-content
-      .image-content__head
-        出品画像
-        %span 必須
-      %p 最大10枚までアップロードできます
-      .image-content__input-box
-        %p
-          ドラッグアンドドロップ
-          %br
-          またはクリックしてファイルをアップロード
-    .item-name
-      .item-name__head
-        商品名
-        %span 必須
-      .item-name__text
-        商品の説明
-      %textarea(cols="30" rows="10")
-    .item-show
-      商品の詳細
-      .item-show__categorie
-        カテゴリー
-        %span 必須
-      .item-show__status
-        商品の状態
-        %span 必須
-    .delivery
-      発送について
-      .delivery__burden
-        配送料の負担
-        %span 必須
-      .delivery__burden
-        発送元の地域
-        %span 必須
-      .delivery__burden
-        発送までの日数
-        %span 必須
-    .price-sell
-      販売価格(300〜9,999,999)
-      .delivery__burden
-        価格
-        %span 必須
-      .price-sell__tax
-        販売手数料(10%)
-      .price-sell__profit
-        販売利益
-       
+  = form_with(model: @item, local: true) do |f|
+    .white-sell
+      .header-content
+        商品の情報を入力
+      .image-content
+        .image-content__head
+          出品画像
+          %span 必須
+        %p 最大10枚までアップロードできます
+        .image-content__input-box
+        = f.text_field :name
+        = f.number_field :price
+        = f.fields_for :item_images do |i|
+          = i.file_field :image
+        = f.fields_for :item_images do |i|
+          = i.file_field :image
+          %p
+            ドラッグアンドドロップ
+            %br
+            またはクリックしてファイルをアップロード
+      .item-name
+        .item-name__head
+          商品名
+          %span 必須
+          
+        .item-name__text
+          商品の説明
+        %textarea(cols="30" rows="10")
+      .item-show
+        商品の詳細
+        .item-show__categorie
+          カテゴリー
+          %span 必須
+        .item-show__status
+          商品の状態
+          %span 必須
+      .delivery
+        発送について
+        .delivery__burden
+          配送料の負担
+          %span 必須
+        .delivery__burden
+          発送元の地域
+          %span 必須
+        .delivery__burden
+          発送までの日数
+          %span 必須
+      .price-sell
+        販売価格(300〜9,999,999)
+        .delivery__burden
+          価格
+          %span 必須
+          
+        .price-sell__tax
+          販売手数料(10%)
+        .price-sell__profit
+          販売利益
+      = f.submit
 
+      
     
-  
 

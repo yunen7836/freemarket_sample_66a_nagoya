@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   devise_scope :user do
     root :to => "devise/sessions#new"
   end
-  resources :items, only: [:new, :create]
+  resources :items, only: [:index, :new, :create]
 end
