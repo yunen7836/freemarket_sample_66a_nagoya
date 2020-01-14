@@ -37,6 +37,8 @@ Things you may want to cover:
 |birthday|datatime|null: false|
 |phone_number|string|null: false|
 |self_introduction|string|
+|provider|string|index: true|
+|uid|string|index: true|
 
 ### Association
 - has_one :delivery dependent::destroy
@@ -86,17 +88,6 @@ Things you may want to cover:
 |customer_id|integer|index: true, null: false|
 |card_id|integer|index: true, null: false|
 
-
-### Association
-- belongs_to :user
-
-## sns_credentialsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|provider|stribg|
-|uid|string|
 
 ### Association
 - belongs_to :user
