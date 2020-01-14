@@ -37,7 +37,7 @@ Things you may want to cover:
 |birthday|datatime|null: false|
 |phone_number|string|null: false|
 |self_introduction|string|
-|provider|stribg|index: true|
+|provider|string|index: true|
 |uid|string|index: true|
 
 ### Association
