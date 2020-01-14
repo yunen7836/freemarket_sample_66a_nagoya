@@ -1,62 +1,340 @@
-.body
+%body
+  .body
+    #app
+      %header.head
+        .head__wrapper
+          .head__top
+            = link_to '' '#', class: "head__top__logo" do
+              = image_tag 'fmarket_logo_red.svg', class: "head__top__logo__img"
+            %form.head__top__form
+              %input.head__top__form__search{name: "word-search", placeholder: "何かお探しですか？", type: "search"}/
+              %button.head__top__form__btn
+                %i.fab.fa-sistrix.fa-2x
+          .head__bottom
+            .head__bottom__left
+              .head__bottom__left__category
+                = link_to '' '#', class: "head__bottom__category__link" do
+                  %i.fas.fa-bars.fa-spin
+                  カテゴリーから探す
+              .head__bottom__left__brand
+                = link_to '' '#', class: "head__bottom__brand__link" do
+                  %i.fas.fa-tags.fa-spin
+                  ブランドから探す
+            .head__bottom__right
+              .head__bottom__right__sign
+                = link_to '' '#', class: "left__btn" do
+                  新規会員登録
+              .head__bottom__right__rogin
+                = link_to '' '#', class: "right__btn" do
+                  ログイン
       .mypage-main
+        .h__side
+          %nav.mypage__nav
+            %ul.mypage__nav__list
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  マイページ
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  お知らせ
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  やることリスト
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  いいね!一覧
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  出品する
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  出品した商品-出品中
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  出品した商品-取引中
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  出品した商品売却済み
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  購入した商品-取引中
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  購入した商品-過去の取引
+                  .float__test
+                    .float__test
+                      %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  ニュース一覧
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  評価一覧
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  ガイド
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  お問い合わせ
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %p メルペイ
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  売上・振込申請
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  ポイント
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %p 設定
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  マイページ
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  お知らせ
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  やることリスト
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  いいね!一覧
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  出品する
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  出品した商品-出品中
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
+              %li.mypage__nav__list__h
+                = link_to '' '#', class: "mypage__nav__list" do
+                  出品した商品-取引中
+                  .float__test
+                    %i.fa.fa-angle-right.fa-2x
         .mypage-main__body
           %section.mypage-main__body__top
-            = link_to '' '#', class: "" do
+            = link_to '',class: "" do
               %p ユーザー名
               %p 評価　出品数
           %section.mypage-main__body__news
             %ul.mypage-main__body__news__tabs
               %li.active
                 %h3
-                  = link_to 'お知らせ' '#', class: "swich-tab" do
+                  = link_to '', class: "swich-tab" do
+                    お知らせ
               %li
                 %h3
-                  = link_to 'やることリスト' '#', class: "swich-tab" do
+                  = link_to '', class: "swich-tab" do
+                    やる事リスト
             .mypage-main__body__news__tab-content
               %ul.mypage-main__body__news__tab-content__lists.active
                 %li.mypage-main__body__news__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__news__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__news__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__news__tab-content__lists__go-list
-                  = link_to '一覧を見る' '#', class: "" do
+                  = link_to '', class: "" do
+                    一覧を見る
               %ul.mypage-main__body__news__tab-content__lists
                 %li.mypage-main__body__news__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__news__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__news__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__news__tab-content__lists__go-list
-                  = link_to '一覧を見る' '#', class: "" do
+                  = link_to '', class: "" do
+                    一覧を見る
           %section.mypage-main__body__items
             %h2.mypage-main__body__items__head 購入した商品
             %ul.mypage-main__body__items__tabs
               %li.active
                 %h3
-                  = link_to '取引中' '#', class: "swich-tab" do
+                  = link_to '', class: "swich-tab" do
+                    取引中
               %li
                 %h3
-                  = link_to '過去の取引' '#', class: "swich-tab" do
+                  = link_to '', class: "swich-tab" do
+                    過去の取引
             .mypage-main__body__items__tab-content
               %ul.mypage-main__body__items__tab-content__lists.active
                 %li.mypage-main__body__items__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__items__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__items__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__items__tab-content__lists__go-list
-                  = link_to '一覧を見る' '#', class: "" do
+                  = link_to '', class: "" do
+                    一覧を見る
               %ul.mypage-main__body__items__tab-content__lists
                 %li.mypage-main__body__items__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__items__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__items__tab-content__lists__list
-                  = link_to '' '#', class: "" do
+                  = link_to '', class: ""
                 %li.mypage-main__body__items__tab-content__lists__go-list
-                  = link_to '一覧を見る' '#', class: "" do
+                  = link_to '', class: "" do
+                    一覧を見る
+      %aside.aside
+        .bottom
+          .bottom__content
+            .bottom__content__left
+              .bottom__content__left__message
+                スマホでも難しいフリマアプリ
+              .bottom__content__left__text
+                今すぐ有料ダウンロード！
+              .bottom__logo
+                = image_tag 'logo_red.svg', class: "bottom__logo__merucari"
+                = link_to '' '#', class: "bottom__logo__apple" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg', class: "bottom__logo__apple__img"
+                = link_to '' 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "bottom__logo__google" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg', class: "bottom__logo__google__img"
+            .bottom__content__right
+              = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png', class: "bottom__content__right__img"
+      %footer.foot
+        .foot__top
+          .company
+            %h2.company__merucari
+              メル○リについて
+            %ul.conpany__tag
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  会社概要（運営会社）
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  採用情報
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  プレスリリース
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  公式ブログ
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  メル○リロゴ利用ガイドライン
+              = link_to '' '#', class: "company__tag__twitter" do
+                %i.fab.fa-twitter.fa-3x
+              = link_to '' '#', class: "company__tag__face-book" do
+                %i.fab.fa-facebook-square.fa-3x
+          .company
+            %h2.company__merucari ヘルプ＆ガイド
+            %ul.conpany__tag
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  メル○リガイド
+            %ul.conpany__tag
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  らくらくメル○リ便
+            %ul.conpany__tag
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  ゆうゆうメル○リ便
+            %ul.conpany__tag
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  大型メル○リ便
+            %ul.conpany__tag
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  車体取引ガイド
+            %ul.conpany__tag
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  メル○リあんしん・あんぜん宣言！
+            %ul.conpany__tag
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  偽ブランド品撲滅への取り組み
+            %ul.conpany__tag
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  メル○リボックス
+          .company__privacy
+            %h2.company__privacy__text
+              プライバシーと利用規約
+            .company__privacy__policy
+              %ul.conpany__tag
+                %li.company__tag__list
+                  = link_to '' '#', class: "company__tag__list__link" do
+                    プライバシーポリシー
+                %li.company__tag__list
+                  = link_to '' '#', class: "company__tag__list__link" do
+                    メル○リ利用規約
+                %li.company__tag__list
+                  = link_to '' '#', class: "company__tag__list__link" do
+                    あんしんスマホサポート制度に関する利用特約
+                %li.company__tag__list
+                  = link_to '' '#', class: "company__tag__list__link" do
+                    コンプライアンスポリシー
+            .company__privacy__data
+              %ul.conpany__tag
+                %li.company__tag__list
+                  = link_to '' '#', class: "company__tag__list__link" do
+                    個人データの安全管理に係る係る基本方針
+                %li.company__tag__list
+                  = link_to '' '#', class: "company__tag__list__link" do
+                    特定商取引に関する表記
+                %li.company__tag__list
+                  = link_to '' '#', class: "company__tag__list__link" do
+                    資金決済方法に基基づく表示
+                %li.company__tag__list
+                  = link_to '' '#', class: "company__tag__list__link" do
+                    法令遵守と犯罪抑止のために
+          .company
+            %h2.company__merucari
+              国
+            %ul.conpany__tag
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  日本
+              %li.company__tag__list
+                = link_to '' '#', class: "company__tag__list__link" do
+                  United States
+        .foot__bottom
+          = link_to '' '#', class: "foot__bottom__link" do
+            = image_tag 'logo_gray.svg', class:"foot__bottom__link__img"
+          %span.foot__bottom__text
+            © Me*ca*i, Inc.
