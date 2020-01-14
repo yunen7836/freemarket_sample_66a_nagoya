@@ -5,6 +5,9 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.new
+    @parents = Category.where(ancestry: nil).order("id ASC")
+    
+    
   end
   def create
     @item = Item.new(product_params)

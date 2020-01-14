@@ -52,7 +52,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|index: true, null: false, foreign_key: true|
-|prefecture_id|string|null: false|
+|prefecture_id|integer|null: false|
 |postal_code|string|null: false|
 |city|string|null: false|
 |street|string|null: false|
@@ -121,6 +121,7 @@ Things you may want to cover:
 |sending_status|integer|null: false|
 |receiving_status|integer|null: false|
 |payment_method|integer|null: false|
+|user|references|null: false, foreign_key:true|
 
 ### Association
 - has_many :item_images dependent::destroy
