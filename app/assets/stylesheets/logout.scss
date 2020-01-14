@@ -91,3 +91,39 @@
 .float__test {
   float: right;
 }
+<<<<<<< HEAD:app/assets/stylesheets/user.scss
+
+
+// ここから出品ボタンのcss
+.circle {
+  position: relative;
+  text-align: center;
+  background: red;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  float: right;
+  position: fixed;
+  bottom: 10px; 
+  right: 10px;
+
+}
+.circle p {
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  left: 26px;
+  width: 100px;
+  text-align: center;
+  -webkit-transform : translateY(-50%);
+  transform : translateY(-50%);
+}
+
+.fa-camera {
+  margin-top: 50px;
+  color: #fff;
+
+}
+// ここまで出品ボタンのcss
+=======
+>>>>>>> 805b9bc8761d310fb6df3f8dfe52c47791527c2f:app/assets/stylesheets/logout.scss
