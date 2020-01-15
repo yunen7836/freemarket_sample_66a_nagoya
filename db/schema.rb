@@ -39,12 +39,12 @@ ActiveRecord::Schema.define(version: 2020_01_13_101842) do
     t.text "description", null: false
     t.bigint "category_id", null: false
     t.bigint "user_id", null: false
-    t.bigint "brand_id"
     t.integer "condition", null: false
     t.integer "shipping_charge", null: false
     t.integer "shipping_method", null: false
     t.integer "ship_form", null: false
     t.integer "shipping_days", null: false
+    t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"

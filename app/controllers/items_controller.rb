@@ -5,9 +5,8 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.new
+    @item.build_brand
     @parents = Category.where(ancestry: nil).order("id ASC")
-    
-    
   end
   def create
     @item = Item.new(product_params)
@@ -20,6 +19,6 @@ class ItemsController < ApplicationController
   private
 
   def product_params
-    params.require(:item).permit(:name, :price, :description, :category_id, :condition, :shipping_charge, :shipping_method, :ship_form, :shipping_days, item_images_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :description, :category_id, :condition, :shipping_charge, :shipping_method, :ship_form, :shipping_days,brand_attributes: [:name], item_images_attributes: [:image]).merge(user_id: current_user.id)
   end
 end
