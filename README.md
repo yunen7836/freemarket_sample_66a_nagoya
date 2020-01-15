@@ -27,27 +27,25 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|index: true, null: false|
+|nickname|string|null: false, index:true|
 |email|string|null: false|
 |password|string|null: false|
-|first_name|string|index: true, null: false|
-|last_name|string|index: true, null: false|
-|first_name_kana|string|index: true, null: false|
-|last_name_kana|string|index: true, null: false|
-|birthday|datatime|null: false|
-|provider|stribg||
-|uid|string||
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|birthday|date|null: false|
 |phone_number|string|null: false|
 |self_introduction|string|
 
 ### Association
-- has_one :delivery dependent::destroy
+- has_one :adress_delivery dependent::destroy
 - has_one :credit_card dependent::destroy
 - has_one :sns_credential dependent::destroy
 - has_many :items
-- has_one :user_address dependent::destroy
+- has_one :address_user dependent::destroy
 
-## user_addressesテーブル
+## address_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -61,14 +59,14 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-## deliverysテーブル
+## address_deliverysテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|first_name|string|index: true, null: false|
-|last_name|string|index: true, null: false|
-|first_name_kana|string|index: true, null: false|
-|last_name_kana|string|index: true, null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
 |postal_code|string|null: false|
 |prefecture_id|string|null: false|
 |user_id|integer|index: true, null: false, foreign_key: true|
@@ -107,7 +105,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index:true|
 |price|integer|null: false|
 |description|text|null: false|
 |catagory|references|null: false, foreign_key:true|
