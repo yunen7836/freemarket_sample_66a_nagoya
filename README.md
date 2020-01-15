@@ -110,11 +110,12 @@ Things you may want to cover:
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|
-|catagory_id|references|null: false, foreign_key:true|
-|size|int|null: false|
-|brand_id|integer|
+|catagory|references|null: false, foreign_key:true|
+|size|integer||
+|brand|references|foreign_key:true|
 |condition|integer|null: false|
 |shipping_charge|integer|null: false|
+|shipping_method|integer|null: false|
 |ship_form|integer|null: false, index:true|
 |shipping_days|integer|null: false|
 |payment_status|integer|null: false|
