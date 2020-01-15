@@ -3,9 +3,6 @@ class UsersController < ApplicationController
     @user = User.all
   end
 
-  def new
-  end
-
   def logout
   end
 end
