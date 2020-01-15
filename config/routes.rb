@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_scope :user do
     root :to => "devise/sessions#new"
+    get 'address_users', to: 'users/registrations#new_address_user'
+    post 'address_users', to: 'users/registrations#create_address_user'
   end
   resources :users, only: [:show, :new]
 end

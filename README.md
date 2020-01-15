@@ -39,18 +39,18 @@ Things you may want to cover:
 |self_introduction|string|
 
 ### Association
-- has_one :delivery dependent::destroy
+- has_one :adress_delivery dependent::destroy
 - has_one :credit_card dependent::destroy
 - has_one :sns_credential dependent::destroy
 - has_many :items
-- has_one :user_address dependent::destroy
+- has_one :address_user dependent::destroy
 
-## user_addressesテーブル
+## address_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|index: true, null: false, foreign_key: true|
-|prefecture_id|string|null: false|
+|prefecture_id|integer|null: false|
 |postal_code|string|null: false|
 |city|string|null: false|
 |street|string|null: false|
@@ -59,7 +59,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-## deliverysテーブル
+## address_deliverysテーブル
 
 |Column|Type|Options|
 |------|----|-------|
