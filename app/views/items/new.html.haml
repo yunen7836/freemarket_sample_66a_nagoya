@@ -1,0 +1,69 @@
+.gray-sell
+  .fmarket-logo
+  = form_with(model: @item, local: true) do |f|
+    .white-sell
+      .header-content
+        商品の情報を入力
+      .image-content
+        .image-content__head
+          出品画像
+          %span 必須
+        %p 最大10枚までアップロードできます
+        .image-content__input-box
+        = f.text_field :name
+        = f.text_area :description
+        = f.number_field :price
+        = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name
+        = f.select :condition, [['新品、未使用', 1], ['未使用に近い', 2], ['目立った傷や汚れなし', 3], ['やや傷や汚れあり', 4], ['傷や汚れあり', 5], ['全体的に状態が悪い', 6]]
+        = f.select :shipping_charge, [['送料込み(出品者負担)', 1], ['着払い(購入者負担)', 2]]
+        = f.select :shipping_method, [['未定', 1], ['らくらくメルカリ便', 2], ['ゆうメール', 3], ['レターパック', 4], ['普通郵便(定形、定形外)', 5], ['クロネコヤマト', 6], ['ゆうパック', 7], ['クリックポスト', 8], ['ゆうパケット', 9]]
+        = f.collection_select :ship_form, Prefecture.all, :id, :name
+        = f.select :shipping_days, [['1〜2日で発送', 1], ['2〜3日で発送', 2], ['4〜７日で発送', 3]]
+        = f.fields_for :brand do |i|
+          = i.text_field :name
+        = f.fields_for :item_images do |i|
+          = i.file_field :image
+        = f.fields_for :item_images do |i|
+          = i.file_field :image
+          %p
+            ドラッグアンドドロップ
+            %br
+            またはクリックしてファイルをアップロード
+      .item-name
+        .item-name__head
+          商品名
+          %span 必須
+          
+        .item-name__text
+          商品の説明
+        %textarea(cols="30" rows="10")
+      .item-show
+        商品の詳細
+        .item-show__categorie
+          カテゴリー
+          %span 必須
+        .item-show__status
+          商品の状態
+          %span 必須
+      .delivery
+        発送について
+        .delivery__burden
+          配送料の負担
+          %span 必須
+        .delivery__burden
+          発送元の地域
+          %span 必須
+        .delivery__burden
+          発送までの日数
+          %span 必須
+      .price-sell
+        販売価格(300〜9,999,999)
+        .delivery__burden
+          価格
+          %span 必須
+          
+        .price-sell__tax
+          販売手数料(10%)
+        .price-sell__profit
+          販売利益
+      = f.submit

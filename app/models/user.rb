@@ -25,4 +25,6 @@ class User < ApplicationRecord
     { user: user, sns: sns }
   end
 
+  validates :email, presence: true
+  has_many :items
 end
