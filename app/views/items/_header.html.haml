@@ -1,0 +1,26 @@
+%header.head
+  .head__wrapper
+    .head__top
+      = link_to root_path, class: "head__top__logo" do
+        = image_tag 'fmarket_logo_red.svg', class: "head__top__logo__img"
+      %form.head__top__form
+        %input.head__top__form__search{name: "word-search", placeholder: "何かお探しですか？", type: "search"}/
+        %button.head__top__form__btn
+          %i.fab.fa-sistrix.fa-2x
+    .head__bottom
+      .head__bottom__left
+        .head__bottom__left__category
+          = link_to '' '#', class: "head__bottom__category__link" do
+            %i.fas.fa-bars.fa-spin
+            カテゴリーから探す
+        .head__bottom__left__brand
+          = link_to '' '#', class: "head__bottom__brand__link" do
+            %i.fas.fa-tags.fa-spin
+            ブランドから探す
+      .head__bottom__right
+        .head__bottom__right__sign
+          = link_to new_user_path, class: "left__btn" do
+            新規会員登録
+        .head__bottom__right__rogin
+          = link_to new_user_session_path, class: "right__btn" do
+            ログイン
