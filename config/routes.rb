@@ -15,5 +15,5 @@ Rails.application.routes.draw do
     post 'address_users', to: 'users/registrations#create_address_user'
   end
   resources :items, only: [:new, :create]
-  resources :users, only: [:show, :new]
+  resources :users, only: [:show, :new, :update]
 end
