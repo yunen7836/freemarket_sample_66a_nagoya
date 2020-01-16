@@ -1,12 +1,14 @@
 class ItemsController < ApplicationController
   def index
   end
+
   def new
     @item = Item.new
     @item.item_images.new
     @item.build_brand
     @parents = Category.where(ancestry: nil).order("id ASC")
   end
+
   def create
     @item = Item.new(product_params)
     if @item.save
@@ -15,6 +17,7 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+  
   private
 
   def product_params
