@@ -1,3 +1,125 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.member__wrapper {
+  height: 700px;
+  background-color: rgb(245, 245, 245);
+}
+
+.member__header {
+  width: 700px;
+  height:97px;
+  margin: 0 auto 0;
+  text-align: center;
+}
+
+.member__body {
+  height: 350px;
+  width: 700px;
+  text-align: center;
+  margin: 0 auto 0px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.member__body__content {
+  height: 275px;
+}
+
+.member__mail {
+  background-color: rgb(240, 29, 29);
+  color: #fff;
+  width: 300px;
+  height: 44px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.member__facebook {
+  background-color: #164583;
+  border-radius: 5px;
+  color: #fff;
+  width: 300px;
+  height: 44px;
+  font-size: 13px;
+}
+
+.member__google {
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  font-size: 13px;
+  width: 300px;
+  height: 44px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.member__rule__content {
+  display: flex;
+  width: 456px;
+  margin: 0 auto 0;
+  justify-content: space-between;
+  font-size: 2px;
+  padding: 30px;
+}
+
+.member__footer__content__h{
+  color: #000;
+  text-decoration: none;
+}
+
+.btn-default {
+  background-color: red;
+  color: #fff;
+  width: 300px;
+  height: 44px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.btn-sns-facebook {
+  background-color: #285185;
+  border-radius: 5px;
+  color: #fff;
+  width: 300px;
+  height: 44px;
+  margin: 5px;
+}
+
+.btn-sns-google {
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+}
+
+.member__footer {
+  text-align: center;
+}
+
+.member__footer__content {
+  margin: 0 auto 0;        
+
+}
+.fmarket__header{
+  height: 50px; 
+  margin-top: 20px;
+  text-align: center;
+
+}          
+.meru__image__h {
+  width: 500px;
+  height: 50px;
+}
+
+.member__foot__h {
+  font-size: 1px;
+}
+
+
+
+
+.new__member {
+  font-size: 20px;
+  padding: 20px;
+
+}
+
