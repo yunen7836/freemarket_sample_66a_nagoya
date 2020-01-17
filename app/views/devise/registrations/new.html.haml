@@ -47,7 +47,7 @@
         .field
           = f.label :生年月日
           %br/
-          = f.date_select :birthday, {start_year: 2020, end_year: 1950, include_blank: true, use_month_numbers: true}, {class: "select-default"}
+          = f.date_select :birthday, {start_year: 2020, end_year: 1950, include_blank: true, use_month_numbers: true, date_separator: '年'}, {class: "select-default"}
 
 
         .actions
