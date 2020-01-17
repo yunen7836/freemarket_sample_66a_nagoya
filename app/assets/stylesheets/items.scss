@@ -85,15 +85,34 @@
     }
     &__categorie{
       width: 400px;
-      &--input{
-        
+      
+      &--input-bottom{
+        margin-top: 40px;
       }
-      #item_category_id{
+      #item_category_id, #item_condition, #item_shipping_charge, #item_shipping_method, #item_ship_form, #item_shipping_days{
         height: 48px;
         width: 100%;
         padding: 0 16px;
         font-size: 16px;
       }
     }
+    &__price-box{
+      height: 72px;
+      padding-bottom: 24px;
+      width: 400px;
+      display:flex;
+      justify-content: space-between;
+      line-height: 48px;
+      border-bottom: 1px solid #ccc;
+      &--price{
+        margin-right: auto;
+      }
+      #item_price{
+        padding: 0 16px;
+        font-size: 16px;
+        text-align: right;
+      }
+    }
+    
   }
 }
