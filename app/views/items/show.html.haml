@@ -1,0 +1,105 @@
+%body
+  .body
+    #app
+      = render partial: 'header'
+      .gray-container
+        .white-container
+          .item-name
+            スマホケース
+          .contents
+            .contents__main-content
+              .contents__main-content--top-image
+                %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
+                .contents__main-content--top-image--images
+                  %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
+                  %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
+                  %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
+                  %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
+                  %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
+              %table.aaaaa{border: "1"}
+                %tr
+                  %th 出品者
+                  %td
+                    = link_to "苗字名前"
+                %tr
+                  %th カテゴリー
+                  %td
+                    = link_to do
+                      %div レディース
+                    = link_to do
+                      %i.fa.fa-chevron-right
+                      %div 小物
+                    = link_to do
+                      %i.fa.fa-chevron-right
+                      %div マフラー/ショール
+                %tr
+                  %th ブランド
+                  %td
+                    = link_to "カメハメハ"
+                %tr
+                  %th 商品の状態
+                  %td ボロボロ
+                %tr
+                  %th 配送料の負担
+                  %td 送料込み(出品者負担)
+                %tr
+                  %th 発送方法
+                  %td 未定
+                %tr
+                  %th 発送元地域
+                  %td
+                    = link_to "熊本県"
+                %tr
+                  %th 発送日の目安
+                  %td 2~3日で発送
+            .contents__plice-box
+              %span.contents__plice-box--plice ¥1,400
+              %span.contents__plice-box--tax (税込)
+              %span.contents__plice-box--fee 送料込み
+            = link_to "購入画面に進む","", class: "contents__buy-btn"
+            .contents__text-content
+              %p.contents__text-content--text
+                ＊未使用
+                %br/
+                ＊フリーサイズ
+                %br/
+                ＊長さ90cmくらい
+                %br/
+                多少の誤差はあるかもしれません。
+                %br/
+                %br/
+                簡易包装になります。
+                %br/
+                %br/
+                自宅保管の為、神経質な方は御遠慮ください。
+                %br/
+                %br/
+                何かございましたらコメントください。
+            .contents__item-btn
+              = link_to "", class: "contents__item-btn--left-btn" do
+                %span いいね！
+                %span 0
+              = link_to "", class: "contents__item-btn--left-btn" do
+                %span 不適切な商品の報告
+              = link_to "", class: "contents__item-btn--right-btn" do
+                %span あんしん・あんぜんへの取り組み
+        .white-container
+          .proposal-form
+            %p.proposal-form__warning
+              相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            .proposal-form__input-box
+              %textarea
+            %input.proposal-form__comment-send{type: "submit", value: "コメントする"}
+        .move-page
+          = link_to "", class: "move-page__prev" do
+            %i.fa.fa-chevron-left
+            %p iPhone 6/7/8/plus 強化 ガラス 保護フィルム すヌーピー
+          = link_to "", class: "move-page__next" do
+            %p iPhone 6/7/8/plus 強化 ガラス 保護フィルム くまモン
+            %i.fa.fa-chevron-right
+        .bread-crumb
+          .bread-crumb__box
+            %p メルカリ
+            %i.fa.fa-chevron-right
+            %p スマホケース
+      = render partial: 'footer'
