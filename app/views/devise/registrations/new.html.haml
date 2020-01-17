@@ -6,45 +6,45 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
       .sign__content
-        .field
+        .new__member__field
           = f.label :ニックネーム
           %br/
           = f.text_field :nickname, autofocus: true, placeholder: "例）フリマ太郎", class: "textform"
-        .field
+        .new__member__field
           = f.label :メールアドレス
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "textform"
         - if @sns_id.present?
           = hidden_field_tag :sns_auth, true
         - else
-        .field
+        .new__member__field
           = f.label :パスワード
           - if @minimum_password_length
             %em
-              (#{@minimum_password_length} characters minimum)
+
           %br/
           = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上", class: "textform"
-        .field
+        .new__member__field
           = f.label :パスワード確認
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上", class: "textform"
-        .field
+        .new__member__field
           = f.label :お名前（全角）
           %br/
           = f.text_field :first_name, placeholder: "例）山田", class: "textform"
           %br/
           = f.text_field :last_name, placeholder: "例）彩", class: "textform"
-        .field
+        .new__member__field
           = f.label :お名前カナ（全角）
           %br/
           = f.text_field :first_name_kana, placeholder: "例）ヤマダ", class: "textform"
           %br/
           = f.text_field :last_name_kana, placeholder: "例）アヤ", class: "textform"
-        .field
+        .new__member__field
           = f.label :電話番号
           %br/
           = f.text_field :phone_number, placeholder: "例）携帯電話の番号を入力", class: "textform"
-        .field
+        .new__member__field
           = f.label :生年月日
           %br/
           = f.date_select :birthday, {start_year: 2020, end_year: 1950, include_blank: true, use_month_numbers: true, date_separator: '年'}, {class: "select-default"}
@@ -65,3 +65,4 @@
             = image_tag 'logo_gray.svg', class: "meru__image__h"
           %span.member__foot__h
             © Me*ca*i, Inc.
+

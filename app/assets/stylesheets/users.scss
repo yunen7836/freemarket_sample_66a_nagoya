@@ -1,28 +1,76 @@
+.member__wrapper__breadcrumb {
+  height: 1000px;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  .member__header {
+    width: 700px;
+    height:97px;
+    margin: 0 auto 0;
+    .sign__content {
+      background-color: #fff;
+    }
+    .new__member {
+      font-size: 20px;
+      margin: 0 0 1px 0;
+      padding: 20px;
+      background-color: #fff;
+      &__field {
+        width: 350px;
+        margin: 0 auto 0;
+        text-align: left;
+        .select-default {
+          height: 40px;
+          width: 80px;
+          -webkit-border-radius: 5px;
+          font-size: 16px;
+        }
+      }
+    }
+    .member__rule__content {
+      background-color: rgb(245, 245, 245);
+      display: flex;
+      width: 456px;
+      margin: 0 auto 0;
+      justify-content: space-between;
+      font-size: 2px;
+      padding: 30px;
+    }
+    
+  .member__footer {
+    text-align: center;
+    &__content {
+      margin: 0 auto 0;        
+      &__h{
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+    .member__foot__h {
+      font-size: 1px;
+    }
+  }
+}
+
+.member__select-default {
+  width: 700px;
+  display: flex;
+  text-align: center;
+  margin: 0 auto 0;
+}
+
+
+
+.meru__image__h {
+  width: 500px;
+  height: 50px;
+}
 .member__wrapper {
   height: 900px;
   background-color: rgb(245, 245, 245);
 }
-.member__wrapper__breadcrumb {
-  height: 1000px;
-  background-color: rgb(245, 245, 245);
-}
 
-.member__header {
-  width: 700px;
-  height:97px;
-  margin: 0 auto 0;
-  text-align: center;
-}
 
-.member__body {
-  height: 350px;
-  width: 700px;
-  text-align: center;
-  margin: 0 auto 0px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-}
 
 .member__body__content {
   height: 275px;
@@ -57,20 +105,8 @@
   border-radius: 5px;
 }
 
-.member__rule__content {
-  background-color: rgb(245, 245, 245);
-  display: flex;
-  width: 456px;
-  margin: 0 auto 0;
-  justify-content: space-between;
-  font-size: 2px;
-  padding: 30px;
-}
 
-.member__footer__content__h{
-  color: #000;
-  text-decoration: none;
-}
+
 
 .btn-default {
   background-color: red;
@@ -94,41 +130,7 @@
   background-color: #fff;
   color: #000;
   border-radius: 5px;
-}
-
-.member__footer {
-  text-align: center;
-}
-
-.member__footer__content {
-  margin: 0 auto 0;        
-
-}
-.fmarket__header{
-  height: 50px; 
-  margin-top: 20px;
-  text-align: center;
-
-}          
-.meru__image__h {
-  width: 500px;
-  height: 50px;
-}
-
-.member__foot__h {
-  font-size: 1px;
-}
-
-
-
-
-.new__member {
-  font-size: 20px;
-  margin: 0 0 1px 0;
-  padding: 20px;
-  background-color: #fff;
-
-}
+}       
 
 .textform {
   height: 40px;
@@ -136,16 +138,6 @@
   -webkit-border-radius: 5px;
   font-size: 7px;
 
-}
-
-.sign__content {
-  background-color: #fff;
-}
-
-.field {
-  width: 350px;
-  margin: 0 auto 0;
-  text-align: left;
 }
 
 .signin__next__page {
@@ -156,25 +148,39 @@
   margin: 5px;
   border-radius: 5px;
   font-size: 20px;
-  text-align: center;
-  
+  text-align: center;  
 }
 
-.select-default {
-  height: 40px;
-  width: 80px;
-  -webkit-border-radius: 5px;
-  font-size: 16px;
-}
 
-.member__select-default {
-  width: 700px;
-  display: flex;
-  text-align: center;
-  margin: 0 auto 0;
-}
+
 
 .member__select-default__h {
-  
   margin: 0 auto 0;
+}
+
+
+.member__wrapper__breadcrumb {
+  height: 1000px;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  .member__header {
+    width: 700px;
+    height:97px;
+    margin: 0 auto 0;
+    .fmarket__header{
+      height: 50px; 
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+  .member__body {
+    height: 350px;
+    width: 700px;
+    text-align: center;
+    margin: 0 auto 0px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
 }
