@@ -1,0 +1,36 @@
+%body
+  .body
+    #app
+      = render partial: 'items/header'
+      .mypage-main
+        = render partial: 'list'
+        .profile__body
+          %section.profile__body__section
+            %h2.profile__body__section__title
+              プロフィール
+            = form_for(@user, html: {class: 'profile__body__section__form'}) do |f|
+              .profile__body__section__form__top
+                %figure.profile__body__section__form__top__figure
+                  %img.profile__body__section__form__top__figure__img
+                = f.text_field :nickname, placeholder: "例)AYA☆セール中", autofocus: true,class: 'profile__body__section__form__top__input'
+              .profile__body__section__form__down
+                = f.text_area :self_introduction, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", autofocus: true,class: 'profile__body__section__form__down__textarea'
+                = f.submit "変更する",class: 'profile__body__section__form__down__button'
+      %aside.aside
+        .bottom
+          .bottom__content
+            .bottom__content__left
+              .bottom__content__left__message
+                スマホでも難しいフリマアプリ
+              .bottom__content__left__text
+                今すぐ有料ダウンロード！
+              .bottom__logo
+                = image_tag 'logo_red.svg', class: "bottom__logo__merucari"
+                = link_to '' '#', class: "bottom__logo__apple" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg', class: "bottom__logo__apple__img"
+                = link_to '' 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "bottom__logo__google" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg', class: "bottom__logo__google__img"
+            .bottom__content__right
+              = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png', class: "bottom__content__right__img"
+      = render partial: 'items/footer'
+      = render partial: 'exhibition'
