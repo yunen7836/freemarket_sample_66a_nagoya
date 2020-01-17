@@ -89,30 +89,74 @@
       &--input-bottom{
         margin-top: 40px;
       }
-      #item_category_id, #item_condition, #item_shipping_charge, #item_shipping_method, #item_ship_form, #item_shipping_days{
+      #item_brand_attributes_name, #item_category_id, #item_condition, #item_shipping_charge, #item_shipping_method, #item_ship_form, #item_shipping_days{
         height: 48px;
         width: 100%;
         padding: 0 16px;
         font-size: 16px;
       }
     }
-    &__price-box{
-      height: 72px;
-      padding-bottom: 24px;
-      width: 400px;
-      display:flex;
-      justify-content: space-between;
-      line-height: 48px;
-      border-bottom: 1px solid #ccc;
-      &--price{
-        margin-right: auto;
+    &__sell-price{
+      &--price-box{
+        height: 72px;
+        padding-bottom: 24px;
+        width: 400px;
+        display:flex;
+        justify-content: space-between;
+        line-height: 48px;
+        &--price{
+          margin-right: auto;
+        }
+        #item_price{
+          padding: 0 16px;
+          font-size: 16px;
+          text-align: right;
+        }
       }
-      #item_price{
-        padding: 0 16px;
-        font-size: 16px;
-        text-align: right;
+      &--tax-box{
+        display:flex;
+        justify-content: space-between;
+        border-top: 1px solid #ccc;
+        padding: 24px 0;
+        &--profit{
+          font-weight: bold;
+        }
       }
     }
-    
+  }
+  .item-submit{
+    padding: 40px;
+    &__conditions{
+      p{
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+    &__submit{
+      width: 100%;
+      margin-top: 40px;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
+    }
+    a{
+      display: block;
+      width: 45%;
+      margin: 24px auto 0;
+      background: #aaa;
+      border: 1px solid #aaa;
+      color: #fff;
+      display: block;
+      line-height: 48px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
+    }
   }
 }

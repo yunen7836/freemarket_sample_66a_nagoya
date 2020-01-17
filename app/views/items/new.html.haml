@@ -10,7 +10,10 @@
           %span 必須
         %p 最大10枚までアップロードできます
         .image-content__input-box
-        
+          = f.fields_for :item_images do |i|
+            = i.file_field :image
+          = f.fields_for :item_images do |i|
+            = i.file_field :image
       .item-name
         .item-name__head
           商品名
@@ -27,6 +30,11 @@
             カテゴリー
             %span 必須
           = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name
+          .item-show__categorie--input-bottom
+            ブランド
+            %span 必須
+          = f.fields_for :brand do |i|
+            = i.text_field :name
           .item-show__categorie--input-bottom
             商品の状態
             %span 必須
@@ -53,24 +61,27 @@
       .item-show
         .item-show__left-head 販売価格(300〜9,999,999)
         .item-show__sell-price
-          .item-show__price-box
-            .item-show__price-box--price
+          .item-show__sell-price--price-box
+            .item-show__sell-price--price-box--price
               価格
               %span 必須
             ¥
             = f.number_field :price
-          .item-show__tax-box
-            .item-show__tax-box--tax
+          .item-show__sell-price--tax-box
+            .item-show__sell-price--tax-box--tax
               販売手数料(10%)
-              -
-      .price-sell
-        販売価格(300〜9,999,999)
-        .delivery__burden
-          価格
-          %span 必須
-          
-        .price-sell__tax
-          販売手数料(10%)
-        .price-sell__profit
-          販売利益
-      = f.submit
+            &mdash;
+            /↑は"-"のエスケープコード
+          .item-show__sell-price--tax-box
+            .item-show__sell-price--tax-box--profit
+              販売利益
+            .item-show__sell-price--tax-box--profit
+              &mdash;
+              /↑は"-"のエスケープコード
+      .item-submit
+        .item-submit__conditions
+          %p 禁止されている出品、行為を必ずご確認ください。
+          %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+          %p また、出品をもちまして加盟店規約に同意したことになります。
+        = f.submit "出品する", class: "item-submit__submit"
+        = link_to "もどる", root_path
