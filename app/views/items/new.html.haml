@@ -26,10 +26,11 @@
       .item-show
         .item-show__left-head 商品の詳細
         .item-show__categorie
-          .item-show__categorie--input-top
-            カテゴリー
-            %span 必須
-          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name
+          .item-show__categorie--input-top{id: :"select-boxs" }
+            .item-show__categorie--input-top--select-box
+              カテゴリー
+              %span 必須
+            = f.select :category, @category_parent_array,{},{id: :"parent_category"}
           .item-show__categorie--input-bottom
             ブランド
             %span 必須
@@ -70,12 +71,13 @@
           .item-show__sell-price--tax-box
             .item-show__sell-price--tax-box--tax
               販売手数料(10%)
-            &mdash;
+            .item-show__sell-price--tax-box--commission
+              &mdash;
             /↑は"-"のエスケープコード
           .item-show__sell-price--tax-box
             .item-show__sell-price--tax-box--profit
               販売利益
-            .item-show__sell-price--tax-box--profit
+            .item-show__sell-price--tax-box--profit{id: :"item-profit"}
               &mdash;
               /↑は"-"のエスケープコード
       .item-submit

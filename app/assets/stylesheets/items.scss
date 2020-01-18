@@ -160,3 +160,12 @@
     }
   }
 }
+#parent_category, #child_category, #grandchild_category{
+  height: 48px;
+  width: 100%;
+  padding: 0 16px;
+  font-size: 16px;
+}
+#child_category, #grandchild_category{
+  margin-top: 8px;
+}
