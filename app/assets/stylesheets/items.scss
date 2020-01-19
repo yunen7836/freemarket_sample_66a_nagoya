@@ -31,13 +31,7 @@
       font-size: 14px;
     }
     &__input-box{
-      height: 80px;
-      padding: 40px;
-      border: 1px dashed #ccc;
-      background: #f5f5f5;
-      p{
-        text-align: center;
-      }
+
     }
   }
   .item-name{
@@ -168,4 +162,14 @@
 }
 #child_category, #grandchild_category{
   margin-top: 8px;
+}
+.item-image-box{
+  border: 1px dashed #ccc;
+  background: #f5f5f5;
+  p{
+    text-align: center;
+  }
+}
+.js-file{
+  display: none;
 }
