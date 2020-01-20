@@ -1,25 +1,87 @@
-= form_for @address_user do |f|
-  = render "devise/shared/error_messages", resource: @address_user
-  .field
-    = f.label :prefecture_id
-    %br/
-    = f.text_field :prefecture_id
-  .field
-    = f.label :postal_code
-    %br/
-    = f.text_field :postal_code
-  .field
-    = f.label :city
-    %br/
-    = f.text_field :city
-  .field
-    = f.label :street
-    %br/
-    = f.text_field :street
-  .field
-    = f.label :building
-    %br/
-    = f.text_field :building
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+
+.address__wrapper
+  .address__header
+    = image_tag 'fmarket_logo_red.svg', class: "fmarket__header"
+    %nav.progress
+      %ul.progress-bar
+        %li.through#through
+          会員情報
+          .progress-status
+          .progress-status_bar
+        %li.active#active
+          電話番号認証
+          .progress-status
+          .progress-status_bar
+        %li.address-h#address-h
+          お届け先住所入力
+          .progress-status
+          .progress-status_bar
+        %li.payment
+          支払い方法
+          .progress-status
+          .progress-status_bar
+        %li.end
+          完了
+          .progress-status
+          .progress-status_bar
+
+  .address__body
+    .sign__content
+      = form_for @address_user do |f|
+        = render "devise/shared/error_messages", resource: @address_user
+        .field
+          = f.label :都道府県, class: "field__a"
+          %br/
+          = f.text_field :prefecture_id, class: "address__textform"
+        .field
+          = f.label :郵便番号
+          %br/
+          = f.text_field :postal_code, class: "address__textform"
+        .field
+          = f.label :市区町村
+          %br/
+          = f.text_field :city, class: "address__textform"
+        .field
+          = f.label :番地
+          %br/
+          = f.text_field :street, class: "address__textform"
+        .field
+          = f.label :建物名
+          %br/
+          = f.text_field :building, class: "address__textform"
+        .actions
+          = f.submit "次へ進む", class: "signin__next__page "
+
+
+    .member__rule
+      .member__rule__content
+        = link_to 'プライバシーポリシー', '#', class: "sinki__kiyaku__content__h"
+        = link_to 'フリマアプリ利用規約', '#', class: "sinki__kiyaku__content__h"
+        = link_to '特定商取引に関する表記', '#',  class: "sinki__kiyaku__content__h"
+    .member__footer
+      .member__footer__content
+        .member__footer__content__h
+          = image_tag 'logo_gray.svg', class: "meru__image__h"
+        %span.member__foot__h
+          © Me*ca*i, Inc.
+
+
+  -# .bread
+  -#   %nav.progress-bar.signup-bar
+  -#     %ol.clearfix
+  -#     %li.active
+  -#     会員情報
+  -#     .progress-status
+
+  -#     %li.active
+  -#     お届け先住所入力
+  -#     .progress-status
+
+  -#     %li.active
+  -#     支払い方法
+  -#     .progress-status
+
+  -#     %li.active
+  -#     完了
+  -#     .progress-status
+

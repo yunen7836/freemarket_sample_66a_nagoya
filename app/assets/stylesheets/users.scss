@@ -6,6 +6,10 @@
     width: 700px;
     height:97px;
     margin: 0 auto 0;
+    .member__header__split {
+      display: flex;
+    
+    }
     .sign__content {
       background-color: #fff;
     }
@@ -17,7 +21,13 @@
       &__field {
         width: 350px;
         margin: 0 auto 0;
-        text-align: left;
+        .require__red {
+          color: #fff;
+          background-color: #ea352d;
+          padding: 4px;
+          border-radius: 3px;
+          font-size: 11px;
+        }
         .select-default {
           height: 40px;
           width: 80px;
@@ -25,6 +35,10 @@
           font-size: 16px;
         }
       }
+        
+    }
+    .member__rule {
+    width: 100%;
     }
     .member__rule__content {
       background-color: rgb(245, 245, 245);
@@ -36,21 +50,23 @@
       padding: 30px;
     }
     
-  .member__footer {
-    text-align: center;
-    &__content {
-      margin: 0 auto 0;        
-      &__h{
-        color: #000;
-        text-decoration: none;
+    .member__footer {
+      text-align: center;
+      &__content {
+        margin: 0 auto 0;        
+        &__h{
+          color: #000;
+          text-decoration: none;
+          .member__foot__h {
+            font-size: 1px;
+          }
+        }
       }
     }
   }
-    .member__foot__h {
-      font-size: 1px;
-    }
-  }
 }
+
+
 
 .member__select-default {
   width: 700px;
@@ -184,3 +200,366 @@
   }
 
 }
+
+
+// ここからアドレス登録ページ
+
+
+
+.address__wrapper {
+  width: 1024px;
+  height: 600px;
+  text-align: center;
+  margin: 0 auto 0;
+  background-color: rgb(245, 245, 245);
+  .address__header{
+    width: 700px;
+    height:97px;
+    margin: 0 auto 0;
+    text-align: center;
+    .fmarket__header{
+      height: 50px; 
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+  .address__body {
+    width: 600px;
+    background-color: rgb(245, 245, 245);
+    margin: 0 auto 0;
+    text-align: center;
+    .sign__content{
+      width: 600px;
+      padding: 20px;
+      background-color: #fff;
+      .address__textform {
+        height: 40px;
+        width: 320px;
+        -webkit-border-radius: 5px;
+        font-size: 7px;
+        margin-bottom: 20px;
+      }
+    }
+    
+    
+    .member__rule {
+      width: 100%;
+      }
+      .member__rule__content {
+        background-color: rgb(245, 245, 245);
+        display: flex;
+        width: 456px;
+        margin: 0 auto 0;
+        justify-content: space-between;
+        font-size: 2px;
+        padding: 30px;
+      }
+      
+    .member__footer {
+      text-align: center;
+      &__content {
+        margin: 0 auto 0;        
+        &__h{
+          color: #000;
+          text-decoration: none;
+        }
+      }
+    }
+    .member__foot__h {
+      font-size: 1px;
+    }
+  }
+}
+
+.bread {
+  display: flex;
+  .progress-bar {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    .clearfix {
+      list-style: none;
+      position: relative;
+      padding: 0px;
+      margin: 0px;
+      display: flex;
+      .active {
+        color: rgb(139, 135, 135);
+        padding: 10px;
+        margin: 10px;
+        font-size: 2px;
+      }
+      .progress-status__red {
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        background: #ccc;
+        border-radius: 50%;
+        background-color: rgb(245, 28, 28);
+      }
+      .progress-status {
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        background: #ccc;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+
+.progress-status {
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background: #ccc;
+  border-radius: 50%;
+}
+  .member__footer {
+    text-align: center;
+    &__content {
+      margin: 0 auto 0;        
+      &__h{
+        color: #000;
+        text-decoration: none;
+      }
+      .member__foot__h {
+        font-size: 1px;
+      }
+    }
+  }
+
+
+
+// ここから会員登録完了ページ
+.address__wrapper {
+  width: 1024px;
+  height: 1024px;
+  text-align: center;
+  margin: 0 auto 0;
+  background-color: rgb(245, 245, 245);
+  .start__body {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto 0;
+    background-color: #fff; 
+    .start__body__content {
+      margin: 50px;
+      background-color: #fff; 
+    }
+    .sign__content__1 {
+      height: 50px; 
+      margin-top: 20px;
+      text-align: center;
+      background-color: #fff; 
+    }
+    .sign__content__2 {
+      height: 50px; 
+      margin-top: 20px;
+      text-align: center;
+      background-color: #fff; 
+    }
+    .address__start {
+      height: 50px; 
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+  .member__rule {
+    width: 100%;
+  }
+  .member__rule__content {
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    width: 456px;
+    margin: 0 auto 0;
+    justify-content: space-between;
+    font-size: 2px;
+    padding: 30px;
+  }
+  .member__footer {
+    text-align: center;
+    &__content {
+      margin: 0 auto 0;        
+      &__h{
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+  .member__foot__h {
+    font-size: 1px;
+  }
+}
+
+
+
+// ここから新規会員登録
+
+.member__wrapper__breadcrumb {
+  height: 1000px;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  .member__header {
+    width: 700px;
+    height:97px;
+    margin: 0 auto 0;
+    .member__body {
+      height: 350px;
+      width: 700px;
+      text-align: center;
+      margin: 0 auto 0px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+
+
+.progress {
+  padding: 40px 0 0 opx;
+  margin-top: 15px;
+  border: 0;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  text-align: center;
+  &-bar{
+    margin: 0;
+    li{
+      margin: 0 20px 0 0;
+      padding: 0;
+      position: relative;
+      z-index: 40;
+      display: inline-block;
+      min-width: 60px;
+      font-size: 12px;
+      color: gray;
+      .progress-status{
+        position: absolute;
+        left: 40%;
+        width: 12px;
+        height: 12px;
+        margin: 8px auto 0;
+        background: gray;
+        border-radius: 50%;
+        z-index: 30;
+      }
+    }
+  }
+}
+
+// デフォルトのプログレスバー
+.progress-status_bar {
+position: absolute;
+left: 50%;
+top: 31px;
+bottom: 5px;
+display: block;
+width: 130px;
+height: 2px;
+background: gray;
+z-index: 10;
+}
+
+.end .progress-status_bar {
+width: 0px;
+}
+
+.teminus .progress-status_bar {
+  width: 0px;
+  }
+.payment .progress-status_bar {
+width: 80px;
+}
+
+
+
+#through{
+  color: gray;
+  .progress-status{
+    background: #ea352d;
+  }
+}
+
+#through .progress-status_bar{
+    background: #ea352d;
+  }
+#active{
+  color: gray;
+  .progress-status{
+    background: #ea352d;
+  }
+}
+
+#address-h{
+  color: #ea352d;
+  .progress-status{
+    background: #ea352d;
+  }
+}
+
+
+
+#active .progress-status_bar{
+  background: #ea352d;
+}
+#address{
+  color: gray;
+  .progress-status{
+    background: #ea352d;
+  }
+}
+
+#address .progress-status_bar{
+  background: #ea352d;
+}
+#payment{
+  color: gray;
+  .progress-status{
+    background: #ea352d;
+  }
+}
+
+#payment .progress-status_bar{
+  background: #ea352d;
+}
+#end{
+  color: #ea352d;
+  .progress-status{
+    background: #ea352d;
+  }
+}
+
+#double{
+  color: #ea352d;
+  .progress-status{
+    background: #ea352d;
+  }
+}
+
+#payment .progress-status_bar{
+  background: #ea352d;
+}
+#teminus{
+  color: gray;
+  .progress-status{
+    background: gray;
+  }
+}
+
+
+#address .progress-status_bar{
+  background: #ea352d;
+}
+#payment{
+  color: gray;
+  .progress-status{
+    background: #ea352d;
+  }
+}
+
+
