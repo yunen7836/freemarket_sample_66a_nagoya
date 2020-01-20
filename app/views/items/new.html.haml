@@ -15,13 +15,11 @@
               - @item.images.each_with_index do |image, i|
                 = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
           .image-content__input-box
-            = f.fields_for :item_images do |i|
-              .js-file_group{data:{index: "#{i.index}"}}
-                = i.label :image, "クリック＆ドロップ", class: :"item-image-box"
-                = i.file_field :image, class: :"js-file"
-                %span.js-remove 削除
-          
-          
+            .js-input
+              = f.fields_for :item_images do |i|
+                .js-file_group{data:{index: "#{i.index}"}}
+                  = i.label :image, "クリック＆ドロップ", class: :"item-image-box"
+                  = i.file_field :image, class: :"js-file"
       .item-name
         .item-name__head
           商品名

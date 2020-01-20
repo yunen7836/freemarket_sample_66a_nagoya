@@ -5,12 +5,14 @@ $(function(){
   }
 
   const buildFileField = (index)=> {
-    const html = `<label class="item-image-box" for="item_item_images_attributes_${index}_image">クリック＆ドロップ</label>
-                  <div data-index="${index}" class="js-file_group">
+    const html = `<div class="js-input">
+                    <label class="item-image-box" for="item_item_images_attributes_${index}_image">クリック＆ドロップ</label>
+                    <div data-index="${index}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="item[item_images_attributes][${index}][image]"
                     id="item_item_images_attributes_${index}_image"><br>
                     <div class="js-remove">削除</div>
+                    </div>
                   </div>`;
     return html;
   }
@@ -18,6 +20,7 @@ $(function(){
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
   $('.image-content__input-box').on('change', '.js-file', function(e) {
+    $(".js-input").remove()
     const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
