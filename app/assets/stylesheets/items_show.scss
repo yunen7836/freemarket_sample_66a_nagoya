@@ -21,12 +21,13 @@
         display: flex;
         justify-content: space-between;
         &--top-image{
-          height: 360px;
+          height: 430px;
           width: 300px;
           img {
           display:block;
           height: 300px;
           width: 300px;
+          margin-bottom: 4px;
           }          
           &--clear{
             line-height: 0;
