@@ -427,7 +427,7 @@
             font-size: 16px;
             font-weight: 600;
             line-height: 1.4em;
-            text-align: center;
+            padding-left: 40px;
           }
           &__tag {
             list-style: none;
@@ -472,6 +472,7 @@
             font-weight: 600;
             line-height: 1.4em;
             color: rgb(255, 255, 255);
+            padding-left: 40px;
           }
           &__policy {
             padding: 0px 10px 0px 0px;

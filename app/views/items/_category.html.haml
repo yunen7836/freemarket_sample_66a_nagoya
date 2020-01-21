@@ -1,22 +1,97 @@
 .category
-  .category__items
-    .category__items__title
-      %h3.category__items__title__type
-        レディース新着アイテム
-      = link_to '' '#', class: "category__items__title__link" do
-        もっと見る
-        %i.fas.fa-chevron-right
-    .category__items__contents
-      .category__items__contents__tag
-        %ul.products
-          %li.product
-            .product__style
-              = link_to '' '#', class: "product__link" do
-                .product__link__item
-                  .product__item__details
-                    %span.product__item__details__price
-                      20$
-                    = image_tag 'https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg', class: "product__item__details__img"
-                  .product-wrapper
-                    %span.product-name
-                      ぽけもん
+  - @parents1.each do |parent|              
+    .category__items
+      .category__items__title
+        %h3.category__items__title__type
+          =parent.name 
+        = link_to '' '#', class: "category__items__title__link" do
+          もっと見る
+          %i.fas.fa-chevron-right             
+      .category__items__contents               
+        .category__items__contents__tag
+          %ul.products
+            - @items1.each do |item|
+              %li.product                        
+                .product__style
+                  = link_to '' '#', class: "product__link" do
+                    .product__link__item
+                      .product__item__details
+                        %span.product__item__details__price
+                          =item.price
+                        = image_tag 'https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg', class: "product__item__details__img"
+                      .product-wrapper
+                        %span.product-name
+                          =item.name
+.category
+  - @parents2.each do |parent|              
+    .category__items
+      .category__items__title
+        %h3.category__items__title__type
+          =parent.name
+        = link_to '' '#', class: "category__items__title__link" do
+          もっと見る
+          %i.fas.fa-chevron-right             
+      .category__items__contents               
+        .category__items__contents__tag
+          %ul.products
+            - @items2.each do |item| 
+              %li.product                        
+                .product__style
+                  = link_to '' '#', class: "product__link" do
+                    .product__link__item
+                      .product__item__details
+                        %span.product__item__details__price
+                          =item.price
+                        = image_tag 'https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg', class: "product__item__details__img"
+                      .product-wrapper
+                        %span.product-name
+                          =item.name
+.category
+  - @parents3.each do |parent|              
+    .category__items
+      .category__items__title
+        %h3.category__items__title__type
+          =parent.name
+        = link_to '' '#', class: "category__items__title__link" do
+          もっと見る
+          %i.fas.fa-chevron-right             
+      .category__items__contents               
+        .category__items__contents__tag
+          %ul.products
+            - @items3.each do |item| 
+              %li.product                        
+                .product__style
+                  = link_to '' '#', class: "product__link" do
+                    .product__link__item
+                      .product__item__details
+                        %span.product__item__details__price
+                          =item.price
+                        = image_tag 'https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg', class: "product__item__details__img"
+                      .product-wrapper
+                        %span.product-name
+                          =item.name
+.category
+  - @parents4.each do |parent|              
+    .category__items
+      .category__items__title
+        %h3.category__items__title__type
+          =parent.name
+        = link_to '' '#', class: "category__items__title__link" do
+          もっと見る
+          %i.fas.fa-chevron-right             
+      .category__items__contents               
+        .category__items__contents__tag
+          %ul.products
+            - @items4.each do |item| 
+              %li.product                        
+                .product__style
+                  = link_to '' '#', class: "product__link" do
+                    .product__link__item
+                      .product__item__details
+                        %span.product__item__details__price
+                          =item.price
+                        = image_tag 'https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg', class: "product__item__details__img"
+                      .product-wrapper
+                        %span.product-name
+                          =item.name
+                          

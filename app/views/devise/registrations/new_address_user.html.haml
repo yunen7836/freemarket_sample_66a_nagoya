@@ -32,7 +32,7 @@
         .field
           = f.label :都道府県, class: "field__a"
           %br/
-          = f.text_field :prefecture_id, class: "address__textform"
+          = f.collection_select :prefecture_id, AhPrefecture.all, :id, :name, class: "address__textform"
         .field
           = f.label :郵便番号
           %br/

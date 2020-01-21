@@ -3,7 +3,15 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
 
   def index
-    @parents = Category.where(ancestry: nil).page(params[:page]).per(4)                          
+    @parents = Category.where(ancestry: nil).page(params[:page]).per(4)
+    @parents1 = Category.where(ancestry: nil, id: 1)
+    @parents2 = Category.where(ancestry: nil, id: 200)
+    @parents3 = Category.where(ancestry: nil, id: 346)
+    @parents4 = Category.where(ancestry: nil, id: 481)
+    @items1 = Category.joins(:items).select('items.*, items.name, items.price').where(id: 1)
+    @items2 = Category.joins(:items).select('items.*, items.name, items.price').where(id: 200)
+    @items3 = Category.joins(:items).select('items.*, items.name, items.price').where(id: 346)
+    @items4 = Category.joins(:items).select('items.*, items.name, items.price').where(id: 481)
   end
 
   def show
