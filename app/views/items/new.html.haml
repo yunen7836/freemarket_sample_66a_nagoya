@@ -51,26 +51,6 @@
             %span 必須
           = f.collection_select :shipping_days, AhShippingDays.all, :id, :name
 
-          = f.fields_for :brand do |i|
-            = i.text_field :name
-          
-          = f.fields_for :item_images do |i|
-            = i.file_field :image
-          = f.fields_for :item_images do |i|
-            = i.file_field :image
-          = f.fields_for :item_images do |i|
-            = i.file_field :image
-          = f.fields_for :item_images do |i|
-            = i.file_field :image
-          = f.fields_for :item_images do |i|
-            = i.file_field :image
-          = f.fields_for :item_images do |i|
-            = i.file_field :image
-          = f.fields_for :item_images do |i|
-            = i.file_field :image
-          = f.fields_for :item_images do |i|
-            = i.file_field :image
-
       .item-show
         .item-show__left-head 販売価格(300〜9,999,999)
         .item-show__sell-price
