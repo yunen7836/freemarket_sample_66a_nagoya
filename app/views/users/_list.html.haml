@@ -85,7 +85,7 @@
             %i.fa.fa-angle-right.fa-2x
       %p 設定
       %li.mypage__nav__list__h
-        = link_to users_profile_show_path, class: "mypage__nav__list" do
+        = link_to user_profile_show_path(current_user.id), class: "mypage__nav__list" do
           プロフィール
           .float__test
             %i.fa.fa-angle-right.fa-2x
@@ -115,7 +115,7 @@
           .float__test
             %i.fa.fa-angle-right.fa-2x
       %li.mypage__nav__list__h
-        = link_to users_logout_path, class: "mypage__nav__list" do
+        = link_to user_logout_path(current_user.id), class: "mypage__nav__list" do
           ログアウト
           .float__test
             %i.fa.fa-angle-right.fa-2x
