@@ -26,6 +26,8 @@ class ItemsController < ApplicationController
 
   def credit
   end
+
+  
   
   private
 
