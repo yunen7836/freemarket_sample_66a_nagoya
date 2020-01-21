@@ -1,28 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 ## usersテーブル
 
 |Column|Type|Options|
@@ -49,7 +24,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|index: true, null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |prefecture_id|integer|null: false|
 |postal_code|string|null: false|
 |city|string|null: false|
@@ -69,7 +44,7 @@ Things you may want to cover:
 |last_name_kana|string|null: false|
 |postal_code|string|null: false|
 |prefecture_id|string|null: false|
-|user_id|integer|index: true, null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |address_city|string|null: false|
 |address_street|string|null: false|
 |address_building|string|
@@ -82,9 +57,9 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|index: true, null: false, foreign_key: true|
-|customer_id|integer|index: true, null: false|
-|card_id|integer|index: true, null: false|
+|user_id|integer|null: false, foreign_key: true|
+|customer_id|integer|null: false|
+|card_id|integer|null: false|
 
 
 ### Association
@@ -114,7 +89,7 @@ Things you may want to cover:
 |condition|integer|null: false|
 |shipping_charge|integer|null: false|
 |shipping_method|integer|null: false|
-|ship_form|integer|null: false, index:true|
+|ship_form|integer|null: false|
 |shipping_days|integer|null: false|
 |payment_status|integer|null: false|
 |sending_status|integer|null: false|
@@ -133,12 +108,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false, foreign_key:true|
-|image|string|
+|image|string|null: false|
 
 ### Association
 - belongs_to :item
 
-## categorysテーブル
+## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
