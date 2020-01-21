@@ -253,7 +253,8 @@
                 .products {
                   margin: -10px;
                   display: flex;
-                  flex-wrap: wrap;          
+                  flex-wrap: wrap;
+                  list-style: none;          
                   .product {
                     width: 20%;
                     padding: 10px;
@@ -411,8 +412,9 @@
       display: block;
       &__top {
         width: 1020px;
-        margin: 0px auto;
+        margin: 0 auto;
         display: flex;
+        margin: 0 auto;
         .company {
           padding-left: 0px;
           width: 0 auto;
@@ -420,13 +422,16 @@
           margin-top: 18px;
           vertical-align: top;
           display: inline-block;
+          
           &__merucari {
             font-size: 16px;
             font-weight: 600;
             line-height: 1.4em;
+            text-align: center;
           }
           &__tag {
             list-style: none;
+            
             &__list {
               line-height: 1.4em;
               margin: 16px 0px 0px;

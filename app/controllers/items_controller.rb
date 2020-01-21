@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
 
   def index
+    @parents = Category.where(ancestry: nil).page(params[:page]).per(4)                          
   end
 
   def show
