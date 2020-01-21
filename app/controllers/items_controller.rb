@@ -1,11 +1,15 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :buy_comfirmation]
 
   def index
   end
 
   def show
+  end
+
+  def buy_confirmation
+    @user = User.find(current_user.id)
   end
 
   def new
