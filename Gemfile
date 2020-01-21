@@ -79,3 +79,4 @@ gem 'haml-rails'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
+gem 'font-awesome-sass', '~> 5.4.1'
