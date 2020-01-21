@@ -105,22 +105,22 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index:true| 商品名
-|price|integer|null: false| 値段
-|description|text|null: false| 説明
-|catagory|references|null: false, foreign_key:true| カテゴリー
+|name|string|null: false, index:true|
+|price|integer|null: false|
+|description|text|null: false|
+|catagory|references|null: false, foreign_key:true|
 |size|integer||
-|brand|references|foreign_key:true| ブランド
-|condition|integer|null: false| 状態
-|shipping_charge|integer|null: false| 値段どっちが負担か
-|shipping_method|integer|null: false|　送る方法
-|ship_form|integer|null: false, index:true|　住んでる場所
-|shipping_days|integer|null: false|配送までの日時
+|brand|references|foreign_key:true|
+|condition|integer|null: false|
+|shipping_charge|integer|null: false|
+|shipping_method|integer|null: false|
+|ship_form|integer|null: false, index:true|
+|shipping_days|integer|null: false|
 |payment_status|integer|null: false|
 |sending_status|integer|null: false|
 |receiving_status|integer|null: false|
-|payment_method|integer|null: false|支払い方法
-|user|references|null: false, foreign_key:true|出品者
+|payment_method|integer|null: false|
+|user|references|null: false, foreign_key:true|
 |buyer|references|foreign_key:true|
 
 ### Association
