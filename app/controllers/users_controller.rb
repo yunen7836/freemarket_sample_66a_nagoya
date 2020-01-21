@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:new]
-  before_action :set_user, only: [:show, :profile_show, :update]
+  before_action :set_user, only: [:show, :profile_show, :update, :logout]
 
   def show
-    @user = User.all
   end
 
   def new

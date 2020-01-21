@@ -1,0 +1,172 @@
+.credit__wrapper {
+  width: 1020px;
+  margin: 40px auto 0;
+  padding-bottom: 40px;
+}
+
+.product__style:hover {
+  border: solid 1px rgb(0, 149, 238);
+  
+}
+
+.credit {
+  width: 700px; 
+  float: right;
+  &__content {
+    background-color: white;
+    &__top {
+      font-size: 24px;
+      text-align: center;
+      padding: 8px 24px;
+      border-bottom: 2px solid #f5f5f5;     
+    }
+    &__bottom {
+      padding: 40px 40px 64px;
+      
+      &__wrapper {
+        width: 343px;
+        margin: 0 auto;
+        .credit__form {
+          
+          &__plate {
+            display: inline-block;
+            font-weight: 600;
+          }
+          &__require {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 2px 4px;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            font-size: 12px;
+          }
+          &__number {
+            display: block;
+            width: 100%;
+            margin: 8px 0 0;
+            height: 48px;
+            padding: 10px 16px 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: white;          
+          }
+          .card {
+            display: flex;
+            margin-top: 8px;
+            list-style: none;
+            &__list {
+              margin: 0;
+              padding: 0;
+              &__img {
+                width: 40px;
+                height: 20px;
+              }
+            }
+          }
+        }
+        .credit__limit {       
+          margin-top: 32px;
+          
+          &__text {
+            font-weight: 600;
+            display: inline-block;
+          }
+          &__require {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 2px 4px;
+            margin: 0 0 0 8px;
+            border-radius: 2px;
+            font-size: 12px;
+          }
+          &__month {
+            width: calc(50% - 3px);
+            display: inline-block;
+            margin: 8px 0 0;
+            &__select {
+              width: calc(100% - 38px);
+              display: inline-block;
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              padding: 0px 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+            }
+            &__icon {
+              display: inline-block;
+            }
+            &__text {
+              display: inline-block;
+              margin: 0;
+              padding: 0;
+              width: 14px;
+            }
+          }
+          .security {
+            display: block;
+            width: 100%;
+            margin: 8px 0 0;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            &__text {
+              margin: 8px 0 0;
+              display: flex;
+              justify-content: space-between;
+              &__null {
+
+              }
+              &__message {
+
+                &__icon {
+                  display: inline-block;
+                  width: 14px;
+                  height: 14px;
+                  border-radius: 50%;
+                  background-color: rgb(0, 149, 238);
+                  color: white;
+                  text-align: center;
+                  font-size: 12px;
+                  line-height: 14px;
+                }
+                &__atend {
+                  display: inline-block;
+                  font-size: 12px;
+                  color: rgb(0, 149, 238);
+                  height: 14px;
+                  line-height: 14px;
+                }
+              }
+            }
+          }       
+        }
+        .credit__btn {
+          margin-top: 32px;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          background-color: red;
+          color: white;
+          transition: all 0.2s ease;
+          cursor: pointer;
+        }
+        .credit__btn:hover {
+          transform: translateY(150px);         
+        }
+      }
+    }
+  }
+}

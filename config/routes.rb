@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
 
   root "items#index"
-  get "users/logout"
-  get "users/profile_show"
+  get "users/credit"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_scope :user do
     root :to => "devise/sessions#new"
@@ -21,5 +21,8 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
-  resources :users, only: [:show, :new, :update]
+  resources :users, only: [:show, :new, :update] do
+    get "profile_show"
+    get "logout"
+  end
 end

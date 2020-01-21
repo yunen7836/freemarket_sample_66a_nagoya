@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
+  before_action :set_item, only: [:show]
 
   def index
   end
@@ -43,6 +44,10 @@ class ItemsController < ApplicationController
   end
   
   private
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
   def move_to_login
     redirect_to new_user_session_path unless user_signed_in?

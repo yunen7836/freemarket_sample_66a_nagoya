@@ -5,27 +5,35 @@
       .gray-container
         .white-container
           .item-name
-            スマホケース
+            = "#{@item.name}"
           .contents
             .contents__main-content
               .contents__main-content--top-image
-                %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
+                - image = @item.item_images.slice(0) 
+                = image_tag "#{image.image}" if image.present?
                 .contents__main-content--top-image--images
-                  %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
-                  %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
-                  %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
-                  %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
-                  %img{src: "https://image.itmedia.co.jp/mobile/articles/1903/01/st52693_sharpen-07.jpg"}
+                  - num = 0
+                  - while num < 5 do
+                    - image = @item.item_images.slice(num)
+                    = image_tag "#{image.image}" if image.present?
+                    - num = num + 1
+                .contents__main-content--top-image--images
+                  - num = 5
+                  - while num < 10 do
+                    - image = @item.item_images.slice(num)
+                    = image_tag "#{image.image}" if image.present?
+                    - num = num + 1
               %table.aaaaa{border: "1"}
                 %tr
                   %th 出品者
                   %td
-                    = link_to "苗字名前"
+                    = link_to "#{@item.user.nickname}"
                 %tr
                   %th カテゴリー
                   %td
                     = link_to do
-                      %div レディース
+                      %div
+                        = "#{@item.category.name}"
                     = link_to do
                       %i.fa.fa-chevron-right
                       %div 小物
@@ -35,7 +43,7 @@
                 %tr
                   %th ブランド
                   %td
-                    = link_to "カメハメハ"
+                    = link_to "#{@item.brand.name}"
                 %tr
                   %th 商品の状態
                   %td ボロボロ
@@ -48,7 +56,7 @@
                 %tr
                   %th 発送元地域
                   %td
-                    = link_to "熊本県"
+                    = link_to AhPrefecture.find(@item.ship_form).name
                 %tr
                   %th 発送日の目安
                   %td 2~3日で発送

@@ -80,3 +80,5 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem "jquery-rails"
+gem 'font-awesome-sass', '~> 5.4.1'
+gem "gretel"
