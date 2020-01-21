@@ -32,7 +32,7 @@
         .field
           = f.label :都道府県, class: "field__a"
           %br/
-          = f.collection_select :prefecture_id, AhPrefecture.all, :id, :name, class: "address__textform"
+          = f.collection_select :prefecture_id, AhPrefecture.all, :id, :name,{prompt: ""}, class: "address__textform"
         .field
           = f.label :郵便番号
           %br/
@@ -61,8 +61,3 @@
     .member__footer
       .member__footer__content
         .member__footer__content__h
-          = image_tag 'logo_gray.svg', class: "meru__image__h"
-        %span.member__foot__h
-          © Me*ca*i, Inc.
-
-
