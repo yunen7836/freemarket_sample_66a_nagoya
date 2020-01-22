@@ -53,11 +53,4 @@
           = f.submit "次へ進む", class: "signin__next__page "
 
 
-    .member__rule
-      .member__rule__content
-        = link_to 'プライバシーポリシー', '#', class: "sinki__kiyaku__content__h"
-        = link_to 'フリマアプリ利用規約', '#', class: "sinki__kiyaku__content__h"
-        = link_to '特定商取引に関する表記', '#',  class: "sinki__kiyaku__content__h"
-    .member__footer
-      .member__footer__content
-        .member__footer__content__h
+  = render partial: "users/policy" 
