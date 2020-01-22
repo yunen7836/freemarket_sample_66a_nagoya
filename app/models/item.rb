@@ -4,8 +4,14 @@ class Item < ApplicationRecord
   belongs_to :brand
   accepts_nested_attributes_for :brand
   belongs_to :category
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture
   belongs_to :user
+
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :ah_prefecture
+  belongs_to_active_hash :ah_condition
+  belongs_to_active_hash :ah_shipping_days
+  belongs_to_active_hash :ah_shipping_method
+  belongs_to_active_hash :ah_shipping_charge
 
 end
