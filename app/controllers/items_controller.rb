@@ -43,6 +43,7 @@ class ItemsController < ApplicationController
     redirect_to new_user_session_path unless user_signed_in?
   end
 
+<<<<<<< Updated upstream
   def product_params
     params.require(:item).permit(:name, :price, :description, :category_id, :condition, :shipping_charge, :shipping_method, :ship_form, :shipping_days,brand_attributes: [:name], item_images_attributes: [:image]).merge(user_id: current_user.id)
   end

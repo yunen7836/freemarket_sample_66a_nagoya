@@ -17,7 +17,14 @@ Rails.application.routes.draw do
   end
   
   resources :items, only: [:new, :create, :show] do
+<<<<<<< Updated upstream
     get "buy_confirmation"
+=======
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+>>>>>>> Stashed changes
   end
 
   resources :users, only: [:show, :new, :update] do
