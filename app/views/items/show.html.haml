@@ -64,7 +64,8 @@
               %span.contents__plice-box--plice ¥1,400
               %span.contents__plice-box--tax (税込)
               %span.contents__plice-box--fee 送料込み
-            = link_to "購入画面に進む","", class: "contents__buy-btn"
+            = link_to item_buy_confirmation_path(params[:id]), class: "contents__buy-btn" do
+              購入画面に進む"
             .contents__text-content
               %p.contents__text-content--text
                 ＊未使用

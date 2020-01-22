@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root "items#index"
   get "users/credit"
 
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_scope :user do
     root :to => "devise/sessions#new"
@@ -15,12 +16,15 @@ Rails.application.routes.draw do
     post 'address_users', to: 'users/registrations#create_address_user'
   end
   
-  resources :items, only: [:new, :create] do
+
+  resources :items, only: [:new, :create, :show] do
+    get 'buy_confirmation'
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
+
   resources :users, only: [:show, :new, :update] do
     get "profile_show"
     get "logout"

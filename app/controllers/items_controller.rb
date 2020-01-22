@@ -1,11 +1,15 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :buy_comfirmation]
 
   def index
   end
 
   def show
+  end
+
+  def buy_confirmation
+    @user = User.find(current_user.id)
   end
 
   def new
@@ -42,12 +46,13 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
+
+  def credit
+  end
+
   
   private
-
-  def set_item
-    @item = Item.find(params[:id])
-  end
 
   def move_to_login
     redirect_to new_user_session_path unless user_signed_in?
@@ -58,6 +63,6 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @product = Product.find(params[:id])
+    @item = Item.find(params[:id])
   end
 end
