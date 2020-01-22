@@ -7,7 +7,7 @@
     height:97px;
     margin: 0 auto 0;
     .member__header__split {
-      display: flex;
+      height: 89px;
     
     }
     .sign__content {
@@ -90,6 +90,17 @@
 
 .member__body__content {
   height: 275px;
+}
+
+.member__body {
+  width: 700px;
+  margin: 0 auto 0px;
+  background-color: #fff;
+}
+.new__member {
+  padding: 30px;
+  font-size: 20px;
+  
 }
 
 .member__mail {
@@ -176,6 +187,7 @@
 
 
 
+
 // ここからアドレス登録ページ
 
 
@@ -212,35 +224,8 @@
         -webkit-border-radius: 5px;
         font-size: 7px;
         margin-bottom: 20px;
+        background: #fff;
       }
-    }
-    
-
-    .member__rule {
-      width: 100%;
-      }
-      .member__rule__content {
-        background-color: rgb(245, 245, 245);
-        display: flex;
-        width: 456px;
-        margin: 0 auto 0;
-        justify-content: space-between;
-        font-size: 2px;
-        padding: 30px;
-      }
-      
-    .member__footer {
-      text-align: center;
-      &__content {
-        margin: 0 auto 0;        
-        &__h{
-          color: #000;
-          text-decoration: none;
-        }
-      }
-    }
-    .member__foot__h {
-      font-size: 1px;
     }
   }
 }
@@ -340,29 +325,7 @@
       text-align: center;
     }
   }
-  .member__rule {
-    width: 100%;
-  }
-  .member__rule__content {
-    background-color: rgb(245, 245, 245);
-    display: flex;
-    width: 456px;
-    margin: 0 auto 0;
-    justify-content: space-between;
-    font-size: 2px;
-    padding: 30px;
-  }
-  .member__footer {
-    text-align: center;
-    &__content {
-      margin: 0 auto 0;        
-      &__h{
-        color: #000;
-        text-decoration: none;
-        font-size: 1px;
-      }
-    }
-  }
+ 
 }
 
 
@@ -573,5 +536,30 @@ width: 80px;
       text-align: center;
     }
   }
-
 }
+
+//フッターの記述
+
+.member__rule {
+  width: 100%;
+  }
+  .member__rule__content {
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    width: 456px;
+    margin: 0 auto 0;
+    justify-content: space-between;
+    font-size: 2px;
+    padding: 30px;
+  }
+
+  //ここまでフッターの記述
+
+  //ここから本人情報確認ページ
+  .aaa {
+    display: flex;
+  }
+  .bbb　{
+    width : calc(100% - 300px) ;
+    height: 100px;
+  }
