@@ -12,6 +12,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :ship_form, null: false
       t.integer :shipping_days, null: false
       t.references :brand, foreign_key:true
+      t.references :buyer,{ to_table: :users }
       t.timestamps
     end
   end

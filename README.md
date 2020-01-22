@@ -96,6 +96,7 @@
 |receiving_status|integer|null: false|
 |payment_method|integer|null: false|
 |user|references|null: false, foreign_key:true|
+|buyer|references|foreign_key:true|
 
 ### Association
 - has_many :item_images dependent::destroy

@@ -15,7 +15,12 @@ Rails.application.routes.draw do
     post 'address_users', to: 'users/registrations#create_address_user'
   end
   
-  resources :items, only: [:new, :create, :show]
+  resources :items, only: [:new, :create] do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
   resources :users, only: [:show, :new, :update] do
     get "profile_show"
     get "logout"
