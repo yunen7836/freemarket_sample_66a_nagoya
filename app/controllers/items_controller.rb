@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
-  before_action :set_item, only: [:show, :buy_comfirmation]
+  before_action :set_item, only: [:show]
 
   def index
   end
@@ -9,7 +9,9 @@ class ItemsController < ApplicationController
   end
 
   def buy_confirmation
+    @item = Item.find(params[:item_id])
     @user = User.find(current_user.id)
+    @image = ItemImage.find_by(item_id: params[:item_id])
   end
 
   def new
