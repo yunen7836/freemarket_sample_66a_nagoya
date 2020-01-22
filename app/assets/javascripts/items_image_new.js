@@ -1,5 +1,5 @@
 $(function(){
-  const buildImg = (index, url)=> {
+  const buildImg = (index, url, value)=> {
     const html = `<div class="js-edit-list">
                     <img data-index="${index}" src="${url}" width="20%">
                     <ul>
@@ -7,7 +7,7 @@ $(function(){
                       <label for="item_item_images_attributes_${index}_image">編集</label>
                         <div data-index="${index}">
                           <div data-index="${index}" class="js-file_group">
-                          <input class="js-file" type="file"
+                          <input class="js-file" type="file" value="${value}"
                           name="item[item_images_attributes][${index}][image]"
                           id="item_item_images_attributes_${index}_image">
                           </div>
@@ -35,23 +35,23 @@ $(function(){
   let image = previews.getElementsByTagName("img");
 
   $('.image-content__input-box').on('change', '.js-file', function(e) {
-    $('#previews').css("width", "100%")
-    w = $(".item-image-box").outerWidth();
-    width = w - 124;
-    $(".js-image-content__input-box").remove();
-    $(".js-input").remove();
-    previews = document.getElementById("previews");
-    image = previews.getElementsByTagName("img");
-    
     const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
+    $('#previews').css("width", "100%")
+    w = $(".item-image-box").outerWidth();
+    width = w - 124;
+    previews = document.getElementById("previews");
+    image = previews.getElementsByTagName("img");
+    a = $(`#item_item_images_attributes_${targetIndex}_image`).val()
+    $(".item-image-box").remove();
+    $(".js-image-content__input-box").remove();
     // 該当indexを持つimgタグがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
-      $('#previews').append(buildImg(targetIndex, blobUrl));
+      $('#previews').append(buildImg(targetIndex, blobUrl, a));
       // fileIndexの先頭の数字を使ってinputを作る
       $('.image-content__input-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
@@ -64,22 +64,24 @@ $(function(){
         $("#previews").append(`<div class="js-image-content__input-box"></div>`)
       }
       if(image.length == 10){
-        $(".js-input").remove();
+        $(".item-image-box").remove();
       }
     }
   });
+
   $('#previews').on('change', '.js-file', function(e) {
-    
-    
     const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
     // 該当indexを持つimgタグがあれば取得して変数imgに入れる(画像変更の処理)
+    a = $(`#item_item_images_attributes_${targetIndex}_image`).val()
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      $(this).parents(".js-edit-list").remove();
+      $('#previews').append(buildImg(targetIndex, blobUrl, a));
       img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
-      $('#previews').append(buildImg(targetIndex, blobUrl));
+      $('#previews').append(buildImg(targetIndex, blobUrl,));
       // fileIndexの先頭の数字を使ってinputを作る
       $('.image-content__input-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();

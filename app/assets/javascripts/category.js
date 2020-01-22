@@ -32,7 +32,7 @@ $(function(){
         dataType: 'json'
       })
       .done(function(children){
-        $('#child_category').remove(); //親が変更された時、子以下を削除するする
+        $('#child_category').remove(); //親が変更された時、子以下を削除する
         $('#grandchild_category').remove();
         var insertHTML = '';
         children.forEach(function(child){
