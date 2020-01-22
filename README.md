@@ -24,7 +24,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|index: true, null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |prefecture_id|integer|null: false|
 |postal_code|string|null: false|
 |city|string|null: false|
@@ -44,7 +44,7 @@
 |last_name_kana|string|null: false|
 |postal_code|string|null: false|
 |prefecture_id|string|null: false|
-|user_id|integer|index: true, null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |address_city|string|null: false|
 |address_street|string|null: false|
 |address_building|string|
@@ -57,9 +57,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|index: true, null: false, foreign_key: true|
-|customer_id|integer|index: true, null: false|
-|card_id|integer|index: true, null: false|
+|user_id|integer|null: false, foreign_key: true|
+|customer_id|integer|null: false|
+|card_id|integer|null: false|
 
 
 ### Association
@@ -89,13 +89,14 @@
 |condition|integer|null: false|
 |shipping_charge|integer|null: false|
 |shipping_method|integer|null: false|
-|ship_form|integer|null: false, index:true|
+|ship_form|integer|null: false|
 |shipping_days|integer|null: false|
 |payment_status|integer|null: false|
 |sending_status|integer|null: false|
 |receiving_status|integer|null: false|
 |payment_method|integer|null: false|
 |user|references|null: false, foreign_key:true|
+|buyer|references|foreign_key:true|
 
 ### Association
 - has_many :item_images dependent::destroy
@@ -108,12 +109,12 @@
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|null: false, foreign_key:true|
-|image|string|
+|image|string|null: false|
 
 ### Association
 - belongs_to :item
 
-## categorysテーブル
+## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|

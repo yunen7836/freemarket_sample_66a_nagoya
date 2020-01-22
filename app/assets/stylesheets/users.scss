@@ -175,32 +175,6 @@
 }
 
 
-.member__wrapper__breadcrumb {
-  height: 1000px;
-  text-align: center;
-  background-color: rgb(245, 245, 245);
-  .member__header {
-    width: 700px;
-    height:97px;
-    margin: 0 auto 0;
-    .fmarket__header{
-      height: 50px; 
-      margin-top: 20px;
-      text-align: center;
-    }
-  }
-  .member__body {
-    height: 350px;
-    width: 700px;
-    text-align: center;
-    margin: 0 auto 0px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-
-}
-
 
 // ここからアドレス登録ページ
 
@@ -241,7 +215,7 @@
       }
     }
     
-    
+
     .member__rule {
       width: 100%;
       }
@@ -385,11 +359,9 @@
       &__h{
         color: #000;
         text-decoration: none;
+        font-size: 1px;
       }
     }
-  }
-  .member__foot__h {
-    font-size: 1px;
   }
 }
 
@@ -452,7 +424,7 @@
   }
 }
 
-// デフォルトのプログレスバー
+// プログレスバー各種
 .progress-status_bar {
 position: absolute;
 left: 50%;
@@ -561,5 +533,45 @@ width: 80px;
     background: #ea352d;
   }
 }
+//プログレスバー終了
 
+.member__wrapper__breadcrumb  {
+  height: 1000px;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  .member__header {
+    width: 700px;
+    height:97px;
+    margin: 0 auto 0;
+    .fmarket__header{
+      height: 50px; 
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+  .member__body {
+    height: 350px;
+    width: 700px;
+    text-align: center;
+    margin: 0 auto 0px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.member__wrapper {
+  height: 1000px;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  .member__header {
+    width: 700px;
+    height:97px;
+    margin: 0 auto 0;
+    .fmarket__header{
+      height: 50px; 
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
 
+}

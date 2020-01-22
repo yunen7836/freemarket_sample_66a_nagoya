@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     post 'address_users', to: 'users/registrations#create_address_user'
   end
   
+
   resources :items, only: [:new, :create, :show] do
     get 'buy_confirmation'
     collection do
