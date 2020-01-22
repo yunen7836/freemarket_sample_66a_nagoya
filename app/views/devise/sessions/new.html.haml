@@ -1,18 +1,32 @@
-%h2 Log in
-
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.member__wrapper
+  .member__header
+    = image_tag 'fmarket_logo_red.svg', class: "fmarket__header"
+    
+  .member__member
+    .member__body
+      .member__body__new
+        %p.new__member 新規会員登録
+      .member__body__content
+        .member__body__content__mail
+          = button_to 'メールアドレスで登録', new_user_registration_path, method: :get, class: "member__mail"
+          %br/
+          %i.icon-facebook
+          = button_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post,  class: "member__facebook"
+          %br/
+          = button_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post,  class: "member__google"
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+          .field
+            = f.label :password
+            %br/
+            = f.password_field :password, autocomplete: "current-password"
+          - if devise_mapping.rememberable?
+            .field
+              = f.check_box :remember_me
+              = f.label :remember_me
+          .actions
+            = f.submit "Log in"
+  = render partial: "users/policy"
