@@ -1,10 +1,7 @@
 .confirmation-body
+  .confirmation-body__header
+    = image_tag 'fmarket_logo_red.svg', class: "fmarket__header"
   .confirmation-body__container
-
-    .confirmation-body__container__header
-      %h1.confirmation-body__container__header__title
-        %a
-          %img
 
     .confirmation-body__container__main
       %section.confirmation-body__container__main__section
@@ -15,11 +12,15 @@
           .confirmation-body__container__main__section__middle__out
             .confirmation-body__container__main__section__middle__out__in
               %h3.confirmation-body__container__main__section__middle__out__in__left
+                = image_tag "#{@image.image}",  class: "confirmation-body__container__main__section__middle__out__in__left__image"
               .confirmation-body__container__main__section__middle__out__in__right
                 %p.confirmation-body__container__main__section__middle__out__in__right__top
+                  = @item.name
                 %p.confirmation-body__container__main__section__middle__out__in__right__down
                   %span.confirmation-body__container__main__section__middle__out__in__right__down__left
+                    = "¥" + @item.price.to_s(:delimited)
                   %span.confirmation-body__container__main__section__middle__out__in__right__down__right
+                    = AhShippingCharge.find(@item.shipping_charge).name
 
           
         %section.confirmation-body__container__main__section__down
@@ -32,44 +33,67 @@
                     支払金額
                   .confirmation-body__container__main__section__down__body__form__1ul__li__right
                     %span.confirmation-body__container__main__section__down__body__form__1ul__li__right__amount
-                      3,500円
+                      = "¥" + @item.price.to_s(:delimited)
 
               %ul.confirmation-body__container__main__section__down__body__form__2ul
                 %li.confirmation-body__container__main__section__down__body__form__2ul__li
                   .confirmation-body__container__main__section__down__body__form__2ul__li__div
                     %i.confirmation-body__container__main__section__down__body__form__2ul__li__div__left
                     %lavel.confirmation-body__container__main__section__down__body__form__2ul__li__div__right
-                      ポイントを使用(所持ポイント:P0)
+                      ⬜️ ポイントを使用(所持ポイント:P0)
                   
               %section.confirmation-body__container__main__section__down__body__form__3section
                 .confirmation-body__container__main__section__down__body__form__3section__div
                   .confirmation-body__container__main__section__down__body__form__3section__div__top
                     %h3.confirmation-body__container__main__section__down__body__form__3section__div__top__left
+                      支払方法
                     %a.confirmation-body__container__main__section__down__body__form__3section__div__top__right
-                      %span
-                        変更する
+                      %span.confirmation-body__container__main__section__down__body__form__3section__div__top__right__span
+                        = link_to '変更する',"#",class: "confirmation-body__container__main__section__down__body__form__3section__div__top__right__span__a"
                   %p.confirmation-body__container__main__section__down__body__form__3section__div__middle
-                  %figure.confirmation-body__container__main__section__down__body__form__3section__div__bottom
+                    クレジットカード
+                    %br
+                    ************5687
+                    %br
+                    有効期限 11 / 20
+                    %br
 
+                  %figure.confirmation-body__container__main__section__down__body__form__3section__div__bottom
+                    %i.fab.fa-cc-jcb
 
               %section.confirmation-body__container__main__section__down__body__form__4section
-                住所
+                .confirmation-body__container__main__section__down__body__form__4section__div
+                  .confirmation-body__container__main__section__down__body__form__4section__div__top
+                    %h3.confirmation-body__container__main__section__down__body__form__4section__div__top__left
+                      配送先
+                    %a.confirmation-body__container__main__section__down__body__form__4section__div__top__right
+                      %span.confirmation-body__container__main__section__down__body__form__4section__div__top__right__span
+                        = link_to '変更する',"#",class: "confirmation-body__container__main__section__down__body__form__4section__div__top__right__span__a"
+
+                  %p.confirmation-body__container__main__section__down__body__form__4section__div__middle
+                    = "〒" + @user.address_user.postal_code
+                    %br
+                    = AhPrefecture.find(@user.address_user.prefecture_id).name
+                    = @user.address_user.city
+                    = @user.address_user.street
+                    = @user.address_user.building
+
 
               %section.confirmation-body__container__main__section__down__body__form__5section
                 %button.confirmation-body__container__main__section__down__body__form__5section__button
-                  購入する
+                  = link_to '購入する','',class: "confirmation-body__container__main__section__down__body__form__5section__button__a"
 
 
 
-    .confirmation-body__container__footer
-      .member__rule
-        .member__rule__content
-          = link_to 'プライバシーポリシー', '#', class: "sinki__kiyaku__content__h"
-          = link_to 'フリマアプリ利用規約', '#', class: "sinki__kiyaku__content__h"
-          = link_to '特定商取引に関する表記', '#',  class: "sinki__kiyaku__content__h"
-      .member__footer
-        .member__footer__content
-          .member__footer__content__h
-            = image_tag 'logo_gray.svg', class: "meru__image__h"
-          %span.member__foot__h
-            © Me*ca*i, Inc.
+  .confirmation-body__container__footer
+    .member__rule
+      .member__rule__content
+        = link_to 'プライバシーポリシー', '#', class: "sinki__kiyaku__content__h"
+        = link_to 'フリマアプリ利用規約', '#', class: "sinki__kiyaku__content__h"
+        = link_to '特定商取引に関する表記', '#',  class: "sinki__kiyaku__content__h"
+    .member__footer
+      .member__footer__content
+        .member__footer__content__h
+          = image_tag 'logo_gray.svg', class: "meru__image__h"
+        %span.member__foot__h
+          © Me*ca*i, Inc.
