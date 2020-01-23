@@ -18,10 +18,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    render :phone_number_confirmation
+  end
+
+  def phone_number_confirmation
+    @user = User.new(session["devise.regist_data"]["user"])
     @address_user = @user.build_address_user
     render :new_address_user
   end
-
 
   def create_address_user
     @user = User.new(session["devise.regist_data"]["user"])

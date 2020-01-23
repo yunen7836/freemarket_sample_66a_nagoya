@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     root :to => "devise/sessions#new"
     get 'address_users', to: 'users/registrations#new_address_user'
     post 'address_users', to: 'users/registrations#create_address_user'
+    get "phone_number_confirmation", to: 'users/registrations#phone_number_confirmation'
   end
   
 
