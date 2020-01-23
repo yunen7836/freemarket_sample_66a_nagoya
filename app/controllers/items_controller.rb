@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :edit]
 
   def index
   end
@@ -49,6 +49,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.new
+    @item.item_images.new
+    @item.build_brand
+    #セレクトボックスの初期値設定
+    @category_parent_array = ["---"]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+  end
 
   def credit
   end

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   
 
-  resources :items, only: [:new, :create, :show] do
+  resources :items, only: [:new, :create, :show, :edit] do
     get 'buy_confirmation'
     collection do
       get 'get_category_children', defaults: { format: 'json' }
