@@ -29,7 +29,7 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 set :linked_files, %w{ config/master.key }
-server "(EC2のIPアドレス)", user: "ec2-user", roles: %w{app db web}
+server "18.177.240.38", user: "ec2-user", roles: %w{app db web}
 set :rails_env, "production"
 set :unicorn_rack_env, "production"
 # デプロイ処理が終わった後、Unicornを再起動するための記述
