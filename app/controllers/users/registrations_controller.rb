@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+
   before_action :configure_sign_up_params, only: [:create]
 
   def create
@@ -92,6 +93,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+
   protected
 
   def configure_sign_up_params
@@ -101,4 +104,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def address_user_params
     params.require(:address_user).permit(:prefecture_id, :postal_code, :city, :street, :building)
   end
+
+
 end

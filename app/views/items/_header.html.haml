@@ -24,3 +24,8 @@
         .head__bottom__right__rogin
           = link_to new_user_session_path, class: "right__btn" do
             ログイン
+        
+        - if user_signed_in?
+          .head__bottom__right__mypage
+            = link_to user_path(current_user.id), class: "mypage__btn" do
+              マイページ
