@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2020_01_22_105623) do
     t.string "last_name", default: "", null: false
     t.string "first_name_kana", default: "", null: false
     t.string "last_name_kana", default: "", null: false
-    t.string "phone_number", default: "", null: false
+    t.string "phone_number", default: ""
     t.string "self_introduction", default: ""
     t.date "birthday", null: false
     t.string "email", default: "", null: false
