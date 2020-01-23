@@ -152,7 +152,7 @@
             }
           }       
         }
-        .credit__btn {
+        #token_submit {
           margin-top: 32px;
           display: block;
           width: 100%;
@@ -162,9 +162,6 @@
           color: white;
           transition: all 0.2s ease;
           cursor: pointer;
-        }
-        .credit__btn:hover {
-          transform: translateY(150px);         
         }
       }
     }
