@@ -46,19 +46,19 @@
         - if @sns_id.present?
           = hidden_field_tag :sns_auth, true
         - else
-        .new__member__field
-          = f.label :パスワード
-          %span.require__red 必須
-          - if @minimum_password_length
-            %em
+          .new__member__field
+            = f.label :パスワード
+            %span.require__red 必須
+            - if @minimum_password_length
+              %em
 
-          %br/
-          = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上", class: "textform"
-        .new__member__field
-          = f.label :パスワード確認
-          %span.require__red 必須
-          %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上", class: "textform"
+            %br/
+            = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上", class: "textform"
+          .new__member__field
+            = f.label :パスワード確認
+            %span.require__red 必須
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "6文字以上", class: "textform"
         .new__member__field
           = f.label :お名前（全角）
           %span.require__red 必須
