@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  prepend_before_action :check_captcha, only: [:create] 
   before_action :configure_sign_up_params, only: [:create]
 
   def create
@@ -92,6 +93,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  private     
+  def check_captcha
+    unless verify_recaptcha
+      self.resource = resource_class.new sign_up_params
+      resource.validate # Look for any other validation errors besides Recaptcha
+      set_minimum_password_length
+      respond_with resource
+    end
+   end
+
   protected
 
   def configure_sign_up_params
@@ -101,4 +112,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def address_user_params
     params.require(:address_user).permit(:prefecture_id, :postal_code, :city, :street, :building)
   end
+
+
 end
