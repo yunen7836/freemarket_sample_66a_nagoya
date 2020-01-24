@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :edit]
 
   def index
   end
@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   def buy_confirmation
     @item = Item.find(params[:item_id])
     @user = User.find(current_user.id)
+
     @image = ItemImage.find_by(item_id: params[:item_id])
   end
 
@@ -49,6 +50,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+    #セレクトボックスの初期値設定
+    @category_parent_array = ["---"]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+  end
 
   def credit
   end
