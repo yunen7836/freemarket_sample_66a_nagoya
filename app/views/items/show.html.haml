@@ -10,18 +10,18 @@
             .contents__main-content
               .contents__main-content--top-image
                 - image = @item.item_images.slice(0) 
-                = image_tag "#{image.image}" if image.present?
+                = image_tag "#{image.image}", class: "contents__main-content--top-image__thumbnail" if image.present?
                 .contents__main-content--top-image--images
                   - num = 0
                   - while num < 5 do
                     - image = @item.item_images.slice(num)
-                    = image_tag "#{image.image}" if image.present?
+                    = image_tag "#{image.image}",class: "contents__main-content--top-image--images__thumbnail", id: "#{num}" if image.present?
                     - num = num + 1
                 .contents__main-content--top-image--images
                   - num = 5
                   - while num < 10 do
                     - image = @item.item_images.slice(num)
-                    = image_tag "#{image.image}" if image.present?
+                    = image_tag "#{image.image}",class: "contents__main-content--top-image--images__thumbnail", id: "#{num}" if image.present?
                     - num = num + 1
               %table.aaaaa{border: "1"}
                 %tr
