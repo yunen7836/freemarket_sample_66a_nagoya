@@ -6,9 +6,10 @@ $(function() {
                   href="/category/${child.id}">${child.name}</a>`;
       return html;
     }
+  
+    
 
-
-    $(".head__bottom__left__category").on("mouseover", function() {
+    $(".head__bottom__left__category").on("mouseenter", function() {
       
       
       $(".category_list").removeClass("none");
@@ -16,7 +17,7 @@ $(function() {
       $(".parent_category").on("mouseover", function() {
         
         var id = this.id//どのリンクにマウスが乗ってるのか取得します
-        
+      
         $(".now-selected-red").removeClass("now-selected-red")//赤色のcssのためです
         $('#' + id).addClass("now-selected-red");//赤色のcssのためです
         $(".child_category").remove();//一旦出ている子カテゴリ消します！
@@ -33,7 +34,9 @@ $(function() {
           })
         });
       });
-    }).on("mouseout", function() {
+    }).on("mouseleave", function() {
+      $(".child_category").remove();//一旦出ている子カテゴリ消します！
+      $(".grand_child_category").remove();//孫、てめえもだ！
       $(".category_list").addClass("none");
       
     });
@@ -65,6 +68,13 @@ $(function() {
         $(document).on("mouseover", ".child_category", function () {
           $(".grand_child_category").remove();
         });
+      });
+
+      $(document).on("mouseover", ".grand_child_category", function () {
+        
+        var id = this.id
+        $(".gc-now-selected-gray").removeClass("gc-now-selected-gray");//灰色のcssのため
+        $('#' + id).addClass("gc-now-selected-gray");//灰色のcssのため
       });
     });  
   });

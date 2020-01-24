@@ -15,14 +15,14 @@
 }
 
 .parents_list {
-  width: 200px;
+  width: 250px;
   font-size: 15px;
 
   
 }
 
 .children_list {
-  width: 200px;
+  width: 250px;
   font-size: 15px;
 
 }
@@ -37,18 +37,40 @@
 .parent_category {
   background-color: white;
   display: block;
+  padding-left: 20px;
+  height: 50px;
+  line-height: 50px;
 }
 
 .child_category {
   background-color: white;
   display: block;
+  padding-left: 20px;
+  height: 30px;
+  line-height: 30px;
 }
 
 .grand_child_category {
   background-color: white;
   display: block;
+  padding-left: 20px;
+  height: 30px;
+  line-height: 30px;
 }
 
 .head {
   position: relative;
+}
+
+.now-selected-red {
+  background-color: red;
+  color: white;
+}
+
+.now-selected-gray {
+  background-color: #eee;;
+}
+
+.gc-now-selected-gray {
+  background-color: #eee;;
 }
