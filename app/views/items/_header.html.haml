@@ -13,6 +13,12 @@
           = link_to '' '#', class: "head__bottom__category__link" do
             %i.fas.fa-bars.fa-spin
             カテゴリーから探す
+          .category_list.none
+            .parents_list
+              - @parents.each do |parent|
+                = link_to "#{parent.name}", "#", class: "parent_category",id: "#{parent.id}"
+            .children_list
+            .grand_children_list
         .head__bottom__left__brand
           = link_to '' '#', class: "head__bottom__brand__link" do
             %i.fas.fa-tags.fa-spin

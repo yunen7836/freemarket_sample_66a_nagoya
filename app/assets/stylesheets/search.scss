@@ -1,0 +1,54 @@
+
+
+.category_list.none {
+  float: left;
+  display: none;
+}
+
+.category_list {
+
+  z-index: 1;
+  position: absolute;
+  top: 44px;
+  left: 5px;
+  display: flex;
+}
+
+.parents_list {
+  width: 200px;
+  font-size: 15px;
+
+  
+}
+
+.children_list {
+  width: 200px;
+  font-size: 15px;
+
+}
+
+.grand_children_list {
+  width: 250px;
+  font-size: 15px;
+
+
+}
+
+.parent_category {
+  background-color: white;
+  display: block;
+}
+
+.child_category {
+  background-color: white;
+  display: block;
+}
+
+.grand_child_category {
+  background-color: white;
+  display: block;
+}
+
+.head {
+  position: relative;
+}
