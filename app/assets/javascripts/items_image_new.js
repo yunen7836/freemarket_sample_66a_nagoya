@@ -63,36 +63,6 @@ $(function(){
     }
   });
 
-  // $('#previews').on('change', '.js-file', function(e) {
-  //   const targetIndex = $(this).parent().data('index');
-  //   // ファイルのブラウザ上でのURLを取得する
-  //   const file = e.target.files[0];
-  //   const blobUrl = window.URL.createObjectURL(file);
-  //   // 該当indexを持つimgタグがあれば取得して変数imgに入れる(画像変更の処理)
-  //   a = $(`#item_item_images_attributes_${targetIndex}_image`).val()
-  //   if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-  //     $(this).parents(".js-edit-list").remove();
-  //     $('#previews').append(buildImg(targetIndex, blobUrl, a));
-  //     img.setAttribute('src', blobUrl);
-  //   } else {  // 新規画像追加の処理
-  //     $('#previews').append(buildImg(targetIndex, blobUrl,));
-  //     // fileIndexの先頭の数字を使ってinputを作る
-  //     $('.image-content__input-box').append(buildFileField(fileIndex[0]));
-  //     fileIndex.shift();
-  //     // 末尾の数に1足した数を追加する
-  //     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-  //     $(".item-image-box").css("width", width)
-  //     if(image.length == 5){
-  //       $(".item-image-box").css("width", "100%")
-  //       $(".image-content__input-box").css("top", "130px")
-  //       $("#previews").append(`<div class="js-image-content__input-box"></div>`)
-  //     }
-  //     if(image.length == 10){
-  //       $(".js-input").remove();
-  //     }
-  //   }
-  // });
-
   $('#previews').on('click', '.js-remove', function() {
     const targetIndex = $(this).data('index');
     w = $(".item-image-box").outerWidth();
