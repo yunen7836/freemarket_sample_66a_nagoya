@@ -64,11 +64,11 @@
               %span.contents__plice-box--plice ¥1,400
               %span.contents__plice-box--tax (税込)
               %span.contents__plice-box--fee 送料込み
-              -if @items_user.id == current_user.id
+              -if @item.id == current_user.id
                 = link_to item_buy_confirmation_path(params[:id]), class: "contents__buy-btn" do
                   購入画面に進む"
               -else
-                = link_to edit_item_path(params[:id]) do
+                = link_to edit_item_path(params[:id]), class: "contents__buy-btn" do
                   商品編集ページに進む
 
             .contents__text-content
