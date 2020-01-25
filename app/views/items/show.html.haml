@@ -43,25 +43,30 @@
                 %tr
                   %th ブランド
                   %td
-                    = link_to "#{@item.brand.name}"
+                    = link_to "#{@brand.name}"
                 %tr
                   %th 商品の状態
-                  %td ボロボロ
+                  %td 
+                    = link_to AhCondition.find(@item.condition).name
                 %tr
                   %th 配送料の負担
-                  %td 送料込み(出品者負担)
+                  %td 
+                    = link_to AhShippingCharge.find(@item.shipping_charge).name
                 %tr
                   %th 発送方法
-                  %td 未定
+                  %td 
+                    = link_to AhShippingMethod.find(@item.shipping_method).name
                 %tr
                   %th 発送元地域
                   %td
                     = link_to AhPrefecture.find(@item.ship_form).name
                 %tr
                   %th 発送日の目安
-                  %td 2~3日で発送
+                  %td
+                    = link_to AhShippingDays.find(@item.shipping_days).name
             .contents__plice-box
-              %span.contents__plice-box--plice ¥1,400
+              %span.contents__plice-box--plice 
+                = "¥" + @item.price.to_s(:delimited)
               %span.contents__plice-box--tax (税込)
               %span.contents__plice-box--fee 送料込み
               -if @item.id == current_user.id

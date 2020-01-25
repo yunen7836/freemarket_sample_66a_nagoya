@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @brand = Brand.find(@item.brand_id)
   end
 
   def buy_confirmation
@@ -57,6 +58,15 @@ class ItemsController < ApplicationController
     #データベースから、親カテゴリーのみ抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
+    end
+  end
+
+  def update
+    item = Item.find(params[:id])
+    if item.update(item_params)
+      redirect_to item_path(item.id)
+    else
+      render :edit
     end
   end
 
