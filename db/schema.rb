@@ -45,14 +45,6 @@ ActiveRecord::Schema.define(version: 2020_01_22_105623) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "customer_id", null: false
-    t.string "card_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
     t.bigint "item_id", null: false
@@ -73,11 +65,12 @@ ActiveRecord::Schema.define(version: 2020_01_22_105623) do
     t.integer "ship_form", null: false
     t.integer "shipping_days", null: false
     t.bigint "brand_id"
+    t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
-    t.index ["ship_form"], name: "index_items_on_ship_form"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
