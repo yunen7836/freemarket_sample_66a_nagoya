@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users, controllers: {
   omniauth_callbacks: 'users/omniauth_callbacks',
   registrations: 'users/registrations'
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
 
 
   root "items#index"
-  get "users/credit"
+  get "category/new"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_scope :user do
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   end
   
 
-  resources :items, only: [:new, :create, :show] do
+  resources :items, only: [:new, :create, :show, :edit, :update] do
     get 'buy_confirmation'
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -29,4 +30,23 @@ Rails.application.routes.draw do
     get "profile_show"
     get "logout"
   end
+
+  #クレカ登録
+  resources :card, only: [:index, :new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
+
+  #商品購入
+  resources :purchase, only: [:index] do
+    collection do
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
+
 end

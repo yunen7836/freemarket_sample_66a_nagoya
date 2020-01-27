@@ -1,0 +1,109 @@
+%body
+  .body
+    #app
+      = render partial: 'items/header'
+      .credit__wrapper
+        = render partial: 'users/list' 
+        .credit
+          .credit__content
+            = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %h2.credit__content__top
+                クレジットカード情報入力
+              .credit__content__bottom
+                .credit__content__bottom__wrapper
+                  .credit__form.form__margin
+                    .credit__form__plate
+                      カード番号
+                    .credit__form__require
+                      必須
+                    = text_field_tag "number", "", class: "credit__form__number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+                    %ul.card
+                      %li.card__list
+                        = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?3649802486', class: "card__list__img"
+                      %li.card__list
+                        = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?3649802486', class: "card__list__img"
+                      %li.card__list
+                        = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?3649802486', class: "card__list__img"
+                      %li.card__list
+                        = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?3649802486', class: "card__list__img"
+                      %li.card__list
+                        = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?3649802486', class: "card__list__img"
+                      %li.card__list
+                        = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?3649802486', class: "card__list__img"
+                      %li.card__list
+                        = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?3649802486', class: "card__list__img"
+                  .credit__limit.form__margin
+                    .credit__limit__text
+                      有効期限
+                    %span.credit__limit__require
+                      必須
+                    %br
+                    .credit__limit__month
+                      %select.credit__limit__month__select#exp_month{name: "exp_month", type: "text"} 
+                        %option{value: ""} --
+                        %option{value: "1"}01
+                        %option{value: "2"}02
+                        %option{value: "3"}03
+                        %option{value: "4"}04
+                        %option{value: "5"}05
+                        %option{value: "6"}06
+                        %option{value: "7"}07
+                        %option{value: "8"}08
+                        %option{value: "9"}09
+                        %option{value: "10"}10
+                        %option{value: "11"}11
+                        %option{value: "12"}12
+                      .credit__limit__month__icon
+
+                      .credit__limit__month__text
+                        月
+                    .credit__limit__month
+                      %select.credit__limit__month__select#exp_year{name: "exp_year", type: "text"} 
+                        %option{value: ""} --
+                        %option{value: "2019"}19
+                        %option{value: "2020"}20
+                        %option{value: "2021"}21
+                        %option{value: "2022"}22
+                        %option{value: "2023"}23
+                        %option{value: "2024"}24
+                        %option{value: "2025"}25
+                        %option{value: "2026"}26
+                        %option{value: "2027"}27
+                        %option{value: "2028"}28
+                        %option{value: "2029"}29
+                      .credit__limit__month__icon
+
+                      .credit__limit__month__text
+                        年
+                  .credit__limit
+                    .credit__limit__text
+                      セキュリティコード
+                    %span.credit__limit__require
+                      必須
+                    = text_field_tag "cvc", "", class: "security", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc" do
+                      .security__text
+                        .security__text__null
+                        .security__text__message
+                          %span.security__text__message__icon
+                            ?
+                          %span.security__text__message__atend    
+                            カードの裏面の番号とは？ 
+                  #card_token                  
+                  = submit_tag "追加する", id: "token_submit"
+      %aside.aside
+        .bottom
+          .bottom__content
+            .bottom__content__left
+              .bottom__content__left__message
+                スマホでも難しいフリマアプリ
+              .bottom__content__left__text
+                今すぐ有料ダウンロード！
+              .bottom__logo
+                = image_tag 'logo_red.svg', class: "bottom__logo__merucari"
+                = link_to '' '#', class: "bottom__logo__apple" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg', class: "bottom__logo__apple__img"
+                = link_to '' 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "bottom__logo__google" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg', class: "bottom__logo__google__img"
+            .bottom__content__right
+              = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png', class: "bottom__content__right__img"
+      = render partial: 'items/footer'       
