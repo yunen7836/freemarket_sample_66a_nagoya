@@ -1,0 +1,93 @@
+.confirmation-body
+  .confirmation-body__header
+    = image_tag 'fmarket_logo_red.svg', class: "fmarket__header"
+  .confirmation-body__container
+
+    .confirmation-body__container__main
+      %section.confirmation-body__container__main__section
+        %h2.confirmation-body__container__main__section__top
+          購入内容の確認
+
+        %section.confirmation-body__container__main__section__middle
+          .confirmation-body__container__main__section__middle__out
+            .confirmation-body__container__main__section__middle__out__in
+              %h3.confirmation-body__container__main__section__middle__out__in__left
+                = image_tag "#{@image.image}",  class: "confirmation-body__container__main__section__middle__out__in__left__image"
+              .confirmation-body__container__main__section__middle__out__in__right
+                %p.confirmation-body__container__main__section__middle__out__in__right__top
+                  = @item.name
+                %p.confirmation-body__container__main__section__middle__out__in__right__down
+                  %span.confirmation-body__container__main__section__middle__out__in__right__down__left
+                    = "¥" + @item.price.to_s(:delimited)
+                  %span.confirmation-body__container__main__section__middle__out__in__right__down__right
+                    = AhShippingCharge.find(@item.shipping_charge).name
+
+          
+        %section.confirmation-body__container__main__section__down
+          .confirmation-body__container__main__section__down__body
+            .confirmation-body__container__main__section__down__body__form
+
+              %ul.confirmation-body__container__main__section__down__body__form__1ul
+                %li.confirmation-body__container__main__section__down__body__form__1ul__li
+                  .confirmation-body__container__main__section__down__body__form__1ul__li__left
+                    支払金額
+                  .confirmation-body__container__main__section__down__body__form__1ul__li__right
+                    %span.confirmation-body__container__main__section__down__body__form__1ul__li__right__amount
+                      = "¥" + @item.price.to_s(:delimited)
+
+              %ul.confirmation-body__container__main__section__down__body__form__2ul
+                %li.confirmation-body__container__main__section__down__body__form__2ul__li
+                  .confirmation-body__container__main__section__down__body__form__2ul__li__div
+                    %i.confirmation-body__container__main__section__down__body__form__2ul__li__div__left
+                    %lavel.confirmation-body__container__main__section__down__body__form__2ul__li__div__right
+                      ⬜️ ポイントを使用(所持ポイント:P0)
+                  
+              %section.confirmation-body__container__main__section__down__body__form__3section
+                .confirmation-body__container__main__section__down__body__form__3section__div
+                  .confirmation-body__container__main__section__down__body__form__3section__div__top
+                    %h3.confirmation-body__container__main__section__down__body__form__3section__div__top__left
+                      支払方法
+                    %a.confirmation-body__container__main__section__down__body__form__3section__div__top__right
+                      %span.confirmation-body__container__main__section__down__body__form__3section__div__top__right__span
+                        = link_to '変更する',"#",class: "confirmation-body__container__main__section__down__body__form__3section__div__top__right__span__a"
+                  %p.confirmation-body__container__main__section__down__body__form__3section__div__middle
+                    クレジットカード
+                    - if @default_card_information.blank?
+                      %br /
+                    - else
+                      -#以下カード情報を表示
+                      = "**** **** **** " + @default_card_information.last4
+                      - exp_month = @default_card_information.exp_month.to_s
+                      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                      = exp_month + " / " + exp_year
+                  %figure.confirmation-body__container__main__section__down__body__form__3section__div__bottom
+                    %i.fab.fa-cc-jcb
+
+              %section.confirmation-body__container__main__section__down__body__form__4section
+                .confirmation-body__container__main__section__down__body__form__4section__div
+                  .confirmation-body__container__main__section__down__body__form__4section__div__top
+                    %h3.confirmation-body__container__main__section__down__body__form__4section__div__top__left
+                      配送先
+                    %a.confirmation-body__container__main__section__down__body__form__4section__div__top__right
+                      %span.confirmation-body__container__main__section__down__body__form__4section__div__top__right__span
+                        = link_to '変更する',"#",class: "confirmation-body__container__main__section__down__body__form__4section__div__top__right__span__a"
+
+                  %p.confirmation-body__container__main__section__down__body__form__4section__div__middle
+                    = "〒" + @user.address_user.postal_code
+                    %br
+                    = AhPrefecture.find(@user.address_user.prefecture_id).name
+                    = @user.address_user.city
+                    = @user.address_user.street
+                    = @user.address_user.building
+
+
+              %section.confirmation-body__container__main__section__down__body__form__5section
+                = form_tag(pay_item_path(params[:item_id]), method: :post) do
+                  %button.confirmation-body__container__main__section__down__body__form__5section__button
+                    購入する
+                .confirmation-body__container__main__section__down__body__form__5section__button__a
+
+
+
+  .confirmation-body__container__footer
+    = render partial: "users/policy"

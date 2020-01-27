@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  validates :nickname, :first_name, :last_name, :first_name_kana, :last_name_kana, :phone_number, :birthday, :email, presence: true
+  validates :nickname, :first_name, :last_name, :first_name_kana, :last_name_kana, :birthday, :email, presence: true
 
   has_many :sns_credentials
   has_one :address_user, dependent: :destroy
@@ -27,4 +27,5 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   has_many :items
+  has_one :card
 end

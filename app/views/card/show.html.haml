@@ -1,0 +1,46 @@
+%body
+  .body
+    #app
+      = render partial: 'items/header'
+      .credit__wrapper
+        = render partial: 'users/list' 
+        .credit
+          .credit__content
+            = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %h2.credit__content__top
+                支払い方法
+              .credit__content__bottom
+                .credit__content__bottom__wrapper
+                  .credit__form.form__margin
+                    %h1
+                      カード番号
+                    .register
+                      = "**** **** **** " + @default_card_information.last4
+                      - exp_month = @default_card_information.exp_month.to_s
+                      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                    %h1
+                      有効期限
+                    .register__limit
+                      = exp_month + " / " + exp_year
+                  
+                    %input{ type: "hidden", name: "card_id", value: "" }
+                    %button.card__btn
+                      削除する
+      %aside.aside
+        .bottom
+          .bottom__content
+            .bottom__content__left
+              .bottom__content__left__message
+                スマホでも難しいフリマアプリ
+              .bottom__content__left__text
+                今すぐ有料ダウンロード！
+              .bottom__logo
+                = image_tag 'logo_red.svg', class: "bottom__logo__merucari"
+                = link_to '' '#', class: "bottom__logo__apple" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg', class: "bottom__logo__apple__img"
+                = link_to '' 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "bottom__logo__google" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg', class: "bottom__logo__google__img"
+            .bottom__content__right
+              = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png', class: "bottom__content__right__img"
+      = render partial: 'items/footer'
+

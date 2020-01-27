@@ -1,0 +1,45 @@
+.member__wrapper__breadcrumb
+  .member__header
+    .member__header__split
+      =link_to root_path do
+        = image_tag 'fmarket_logo_red.svg', class: "fmarket__header"
+      %nav.progress
+        %ul.progress-bar
+          %li.active#active.phone_number_red
+            会員情報
+            .progress-status
+            .progress-status_bar
+          %li.double#double
+            電話番号認証
+            .progress-status
+            .progress-status_bar
+          %li
+            お届け先住所入力
+            .progress-status
+            .progress-status_bar
+          %li.payment
+            支払い方法
+            .progress-status
+            .progress-status_bar
+          %li.teminus#teminus
+            完了
+            .progress-status
+            .progress-status_bar
+
+
+        
+
+    %h2.new__member 電話番号の確認
+    .sign__content
+      %span.phone_number_text#phone_number_font1
+        携帯電話の番号
+      %form{:action => "#"}
+        %input{name: "post_code", type: "text", placeholder: "携帯電話の番号を入力", class: "textform", id: "phone_number_form"}/
+      %span.phone_number_text
+        本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+      .actions
+        = link_to 'SMSを送信する', phone_number_confirmation_path, class: "phone_number_botton"
+      %span.phone_number_text
+        ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+      = link_to "電話番号の確認が必要な理由＞", "#", id: "phone_number_reason"
+    = render partial: "users/policy"

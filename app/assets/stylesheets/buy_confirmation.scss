@@ -1,0 +1,216 @@
+.confirmation-body {
+  section {
+    display: block;
+  }
+  p {
+    display: block;
+  }
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+  &__header {
+    width: 700px;
+    height:97px;
+    margin: 0 auto 0;
+    text-align: center;
+    .fmarket__header{
+      height: 50px; 
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+  &__container {
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    &__main {
+      &__section {
+        &__top {
+          font-size: 22px;
+          padding: 32px;
+          line-height: 1.5;
+          text-align: center;
+          margin: 0;
+        }
+        &__middle {
+          border-top: 1px solid #f5f5f5;
+          text-align: center;
+          padding: 32px 16px;
+          &__out {
+            max-width: 343px;
+            margin: 0 auto;
+            &__in {
+              display: flex;
+              &__left {
+                margin: 0;
+                display: flex;
+                height: 80px;
+                width: 80px;
+                justify-content: center;
+                -webkit-box-align: center;
+                &__image {
+                  width: 80px;
+                  
+                }
+              }
+              &__right {
+                margin-left: 16px;
+                &__top {
+                  font-size: 14px;
+                  margin: 0;
+                  padding: 8px 0;
+                  line-height: 1.5;
+                  text-align: left;
+                }
+                &__down {
+                  margin: 0;
+                  text-align: left;
+                  font-size: 15px;
+                  font-weight: 600;
+                  &__left {
+                    font-size: 12px
+                  }
+                  &__right {
+                    font-size: 12px;
+
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.confirmation-body__container__main__section__down {
+  padding: 32px 16px;
+  text-align: center;
+  border-top: 1px solid #f5f5f5;
+  &__body {
+    max-width: 343px;
+    margin: 0 auto;
+    &__form {
+      &__1ul {
+        list-style: none;
+        display: table;
+        border-collapse: collapse;
+        width: 100%;
+        &__li {
+          font-size: 30px;
+          font-weight: 600;
+          display: table-row;
+          &__left {
+            text-align: left;
+            font-size: 18px;
+            display: table-cell;
+          }
+          &__right {
+            display: table-cell;
+            text-align: right;
+            &__amount {
+            }
+          }
+        }
+      }
+      &__2ul {
+        list-style: none;
+        color: #888;
+        margin: 24px 0 32px;
+        &__li{
+          &__div {
+            text-align: left;
+            &__left {
+            }
+            &__right {
+
+            }
+          }
+        }
+      }
+      &__3section {
+        text-align: left;
+        border-top: 1px solid #f5f5f5;
+        padding: 32px 0;
+        &__div {
+          &__top {
+            display: flex;
+            justify-content: space-between;
+            &__left {
+              font-size: 14px;
+              margin: 0;
+            }
+            &__right {
+              &__span {
+                &__a {
+                  color: #0099e8;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          &__middle {
+            line-height: 20px;
+
+          }
+          &__bottom {
+            margin: 0;
+          }
+        }
+      }
+      &__4section {
+        text-align: left;
+        border-top: 1px solid #f5f5f5;
+        padding: 32px 0;
+        &__div {
+          &__top {
+            display: flex;
+            justify-content: space-between;
+            &__left {
+              font-size: 14px;
+              margin: 0;
+            }
+            &__right {
+              &__span {
+                &__a {
+                  color: #0099e8;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          &__middle {
+            line-height: 20px;
+
+          }
+          &__bottom {
+            margin: 0;
+          }
+        }
+      }
+      &__5section {
+        padding: 24px 0 0;
+        border-top: 1px solid #f5f5f5;
+        &__button {
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          font-weight: 600;
+          &__a {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+

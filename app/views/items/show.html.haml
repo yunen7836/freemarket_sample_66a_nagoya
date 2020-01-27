@@ -10,18 +10,18 @@
             .contents__main-content
               .contents__main-content--top-image
                 - image = @item.item_images.slice(0) 
-                = image_tag "#{image.image}" if image.present?
+                = image_tag "#{image.image}", class: "contents__main-content--top-image__thumbnail" if image.present?
                 .contents__main-content--top-image--images
                   - num = 0
                   - while num < 5 do
                     - image = @item.item_images.slice(num)
-                    = image_tag "#{image.image}" if image.present?
+                    = image_tag "#{image.image}",class: "contents__main-content--top-image--images__thumbnail", id: "#{num}" if image.present?
                     - num = num + 1
                 .contents__main-content--top-image--images
                   - num = 5
                   - while num < 10 do
                     - image = @item.item_images.slice(num)
-                    = image_tag "#{image.image}" if image.present?
+                    = image_tag "#{image.image}",class: "contents__main-content--top-image--images__thumbnail", id: "#{num}" if image.present?
                     - num = num + 1
               %table.aaaaa{border: "1"}
                 %tr
@@ -43,28 +43,42 @@
                 %tr
                   %th ブランド
                   %td
-                    = link_to "#{@item.brand.name}"
+                    = link_to "#{@brand.name}"
                 %tr
                   %th 商品の状態
-                  %td ボロボロ
+                  %td 
+                    = link_to AhCondition.find(@item.condition).name
                 %tr
                   %th 配送料の負担
-                  %td 送料込み(出品者負担)
+                  %td 
+                    = link_to AhShippingCharge.find(@item.shipping_charge).name
                 %tr
                   %th 発送方法
-                  %td 未定
+                  %td 
+                    = link_to AhShippingMethod.find(@item.shipping_method).name
                 %tr
                   %th 発送元地域
                   %td
                     = link_to AhPrefecture.find(@item.ship_form).name
                 %tr
                   %th 発送日の目安
-                  %td 2~3日で発送
+                  %td
+                    = link_to AhShippingDays.find(@item.shipping_days).name
             .contents__plice-box
-              %span.contents__plice-box--plice ¥1,400
+              %span.contents__plice-box--plice 
+                = "¥" + @item.price.to_s(:delimited)
               %span.contents__plice-box--tax (税込)
               %span.contents__plice-box--fee 送料込み
-            = link_to "購入画面に進む","", class: "contents__buy-btn"
+              -if @item.user_id != current_user.id
+                = link_to item_buy_confirmation_path(params[:id]), class: "contents__buy-btn" do
+                  購入画面に進む"
+              -else
+                = link_to edit_item_path(params[:id]), class: "contents__buy-btn" do
+                  商品編集ページに進む
+                = link_to  item_path(params[:id]), method: :delete, class: "contents__buy-btn" do
+                  この商品を削除する
+              
+
             .contents__text-content
               %p.contents__text-content--text
                 ＊未使用

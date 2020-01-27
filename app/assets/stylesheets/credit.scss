@@ -52,6 +52,15 @@
             border: 1px solid #ccc;
             background-color: white;          
           }
+          h1 {
+            margin: 0 auto;
+            width: 70px;
+            font-size: 12px;
+            background-color: skyblue;
+            color: white;
+            border-radius: 20px;
+            text-align: center;
+          }
           .card {
             display: flex;
             margin-top: 8px;
@@ -152,7 +161,7 @@
             }
           }       
         }
-        .credit__btn {
+        #token_submit {
           margin-top: 32px;
           display: block;
           width: 100%;
@@ -162,11 +171,48 @@
           color: white;
           transition: all 0.2s ease;
           cursor: pointer;
-        }
-        .credit__btn:hover {
-          transform: translateY(150px);         
+          border-radius: 10px;
         }
       }
     }
   }
+}
+.register {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 20px 0 60px;
+  text-align: center;
+  
+}
+.register__limit {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 20px;
+  text-align: center;
+}
+.card__btn {
+  margin-top: 32px;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  background-color: red;
+  color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+.top__page__link {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 100px;
+}
+
+.confirmation-body__card {
+  height: 380px;
 }

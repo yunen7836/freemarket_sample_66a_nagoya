@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_031701) do
+ActiveRecord::Schema.define(version: 2020_01_22_105623) do
 
   create_table "address_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id", null: false
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 2020_01_15_031701) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,11 +65,12 @@ ActiveRecord::Schema.define(version: 2020_01_15_031701) do
     t.integer "ship_form", null: false
     t.integer "shipping_days", null: false
     t.bigint "brand_id"
+    t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
-    t.index ["ship_form"], name: "index_items_on_ship_form"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -80,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_01_15_031701) do
     t.string "last_name", default: "", null: false
     t.string "first_name_kana", default: "", null: false
     t.string "last_name_kana", default: "", null: false
-    t.string "phone_number", default: "", null: false
+    t.string "phone_number", default: ""
     t.string "self_introduction", default: ""
     t.date "birthday", null: false
     t.string "email", default: "", null: false

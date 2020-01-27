@@ -2,12 +2,20 @@
   .body
     #app
       = render partial: 'items/header'
+      
+      
+      -# config/breadcrumbs.rbに定義したmypageを呼び出し
+      - breadcrumb :mypage
+      -# 下記を記述した箇所にパンくずリストが表示される。
+      = breadcrumbs separator: " &rsaquo; "
+
       .mypage-main
         = render partial: 'list'
         .mypage-main__body
           %section.mypage-main__body__top
+            = image_tag "mypageicon.png", class: "mypage-main__body__top__icon"
             = link_to '',class: "" do
-              %p ユーザー名
+              = @user.nickname
               %p 評価　出品数
           %section.mypage-main__body__news
             %ul.mypage-main__body__news__tabs

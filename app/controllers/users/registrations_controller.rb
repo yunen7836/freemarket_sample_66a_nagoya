@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+
   before_action :configure_sign_up_params, only: [:create]
 
   def create
@@ -17,10 +18,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    render :phone_number_confirmation
+  end
+
+  def phone_number_confirmation
+    @user = User.new(session["devise.regist_data"]["user"])
     @address_user = @user.build_address_user
     render :new_address_user
   end
-
 
   def create_address_user
     @user = User.new(session["devise.regist_data"]["user"])
@@ -92,6 +97,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+
   protected
 
   def configure_sign_up_params
@@ -101,4 +108,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def address_user_params
     params.require(:address_user).permit(:prefecture_id, :postal_code, :city, :street, :building)
   end
+
+
 end
