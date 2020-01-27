@@ -3,26 +3,21 @@ class PurchaseController < ApplicationController
 
   before_action :set_card, only: [:index, :pay]
   def index
-    if @card.blank?     
-      redirect_to controller: "card", action: "new"
-    else
-      Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
-      #保管した顧客IDでpayjpから情報取得
-      customer = Payjp::Customer.retrieve(@card.customer_id)
-      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+    
+      Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]     
+      customer = Payjp::Customer.retrieve(@card.customer_id)     
       @default_card_information = customer.cards.retrieve(@card.card_id)
-    end
   end
 
-  def pay
-    
+  def pay   
+    @item = Item.find(params[:id])     
     Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
     Payjp::Charge.create(
-    :amount => 13500, #支払金額を入力（itemテーブル等に紐づけても良い）
-    :customer => @card.customer_id, #顧客ID
-    :currency => 'jpy', #日本円
+    :amount => @item.price, 
+    :customer => @card.customer_id, 
+    :currency => 'jpy', 
   )
-  redirect_to action: 'done' #完了画面に移動
+  redirect_to action: 'done' 
   end
 
   private

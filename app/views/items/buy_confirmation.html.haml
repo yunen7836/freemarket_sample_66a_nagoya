@@ -25,7 +25,7 @@
           
         %section.confirmation-body__container__main__section__down
           .confirmation-body__container__main__section__down__body
-            %form.confirmation-body__container__main__section__down__body__form
+            .confirmation-body__container__main__section__down__body__form
 
               %ul.confirmation-body__container__main__section__down__body__form__1ul
                 %li.confirmation-body__container__main__section__down__body__form__1ul__li
@@ -52,12 +52,14 @@
                         = link_to '変更する',"#",class: "confirmation-body__container__main__section__down__body__form__3section__div__top__right__span__a"
                   %p.confirmation-body__container__main__section__down__body__form__3section__div__middle
                     クレジットカード
-                    %br
-                    ************5687
-                    %br
-                    有効期限 11 / 20
-                    %br
-
+                    - if @default_card_information.blank?
+                      %br /
+                    - else
+                      -#以下カード情報を表示
+                      = "**** **** **** " + @default_card_information.last4
+                      - exp_month = @default_card_information.exp_month.to_s
+                      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                      = exp_month + " / " + exp_year
                   %figure.confirmation-body__container__main__section__down__body__form__3section__div__bottom
                     %i.fab.fa-cc-jcb
 
@@ -80,8 +82,10 @@
 
 
               %section.confirmation-body__container__main__section__down__body__form__5section
-                %button.confirmation-body__container__main__section__down__body__form__5section__button
-                  = link_to '購入する','',class: "confirmation-body__container__main__section__down__body__form__5section__button__a"
+                = form_tag(pay_item_path(params[:item_id]), method: :post) do
+                  %button.confirmation-body__container__main__section__down__body__form__5section__button
+                    購入する
+                .confirmation-body__container__main__section__down__body__form__5section__button__a
 
 
 
