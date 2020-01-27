@@ -24,6 +24,10 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
+
+    member do
+      post 'pay', to: 'purchase#pay'
+    end
   end
 
   resources :users, only: [:show, :new, :update] do
@@ -44,7 +48,7 @@ Rails.application.routes.draw do
   resources :purchase, only: [:index] do
     collection do
       get 'index', to: 'purchase#index'
-      post 'pay', to: 'purchase#pay'
+      
       get 'done', to: 'purchase#done'
     end
   end

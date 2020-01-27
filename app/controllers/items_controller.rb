@@ -10,10 +10,14 @@ class ItemsController < ApplicationController
   end
 
   def buy_confirmation
+    @card = Card.where(user_id: current_user.id).first 
     @item = Item.find(params[:item_id])
     @user = User.find(current_user.id)
 
     @image = ItemImage.find_by(item_id: params[:item_id])
+    Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
   end
 
   def new
