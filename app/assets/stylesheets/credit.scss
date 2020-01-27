@@ -52,6 +52,15 @@
             border: 1px solid #ccc;
             background-color: white;          
           }
+          h1 {
+            margin: 0 auto;
+            width: 70px;
+            font-size: 12px;
+            background-color: skyblue;
+            color: white;
+            border-radius: 20px;
+            text-align: center;
+          }
           .card {
             display: flex;
             margin-top: 8px;
@@ -194,15 +203,7 @@
   text-align: center;
   border-radius: 10px;
 }
-h1 {
-  margin: 0 auto;
-  width: 70px;
-  font-size: 12px;
-  background-color: skyblue;
-  color: white;
-  border-radius: 20px;
-  text-align: center;
-}
+
 
 .top__page__link {
   text-align: center;
