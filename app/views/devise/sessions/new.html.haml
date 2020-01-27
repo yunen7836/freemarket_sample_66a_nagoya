@@ -13,14 +13,14 @@
           %br/
           %i.icon-facebook
           .login_border#login_sosial_space
-            = button_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post,  class: "member__facebook", id: "login_social"
+            = button_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post,  class: "member__facebook login_social_botton"
             %br/
-            = button_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post,  class: "member__google", id: "login_social"
+            = button_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post,  class: "member__google login_social_botton"
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             .field
-              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "textform", id: "login_textform"
+              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "textform login_textform"
             .field
-              = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "textform", id: "login_textform"
+              = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "textform login_textform"
             .rechaptcha
               = flash[:recaptcha_error]
               = recaptcha_tags
@@ -28,4 +28,4 @@
               = f.submit "ログイン",  class: "signin__next__page"
             .login_forget_box
               =link_to 'パスワードをお忘れの方', '#', class: "login_forget"
-  = render partial: "users/policy"
+  = render partial: "users/policy" 
