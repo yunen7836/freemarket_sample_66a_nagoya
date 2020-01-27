@@ -1,0 +1,52 @@
+%body
+  .body
+    #app
+      = render partial: 'items/header'
+      .items
+        .items__wrapper
+
+          .category
+            .category__items
+              - if @items.present?
+                .category__items__title
+                  %h3.category__items__title__type
+                    = @category.name + "の商品一覧"
+                .category__items__contents
+                  .category__items__contents__tag
+                    %ul.products
+                      - @items.each do |item|
+                        %li.product
+                          .product__style
+                            = link_to item_path(item.id), class: "product__link" do
+                              .product__link__item
+                                .product__item__details
+                                  %span.product__item__details__price
+                                    = "¥" + item.price.to_s(:delimited)
+                                  = image_tag "#{item.item_images.slice(0).image}", class: "product__item__details__img"
+                                .product-wrapper
+                                  %span.product-name
+                                    = item.name
+              - else
+                .category__items__title
+                  %h3.category__items__title__type
+                    お探しの商品は存在しません
+
+      .camera
+      = render partial: 'users/exhibition'
+      %aside.aside
+        .bottom
+          .bottom__content
+            .bottom__content__left
+              .bottom__content__left__message
+                スマホでも難しいフリマアプリ
+              .bottom__content__left__text
+                今すぐ有料ダウンロード！
+              .bottom__logo
+                = image_tag 'logo_red.svg', class: "bottom__logo__merucari"
+                = link_to '' '#', class: "bottom__logo__apple" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg', class: "bottom__logo__apple__img"
+                = link_to '' 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "bottom__logo__google" do
+                  = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg', class: "bottom__logo__google__img"
+            .bottom__content__right
+              = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/download_app_pc-a4418175e8be071827ac88d073f40e4a.png', class: "bottom__content__right__img"
+      = render partial: 'items/footer'

@@ -6,4 +6,10 @@ class CategoryController < ApplicationController
       format.json
     end
   end
+
+  def show
+    @category = Category.find(params[:id])
+    @items = Item.where(category_id: params[:id]).limit(50)
+  end
+
 end
