@@ -177,7 +177,7 @@
       .items__wrapper { 
         position: relative;       
         .items__scroll {
-          height: 390px;
+          height: 290px;
           text-align: center;
           line-height: 290px;
           overflow: hidden;
@@ -262,7 +262,8 @@
                   list-style: none;
                   margin: -10px;
                   display: flex;
-                  flex-wrap: wrap;          
+                  flex-wrap: wrap;
+                  list-style: none;          
                   .product {
                     
                     width: 20%;
@@ -334,6 +335,7 @@
                               width: 100%;
                               z-index: 1;
                               background-color: white;
+                              display: block;
                             }
                           }
                         }
@@ -421,8 +423,9 @@
       display: block;
       &__top {
         width: 1020px;
-        margin: 0px auto;
+        margin: 0 auto;
         display: flex;
+        margin: 0 auto;
         .company {
           padding-left: 0px;
           width: 0 auto;
@@ -430,13 +433,16 @@
           margin-top: 18px;
           vertical-align: top;
           display: inline-block;
+          
           &__merucari {
             font-size: 16px;
             font-weight: 600;
             line-height: 1.4em;
+            padding-left: 40px;
           }
           &__tag {
             list-style: none;
+            
             &__list {
               line-height: 1.4em;
               margin: 16px 0px 0px;
@@ -477,6 +483,7 @@
             font-weight: 600;
             line-height: 1.4em;
             color: rgb(255, 255, 255);
+            padding-left: 40px;
           }
           &__policy {
             padding: 0px 10px 0px 0px;
