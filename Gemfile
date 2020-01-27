@@ -79,10 +79,8 @@ gem 'haml-rails'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
-<<<<<<< HEAD
 gem 'kaminari'
 gem 'font-awesome-sass', '~> 5.4.1'
-=======
 gem "jquery-rails"
 gem 'font-awesome-sass', '~> 5.4.1'
 gem "gretel"
@@ -91,4 +89,3 @@ gem 'dotenv-rails'
 gem 'fog-aws'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'rails-i18n'
->>>>>>> master

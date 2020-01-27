@@ -406,11 +406,8 @@ DEPENDENCIES
   gretel
   haml-rails
   jbuilder (~> 2.5)
-<<<<<<< HEAD
   kaminari
-=======
   jquery-rails
->>>>>>> master
   listen (>= 3.0.5, < 3.2)
   mini_magick
   mysql2 (>= 0.4.4, < 0.6.0)
