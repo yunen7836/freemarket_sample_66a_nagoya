@@ -33,6 +33,19 @@ class ItemsController < ApplicationController
 
   end
 
+  def search
+    @search_text = params[:keyword]
+    redirect_to root_path if params[:keyword] == "" 
+    split_keywords = params[:keyword].split(/[[:blank:]]+/)
+    @items = Item.all
+
+    split_keywords.each do |keyword|  # 分割したキーワードごとに検索
+      next if keyword == "" 
+      @items = @items.where( "name LIKE ? OR description LIKE ? ", "%#{keyword}%", "%#{keyword}%")
+    end
+
+  end
+
   # 以下全て、formatはjsonのみ
    # 親カテゴリーが選択された後に動くアクション
   def get_category_children
