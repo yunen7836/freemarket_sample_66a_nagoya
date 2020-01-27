@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
-  before_action :set_item, only: [:show, :edit]
+  before_action :set_item, only: [:show, :edit, :destroy]
 
   def index
   end
@@ -79,6 +79,11 @@ class ItemsController < ApplicationController
   end
 
   def credit
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
   end
 
   
