@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .fmarket-logo{
+  line-height: 170px;
   height: 128px;
+  text-align: center;
+  &__image{
+    width: 185px;
+    height: 49px;
+  }
 }
 .gray-sell{
   background-color: rgb(245, 245, 245);
@@ -12,6 +18,14 @@
   background-color: #fff;
   width: 700px;
   margin: 0 auto;
+  .item-label-red{
+    background-color: #ea352d;
+    color: white;
+    padding: 2px 4px;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 14px;
+  }
   .header-content{
     padding: 32px 16px;
     font-size: 22px;
@@ -19,17 +33,31 @@
     font-weight: bold;
     border-bottom: 1px solid rgb(245, 245, 245);
   }
+  .alerts{
+    padding: 40px;
+    .alert{
+      padding: 10px 20px;
+      border: red 5px solid;
+      border-radius: 10px;
+      .alert-count{
+        color: red;
+        font-size: 24px;
+      }
+      .alert-warning{
+        ul{
+          font-size: 18px;
+          color: red;
+          margin:20px 0;
+          padding: 0;
+          list-style: none;
+        }
+      }
+    }
+  }
+  
   .image-content{
     padding: 40px;
     font-size: 16px;
-    span{
-      background-color: red;
-      color: white;
-      padding: 2px 4px;
-      font-weight: bold;
-      border-radius: 3px;
-      font-size: 14px;
-    }
     &__box{
       position: relative;
       display: flex;
@@ -215,4 +243,12 @@
 .js-image-content__input-box{
   height: 130px;
   width: 100%;
+}
+.item-label-gray{
+  background-color: #ccc;
+  color: white;
+  padding: 2px 4px;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 14px;
 }

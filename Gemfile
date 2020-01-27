@@ -84,3 +84,4 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem "gretel"
 gem 'fog-aws'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'rails-i18n'

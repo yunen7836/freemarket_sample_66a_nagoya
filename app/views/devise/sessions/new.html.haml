@@ -21,9 +21,9 @@
               = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "textform", id: "login_textform"
             .field
               = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "textform", id: "login_textform"
-            .rechaptcha
-              = flash[:recaptcha_error]
-              = recaptcha_tags
+            -# .rechaptcha
+            -#   = flash[:recaptcha_error]
+            -#     = recaptcha_tags
             .actions
               = f.submit "ログイン",  class: "signin__next__page"
             .login_forget_box

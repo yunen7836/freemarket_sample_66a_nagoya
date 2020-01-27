@@ -13,8 +13,9 @@
         = render partial: 'list'
         .mypage-main__body
           %section.mypage-main__body__top
+            = image_tag "mypageicon.png", class: "mypage-main__body__top__icon"
             = link_to '',class: "" do
-              %p ユーザー名
+              = @user.nickname
               %p 評価　出品数
           %section.mypage-main__body__news
             %ul.mypage-main__body__news__tabs

@@ -65,6 +65,7 @@ $(function(){
           grandchildren.forEach(function(grandchild){
             insertHTML += appendOption(grandchild);
           });
+          console.log(insertHTML)
           appendGrandchidrenBox(insertHTML);
         }
       })
