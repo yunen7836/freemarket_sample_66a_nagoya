@@ -24,14 +24,29 @@
             %i.fas.fa-tags.fa-spin
             ブランドから探す
       .head__bottom__right
-        .head__bottom__right__sign
-          = link_to new_user_path, class: "left__btn" do
-            新規会員登録
-        .head__bottom__right__rogin
-          = link_to new_user_session_path, class: "right__btn" do
-            ログイン
-        
         - if user_signed_in?
-          .head__bottom__right__mypage
+          .head__bottom__right__login
+            = link_to "#", class: "mypage__btn" do
+              %i.far.fa-heart
+              いいね！一覧
+          .head__bottom__right__login
+            = link_to "#", class: "mypage__btn" do
+              %i.far.fa-bell
+              お知らせ
+          .head__bottom__right__login
+            = link_to "#", class: "mypage__btn" do
+              %i.fas.fa-check
+              やることリスト
+          .head__bottom__right__login
             = link_to user_path(current_user.id), class: "mypage__btn" do
+              %span
+                = image_tag "mypageicon.png", class: "header__mypage-icon"
               マイページ
+        - else
+          .head__bottom__right__sign
+            = link_to new_user_path, class: "left__btn" do
+              新規会員登録
+          .head__bottom__right__rogin
+            = link_to new_user_session_path, class: "right__btn" do
+              ログイン
+          

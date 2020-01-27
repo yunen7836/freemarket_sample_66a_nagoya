@@ -83,7 +83,7 @@
 |name|string|null: false, index:true|
 |price|integer|null: false|
 |description|text|null: false|
-|catagory|references|null: false, foreign_key:true|
+|category|references|null: false, foreign_key:true|
 |size|integer||
 |brand|references|foreign_key:true|
 |condition|integer|null: false|

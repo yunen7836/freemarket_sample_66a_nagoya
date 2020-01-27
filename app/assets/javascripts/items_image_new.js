@@ -1,4 +1,6 @@
+
 $(function(){
+  if (document.getElementById("js-image-true") != null){
   const buildImg = (index, url)=> {
     const html = `<div class="js-edit-list" data-index="${index}">
                     <img data-index="${index}" src="${url}" width="20%">
@@ -68,14 +70,12 @@ $(function(){
     w = $(".item-image-box").outerWidth();
     width = w + 124;
     $(".item-image-box").css("width", width)
-    
     $(this).parent().parent().remove();
     // 画像入力欄が0個にならないようにしておく
     $(`#js-hidden-input${targetIndex}`).remove();
     if (image.length == 0){
       $(".image-content__box").append(`<div class="js-image-content__input-box"></div>`)
     }
-
     if(image.length == 4){
       lastIndex = $('.js-input:last').data("index")
       $(`#js-hidden-input${lastIndex}`).css("display", "none")
@@ -96,4 +96,5 @@ $(function(){
       $(".image-content__input-box").css("top", "130px")
     }
   });
+  }
 })

@@ -115,6 +115,15 @@
           }
           &__right {
             display: flex;
+            &__login{
+              line-height: 44px;
+              font-size: 14px;
+              margin: 0 7px;
+              img{
+                width:20px;
+                height:20px;
+              }
+            }
             &__sign {
               text-align: center; 
               .left__btn {
@@ -249,12 +258,13 @@
             &__contents {
               
               &__tag {
-
                 .products {
+                  list-style: none;
                   margin: -10px;
                   display: flex;
                   flex-wrap: wrap;          
                   .product {
+                    
                     width: 20%;
                     padding: 10px;
                     .product__style {

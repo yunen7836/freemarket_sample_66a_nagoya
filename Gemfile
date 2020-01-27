@@ -86,3 +86,4 @@ gem 'payjp'
 gem 'dotenv-rails'
 gem 'fog-aws'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'rails-i18n'
