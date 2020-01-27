@@ -10,8 +10,8 @@ $(function() {
     
 
     $(".head__bottom__left__category").on("mouseenter", function() {
-      
-      
+      $(".child_category").remove();//一旦出ている子カテゴリ消します！
+      $(".grand_child_category").remove();//孫、てめえもだ！
       $(".category_list").removeClass("none");
     
       $(".parent_category").on("mouseover", function() {
@@ -28,7 +28,7 @@ $(function() {
           data: {parent_id: id},//どの親の要素かを送ります　params[:parent_id]で送られる
           dataType: 'json'
         }).done(function(children) {
-          children.forEach(function (child) {//帰ってきた子カテゴリー（配列）
+          children.forEach(function (child) {//帰ってきた子カテゴリー（配列
             var html = buildChildHTML(child);//HTMLにして
             $(".children_list").append(html);//リストに追加します
           })
@@ -47,7 +47,7 @@ $(function() {
     // 孫カテゴリを追加する処理です　基本的に子要素と同じです！
     function buildGrandChildHTML(child){
       var html =`<a class="grand_child_category" id="${child.id}"
-                 href="#">${child.name}</a>`;
+                    href="category/${child.id}">${child.name}</a>`;
       return html;
     }
   
