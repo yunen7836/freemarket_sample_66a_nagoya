@@ -75,8 +75,8 @@
               -else
                 = link_to edit_item_path(params[:id]), class: "contents__buy-btn" do
                   商品編集ページに進む
-                = link_to  item_path(params[:id]), method: :delete do
-                  aaaaa
+                = link_to  item_path(params[:id]), method: :delete, class: "contents__buy-btn" do
+                  この商品を削除する
               
 
             .contents__text-content
