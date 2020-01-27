@@ -8,10 +8,12 @@ class ItemsController < ApplicationController
     @parents2 = Category.where(ancestry: nil, id: 200)
     @parents3 = Category.where(ancestry: nil, id: 346)
     @parents4 = Category.where(ancestry: nil, id: 481)
-    @items1 = Category.joins(:items).select('items.*, items.name, items.price').where(id: 1)
-    @items2 = Category.joins(:items).select('items.*, items.name, items.price').where(id: 200)
-    @items3 = Category.joins(:items).select('items.*, items.name, items.price').where(id: 346)
-    @items4 = Category.joins(:items).select('items.*, items.name, items.price').where(id: 481)
+    @items1 = Item.joins(:item_images).select('items.id, items.name, items.price, item_images.image').where(category_id: 1)
+    @items2 = Item.joins(:item_images).select('items.id, items.name, items.price, item_images.image').where(category_id: 200)
+    @items3 = Item.joins(:item_images).select('items.id, items.name, items.price, item_images.image').where(category_id: 346)
+    @items4 = Item.joins(:item_images).select('items.id, items.name, items.price, item_images.image').where(category_id: 481)
+
+    
   end
 
   def show

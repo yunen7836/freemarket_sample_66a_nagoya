@@ -17,8 +17,9 @@
                     .product__link__item
                       .product__item__details
                         %span.product__item__details__price
-                          =item.price
-                        = image_tag 'https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg', class: "product__item__details__img"
+                          ¥
+                          = number_with_delimiter(item.price)
+                        = image_tag "/uploads/item_image/image/#{item.id}/#{item.image}", class: "product__item__details__img"
                       .product-wrapper
                         %span.product-name
                           =item.name
@@ -41,8 +42,9 @@
                     .product__link__item
                       .product__item__details
                         %span.product__item__details__price
-                          =item.price
-                        = image_tag 'https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg', class: "product__item__details__img"
+                          ¥
+                          = number_with_delimiter(item.price)
+                        = image_tag "/uploads/item_image/image/#{item.id}/#{item.image}", class: "product__item__details__img"
                       .product-wrapper
                         %span.product-name
                           =item.name
@@ -65,8 +67,9 @@
                     .product__link__item
                       .product__item__details
                         %span.product__item__details__price
-                          =item.price
-                        = image_tag 'https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg', class: "product__item__details__img"
+                          ¥
+                          = number_with_delimiter(item.price)
+                        = image_tag "/uploads/item_image/image/#{item.id}/#{item.image}", class: "product__item__details__img"
                       .product-wrapper
                         %span.product-name
                           =item.name
@@ -89,8 +92,9 @@
                     .product__link__item
                       .product__item__details
                         %span.product__item__details__price
-                          =item.price
-                        = image_tag 'https://img2.finalfantasyxiv.com/accimg/98/25/9825294afbe5583524d3ab02e98a90be8cf5f053.jpg', class: "product__item__details__img"
+                          ¥
+                          = number_with_delimiter(item.price)
+                        = image_tag "/uploads/item_image/image/#{item.id}/#{item.image}", class: "product__item__details__img"
                       .product-wrapper
                         %span.product-name
                           =item.name

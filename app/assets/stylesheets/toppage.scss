@@ -168,7 +168,7 @@
       .items__wrapper { 
         position: relative;       
         .items__scroll {
-          height: 390px;
+          height: 290px;
           text-align: center;
           line-height: 290px;
           overflow: hidden;
@@ -325,6 +325,7 @@
                               width: 100%;
                               z-index: 1;
                               background-color: white;
+                              display: block;
                             }
                           }
                         }
