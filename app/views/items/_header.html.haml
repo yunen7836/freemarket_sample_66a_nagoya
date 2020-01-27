@@ -3,8 +3,8 @@
     .head__top
       = link_to root_path, class: "head__top__logo" do
         = image_tag 'fmarket_logo_red.svg', class: "head__top__logo__img"
-      %form.head__top__form
-        %input.head__top__form__search{name: "word-search", placeholder: "何かお探しですか？", type: "search"}/
+      %form.head__top__form{action: "/items/search", method: "GET"}
+        %input.head__top__form__search{name: "keyword", placeholder: "何かお探しですか？", type: "search"}/
         %button.head__top__form__btn
           %i.fab.fa-sistrix.fa-2x
     .head__bottom
