@@ -4,8 +4,8 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
 
-  config.omniauth :facebook,ENV['FACEBOOK_CLIENT_ID'],ENV['FACEBOOK_CLIENT_SECRET']
-  config.omniauth :google_oauth2,ENV['GOOGLE_CLIENT_ID'],ENV['GOOGLE_CLIENT_SECRET']
+  config.omniauth :facebook,Rails.application.credentials[:FACEBOOK_CLIENT_ID],Rails.application.credentials[:FACEBOOK_CLIENT_SECRET]
+  config.omniauth :google_oauth2,Rails.application.credentials[:GOOGLE_CLIENT_ID],Rails.application.credentials[:GOOGLE_CLIENT_SECRET]
 
 
   # The secret key used by Devise. Devise uses this key to generate
