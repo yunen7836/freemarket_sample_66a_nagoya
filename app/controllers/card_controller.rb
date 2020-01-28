@@ -1,7 +1,9 @@
 class CardController < ApplicationController
+  before_action :move_to_login
   require "payjp"
-
+  
   before_action :set_card, only: [:new]
+  
 
   def index
   end 

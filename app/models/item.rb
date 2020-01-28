@@ -10,7 +10,6 @@ class Item < ApplicationRecord
             :price,
             :description,
             :category_id,
-            :brand,
             :user_id,
             :condition,
             :shipping_charge,
