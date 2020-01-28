@@ -57,11 +57,6 @@
                     %span.item-label-red 必須
                     = f.select :category_id, @category_parent_array,{},{id: :"parent_category"}
                 .item-show__categorie--input-bottom
-                  ブランド
-                  %span.item-label-gray 任意
-                = f.fields_for :brand do |i|
-                  = i.text_field :name
-                .item-show__categorie--input-bottom
                   商品の状態
                   %span.item-label-red 必須
                 = f.collection_select :condition, AhCondition.all, :id, :name 
