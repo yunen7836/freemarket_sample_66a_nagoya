@@ -34,7 +34,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.new
-    @item.build_brand
     #セレクトボックスの初期値設定
     @category_parent_array = ["---"]
     #データベースから、親カテゴリーのみ抽出し、配列化
@@ -54,9 +53,16 @@ class ItemsController < ApplicationController
       next if keyword == "" 
       @items = @items.where( "name LIKE ? OR description LIKE ? ", "%#{keyword}%", "%#{keyword}%")
     end
-
   end
 
+  def brand_search
+    return nil if params[:keyword] == ""
+    @brands = Brand.where(['name LIKE ?', "%#{params[:keyword]}%"] )
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
   # 以下全て、formatはjsonのみ
    # 親カテゴリーが選択された後に動くアクション
   def get_category_children
@@ -80,6 +86,8 @@ class ItemsController < ApplicationController
       Category.where(ancestry: nil).each do |parent|
         @category_parent_array << parent.name
       end
+      @item.item_images.clear()
+      @item.item_images.new
       render :new
     end
   end
@@ -120,7 +128,7 @@ class ItemsController < ApplicationController
 
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :category_id, :condition, :shipping_charge, :shipping_method, :ship_form, :shipping_days,brand_attributes: [:name], item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :description, :category_id, :condition, :shipping_charge, :shipping_method, :ship_form, :shipping_days, :brand_id, item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_item
