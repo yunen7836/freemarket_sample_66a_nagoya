@@ -10,7 +10,7 @@
       = breadcrumbs separator: " &rsaquo; "
 
       .mypage-main
-        = render partial: 'list'
+        
         .mypage-main__body
           %section.mypage-main__body__top
             = image_tag "mypageicon.png", class: "mypage-main__body__top__icon"
@@ -80,6 +80,7 @@
                 %li.mypage-main__body__items__tab-content__lists__go-list
                   = link_to '', class: "" do
                     一覧を見る
+        = render partial: 'list'
       %aside.aside
         .bottom
           .bottom__content
