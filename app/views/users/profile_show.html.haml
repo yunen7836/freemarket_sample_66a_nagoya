@@ -9,7 +9,7 @@
       = breadcrumbs separator: " &rsaquo; "
 
       .mypage-main
-        = render partial: 'list'
+        
         .profile__body
           %section.profile__body__section
             %h2.profile__body__section__title
@@ -22,6 +22,7 @@
               .profile__body__section__form__down
                 = f.text_area :self_introduction, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", autofocus: true,class: 'profile__body__section__form__down__textarea'
                 = f.submit "変更する",class: 'profile__body__section__form__down__button'
+        = render partial: 'list'
       %aside.aside
         .bottom
           .bottom__content

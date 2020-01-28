@@ -1,3 +1,19 @@
+@media screen and (max-width: 1200px) {
+  /* 横幅が320px以下の場合に適用するスタイル */
+  .h__side { width: 800px;
+             margin: 40px 200px auto 0;
+             float: right;
+             
+          }
+          .hako1 {
+            margin: 40px 200px auto 0;
+          }
+}
+.hako1 {
+  float: right;
+  margin-top: 56px;
+}
+
 body {
   margin: 0;
 }
@@ -27,7 +43,7 @@ a {
     float: right;
     &__top {
       height: 200px;
-      background-color: lightpink;
+      background-image: url(paku1210A1129_TP_V4.jpeg);
       position: relative;
       padding: 20px;
       text-align: center;
