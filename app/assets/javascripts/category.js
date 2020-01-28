@@ -122,6 +122,7 @@ $(function(){
   })
   
   $('#select-boxs').on('keyup', "#item_brand_id", function(){
+    $("#item_brand_name_id").remove();
     let input = $("#item_brand_id").val();
     $.ajax({
       type: "GET",
