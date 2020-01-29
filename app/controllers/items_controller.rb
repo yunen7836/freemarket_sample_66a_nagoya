@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create]
-  before_action :set_item, only: [:show, :edit, :destroy]
+  before_action :set_item, only: [:show, :edit, :destroy, :update]
 
   def index
     @parents = Category.where(ancestry: nil).page(params[:page]).per(4)
@@ -103,9 +103,19 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.update(item_params)
-      redirect_to item_path(item.id)
+    count = @item.item_images.length - 1
+    del = []
+    while count > 0 do
+      if params[:item][:item_images_attributes]["#{count}"][:image] == nil
+        del << params[:item][:item_images_attributes]["#{count}"][:id]
+      end
+      count = count - 1
+    end
+    if @item.update(item_params)
+      del.each do |del|
+        @item.item_images.delete(del)
+      end
+      redirect_to item_path(@item.id)
     else
       render :edit
     end
@@ -118,7 +128,7 @@ class ItemsController < ApplicationController
     if @item.destroy
       redirect_to root_path
     else
-      render :show
+      render :show 
     end
   end
 

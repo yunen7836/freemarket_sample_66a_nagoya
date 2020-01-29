@@ -11,7 +11,7 @@ $(function(){
                       <li class="js-remove" data-index="${index}">削除</li>
                     </ul>
                   </div>`;
-    return html;
+    return html; 
   }
   const buildFileField = (index)=> {
     const html = `<div class="js-input" id="js-hidden-input${index}" data-index="${index}">
