@@ -1,7 +1,7 @@
 
 .wrapper {
   background-color: rgb(245, 245, 245);
-  display: flex;
+  
 
 }
 
@@ -58,10 +58,10 @@
 }
 
 .right {
-  margin-top: 15px;
+  margin-top: -15px;
   padding: 0 40px 40px 40px;
-  width:85%;
-  position: relative;
+  float: right;
+  margin-right: 170px;
 }
 
 .hako2 {

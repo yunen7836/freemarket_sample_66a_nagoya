@@ -10,7 +10,7 @@
 
       .wrapper
         
-        .right
+        .right__mypage
           .identifications
             = form_with(model: @address, url: user_identification_update_path(current_user.id), method: :PATCH, local: true) do |f|
               %h2.identification-head
@@ -62,6 +62,6 @@
                 = f.submit class: "identification-body__btn"
                   
               
-          = render partial: 'list'
+        = render partial: 'list'
       = render partial: 'exhibition'
       = render partial: 'items/footer'
