@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :update] do
     get "profile_show"
     get "logout"
+    get "identification"
+    patch "identification_update"
   end
 
   #クレカ登録
