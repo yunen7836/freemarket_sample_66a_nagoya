@@ -1,0 +1,67 @@
+%body
+  .body
+    #app
+      = render partial: 'items/header'
+
+      -# config/breadcrumbs.rbに定義したmypageを呼び出し
+      - breadcrumb :logout
+      -# 下記を記述した箇所にパンくずリストが表示される。
+      = breadcrumbs separator: " &rsaquo; "
+
+      .wrapper
+        
+        .right
+          .identifications
+            = form_with(model: @address, url: user_identification_update_path(current_user.id), method: :PATCH, local: true) do |f|
+              %h2.identification-head
+                本人情報の登録
+              .identification-body
+                %p 
+                  お客さまの本人情報をご登録ください。
+                  %br 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+                %p.identification-body__right
+                  = link_to "#", class: "identification-body__right--upload-link" do
+                    本人確認書類のアップロードについて
+                .identification-body__form-group
+                  %label.identification-body__form-group--label-block お名前
+                  %p
+                    = @user.nickname
+                .identification-body__form-group
+                  %label.identification-body__form-group--label-block お名前カナ
+                  %p
+                    = @user.first_name_kana + @user.last_name_kana
+                .identification-body__form-group
+                  %label.identification-body__form-group--label-block 生年月日
+                  %p
+                    = @user.birthday
+                .identification-body__form-group
+                  %p.identification-body__form-group--label-inline
+                    %label 郵便番号
+                    %span.item-label-gray 任意
+                  = f.text_field :postal_code
+                .identification-body__form-group
+                  %p.identification-body__form-group--label-inline
+                    %label 都道府県
+                    %span.item-label-gray 任意
+                  = f.collection_select :prefecture_id, AhPrefecture.all, :id, :name
+                .identification-body__form-group
+                  %p.identification-body__form-group--label-inline
+                    %label 市区町村
+                    %span.item-label-gray 任意
+                  = f.text_field :city
+                .identification-body__form-group
+                  %p.identification-body__form-group--label-inline
+                    %label 番地
+                    %span.item-label-gray 任意
+                  = f.text_field :street
+                .identification-body__form-group
+                  %p.identification-body__form-group--label-inline
+                    %label 建物名
+                    %span.item-label-gray 任意
+                  = f.text_field :building
+                = f.submit class: "identification-body__btn"
+                  
+              
+          = render partial: 'list'
+      = render partial: 'exhibition'
+      = render partial: 'items/footer'

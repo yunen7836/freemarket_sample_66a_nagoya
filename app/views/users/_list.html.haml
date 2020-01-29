@@ -105,7 +105,7 @@
           .float__test
             %i.fa.fa-angle-right.fa-2x
       %li.mypage__nav__list__h
-        = link_to '' '#', class: "mypage__nav__list" do
+        = link_to user_identification_path(current_user.id), class: "mypage__nav__list" do
           本人情報
           .float__test
             %i.fa.fa-angle-right.fa-2x
