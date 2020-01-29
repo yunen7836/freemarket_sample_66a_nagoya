@@ -1,7 +1,7 @@
 .credit__wrapper {
-  width: 1020px;
-  margin: 40px auto 0;
-  padding-bottom: 40px;
+  width: 100%;
+  // margin: 40px auto 0;
+  
 }
 
 .product__style:hover {
@@ -12,6 +12,8 @@
 .credit {
   width: 700px; 
   float: right;
+  padding-top: 41px;
+  margin-right: 210px;
   &__content {
     background-color: white;
     &__top {
@@ -54,12 +56,14 @@
           }
           h1 {
             margin: 0 auto;
-            width: 70px;
+            width: 80px;
             font-size: 12px;
-            background-color: skyblue;
+            background-color: red;
             color: white;
             border-radius: 20px;
             text-align: center;
+            
+            line-height: 20px;
           }
           .card {
             display: flex;

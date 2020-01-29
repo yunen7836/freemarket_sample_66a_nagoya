@@ -3,10 +3,13 @@ class PurchaseController < ApplicationController
 
   before_action :set_card, only: [:index, :pay]
   def index
-    
+    if card.blank?
+       redirect_to controller: "card", action: "new"
+    else
       Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]     
       customer = Payjp::Customer.retrieve(@card.customer_id)     
       @default_card_information = customer.cards.retrieve(@card.card_id)
+    end
   end
 
   def pay   
@@ -17,6 +20,8 @@ class PurchaseController < ApplicationController
     :customer => @card.customer_id, 
     :currency => 'jpy', 
     )
+    
+    @item.update(buyer_id: current_user.id)
     redirect_to action: 'done' 
   end
 
@@ -24,4 +29,5 @@ class PurchaseController < ApplicationController
   def set_card
     @card = Card.where(user_id: current_user.id).first 
   end
+  
 end
