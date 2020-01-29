@@ -24,7 +24,7 @@
                 出品画像
                 %span.item-label-red 必須
               %p 最大10枚までアップロードできます
-              .image-content__box#js-image-true
+              .image-content__box#js-image-true 
                 #previews
                   - @item.persisted? do
                     - @item.images.each_with_index do |image, i|

@@ -7,9 +7,9 @@
       .image-content
         .image-content__head
           出品画像
-          %span 必須
+          %span.item-label-red 必須
         %p 最大10枚までアップロードできます
-        .image-content__box
+        .image-content__box#js-image-true 
           #previews
             - @item.persisted? do
               - @item.images.each_with_index do |image, i|
@@ -18,7 +18,12 @@
           .image-content__input-box
             .js-input#js-hidden-input0
               = f.fields_for :item_images do |i|
-                = i.file_field :image, class: :"js-edit-file"
+                .js-file_group{data:{index: "#{i.index}"}}
+                  = i.label :image, class: :"item-image-box" do
+                    ドラッグアンドドロップ 
+                    %br/ 
+                    またはクリックしてファイルをアップロード
+                  = i.file_field :image, class: :"js-file"
       .item-name
         .item-name__head
           商品名
