@@ -19,7 +19,8 @@
                         %span.product__item__details__price
                           ¥
                           = number_with_delimiter(item.price)
-                        = image_tag "/uploads/item_image/image/#{item.id}/#{item.image}", class: "product__item__details__img"                         
+                        - item.item_images.first(1).each do |i|
+                          = image_tag "#{i.image}", class: "product__item__details__img"                         
                       .product-wrapper
                         %span.product-name
                           =item.name
@@ -49,7 +50,8 @@
                         %span.product__item__details__price
                           ¥
                           = number_with_delimiter(item.price)
-                        = image_tag "/uploads/item_image/image/#{item.id}/#{item.image}", class: "product__item__details__img"
+                        - item.item_images.first(1).each do |i|
+                          = image_tag "#{i.image}", class: "product__item__details__img"                         
                       .product-wrapper
                         %span.product-name
                           =item.name
@@ -79,7 +81,8 @@
                         %span.product__item__details__price
                           ¥
                           = number_with_delimiter(item.price)
-                        = image_tag "/uploads/item_image/image/#{item.id}/#{item.image}", class: "product__item__details__img" 
+                        - item.item_images.first(1).each do |i|
+                          = image_tag "#{i.image}", class: "product__item__details__img"                         
                       .product-wrapper
                         %span.product-name
                           =item.name
@@ -109,7 +112,8 @@
                         %span.product__item__details__price
                           ¥
                           = number_with_delimiter(item.price)
-                        = image_tag "/uploads/item_image/image/#{item.id}/#{item.image}", class: "product__item__details__img"
+                        - item.item_images.first(1).each do |i|
+                          = image_tag "#{i.image}", class: "product__item__details__img"                         
                       .product-wrapper
                         %span.product-name
                           =item.name
@@ -139,7 +143,8 @@
                         %span.product__item__details__price
                           ¥
                           = number_with_delimiter(item.price)
-                        = image_tag "/uploads/item_image/image/#{item.id}/#{item.image}", class: "product__item__details__img"
+                        - item.item_images.first(1).each do |i|
+                          = image_tag "#{i.image}", class: "product__item__details__img"                         
                       .product-wrapper
                         %span.product-name
                           =item.name

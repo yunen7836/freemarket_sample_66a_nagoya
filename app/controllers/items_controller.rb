@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
     @items3 = Item.joins(:item_images).select('items.id, items.buyer_id, items.name, items.price, item_images.image').where(category_id: 348).last(10)
     @items4 = Item.joins(:item_images).select('items.id, items.buyer_id, items.name, items.price, item_images.image').where(category_id: 483).last(10)
     @items = Item.joins(:item_images).select('items.id, items.buyer_id, items.name, items.price, item_images.image').last(10)
-   
   end
 
   def show
