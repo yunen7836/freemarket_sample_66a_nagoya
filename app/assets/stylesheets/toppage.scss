@@ -18,10 +18,12 @@
       &__wrapper {
         width: 1020px;
         margin: 0 auto;
-        padding: 8px 0px 0px;       
+        padding: 8px 0px 0px;  
+             
         .head__top{
           display: flex;
-          justify-content: space-between;           
+          justify-content: space-between; 
+                 
           &__logo{
             -webkit-box-align: center;
             display: flex;
@@ -182,6 +184,7 @@
           overflow: hidden;
           width: 100vw;
           position: relative;
+          
           .slider {
             
             &__list{
@@ -440,7 +443,7 @@
             font-size: 16px;
             font-weight: 600;
             line-height: 1.4em;
-            padding-left: 40px;
+            
           }
           &__tag {
             list-style: none;
@@ -485,7 +488,7 @@
             font-weight: 600;
             line-height: 1.4em;
             color: rgb(255, 255, 255);
-            padding-left: 40px;
+           
           }
           &__policy {
             padding: 0px 10px 0px 0px;
