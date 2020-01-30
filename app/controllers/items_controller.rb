@@ -102,18 +102,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    count = @item.item_images.length - 1
-    del = []
-    while count > 0 do
-      if params[:item][:item_images_attributes]["#{count}"][:image] == nil
-        del << params[:item][:item_images_attributes]["#{count}"][:id]
-      end
-      count = count - 1
-    end
     if @item.update(item_params)
-      del.each do |del|
-        @item.item_images.delete(del)
-      end
       redirect_to item_path(@item.id)
     else
       render :edit
