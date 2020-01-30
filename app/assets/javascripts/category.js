@@ -29,7 +29,7 @@ $(function(){
                   ブランド
                   <span class="item-label-gray">任意</span>
                 </div>
-                <input type="text" name="item[brand_id]" id="item_brand_id">`
+                <input type="text" id="item_brand_id">`
     $('#select-boxs').append(BrandHtml)
   }
 
