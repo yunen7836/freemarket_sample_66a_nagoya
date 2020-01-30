@@ -183,12 +183,14 @@
           text-align: center;
           overflow: hidden;
           width: 100vw;
-          position: relative;
-          
-          .slider {
-            
-            &__list{
-                
+          position: relative;         
+          .slide {
+            position: relative;          
+            &__img {
+              position: absolute;
+              left:0;
+              top:0;
+              width: 100vw;          
             }
           }
         }
@@ -558,12 +560,3 @@
     font-weight: 600
   }
 }
-
-
-
-
-
-
-
-
-
