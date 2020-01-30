@@ -10,24 +10,23 @@ $(function() {
     
 
     $(".head__bottom__left__category").on("mouseenter", function() {
-      $(".child_category").remove();//一旦出ている子カテゴリ消します！
-      $(".grand_child_category").remove();//孫、てめえもだ！
       $(".category_list").removeClass("none");
     
-      $(".parent_category").on("mouseover", function() {
+      $(".parent_category").on("mouseenter", function() {
         
         var id = this.id//どのリンクにマウスが乗ってるのか取得します
       
         $(".now-selected-red").removeClass("now-selected-red")//赤色のcssのためです
         $('#' + id).addClass("now-selected-red");//赤色のcssのためです
-        $(".child_category").remove();//一旦出ている子カテゴリ消します！
-        $(".grand_child_category").remove();//孫、てめえもだ！
+
         $.ajax({
           type: 'GET',
           url: '/category/new',//とりあえずここでは、newアクションに飛ばしてます
           data: {parent_id: id},//どの親の要素かを送ります　params[:parent_id]で送られる
           dataType: 'json'
         }).done(function(children) {
+          $(".child_category").remove();//一旦出ている子カテゴリ消します！
+          $(".grand_child_category").remove();//孫、てめえもだ！
           children.forEach(function (child) {//帰ってきた子カテゴリー（配列
             var html = buildChildHTML(child);//HTMLにして
             $(".children_list").append(html);//リストに追加します
