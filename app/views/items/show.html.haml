@@ -87,22 +87,7 @@
 
             .contents__text-content
               %p.contents__text-content--text
-                ＊未使用
-                %br/
-                ＊フリーサイズ
-                %br/
-                ＊長さ90cmくらい
-                %br/
-                多少の誤差はあるかもしれません。
-                %br/
-                %br/
-                簡易包装になります。
-                %br/
-                %br/
-                自宅保管の為、神経質な方は御遠慮ください。
-                %br/
-                %br/
-                何かございましたらコメントください。
+                = simple_format(h(@item.description))
             .contents__item-btn
               = link_to "", class: "contents__item-btn--left-btn" do
                 %span いいね！
