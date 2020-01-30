@@ -173,7 +173,7 @@
       }  
     }
     .items {
-      max-width: 1020px;
+      
       width: 100%;
       margin: 0 auto;
       .items__wrapper { 
@@ -182,7 +182,7 @@
           height: 390px;
           text-align: center;
           overflow: hidden;
-          
+          width: 100vw;
           position: relative;
           
           .slider {
@@ -198,8 +198,9 @@
           width: 100vw;
           margin-left: -50vw;
           left: 50%;
-          position: relative;
+          
           background-color: white;
+         
           h2 {
             margin-bottom: 16px;
             text-align: center;
@@ -237,6 +238,8 @@
         .category {
           padding: 42px 0px 100px;
           background-color: rgb(245, 245, 245);
+          margin: 0 auto;
+          max-width: 1020px;
           &__items {
             
             &__title {
