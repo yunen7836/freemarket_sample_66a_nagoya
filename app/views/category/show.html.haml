@@ -30,6 +30,10 @@
                                 .product-wrapper
                                   %span.product-name
                                     = item.name
+                                  -if item.buyer_id.present? 
+                                    .items-box_photo__sold
+                                      .items-box_photo__sold__inner
+                                        SOLD
               - else
                 .category__items__title
                   %h3.category__items__title__type
