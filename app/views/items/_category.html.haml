@@ -44,7 +44,7 @@
             - @items1.each do |item|
               %li.product                        
                 .product__style
-                  = link_to '' '#', class: "product__link" do
+                  = link_to item_path(item.id), class: "product__link" do
                     .product__link__item
                       .product__item__details
                         %span.product__item__details__price
@@ -75,7 +75,7 @@
             - @items2.each do |item| 
               %li.product                        
                 .product__style
-                  = link_to '' '#', class: "product__link" do
+                  = link_to item_path(item.id), class: "product__link" do
                     .product__link__item
                       .product__item__details
                         %span.product__item__details__price
@@ -106,7 +106,7 @@
             - @items3.each do |item| 
               %li.product                        
                 .product__style
-                  = link_to '' '#', class: "product__link" do
+                  = link_to item_path(item.id), class: "product__link" do
                     .product__link__item
                       .product__item__details
                         %span.product__item__details__price
@@ -137,7 +137,7 @@
             - @items4.each do |item| 
               %li.product                        
                 .product__style
-                  = link_to '' '#', class: "product__link" do
+                  = link_to item_path(item.id), class: "product__link" do
                     .product__link__item
                       .product__item__details
                         %span.product__item__details__price
