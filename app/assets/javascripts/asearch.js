@@ -12,7 +12,7 @@ $(function() {
     $(".head__bottom__left__category").on("mouseenter", function() {
       $(".category_list").removeClass("none");
     
-      $(".parent_category").on("mouseover", function() {
+      $(".parent_category").on("mouseenter", function() {
         
         var id = this.id//どのリンクにマウスが乗ってるのか取得します
       
