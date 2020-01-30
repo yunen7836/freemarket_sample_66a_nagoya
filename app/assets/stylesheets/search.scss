@@ -3,6 +3,7 @@
 .category_list.none {
   float: left;
   display: none;
+  
 }
 
 .category_list {
@@ -12,6 +13,7 @@
   top: 44px;
   left: 5px;
   display: flex;
+  z-index: 200;
 }
 
 .parents_list {
