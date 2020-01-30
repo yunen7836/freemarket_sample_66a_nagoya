@@ -25,9 +25,56 @@ $(function(){
     return html;
   }
 
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  var fileIndex = [1,2,3,4,5,6,7,8,9,10];
   let previews = document.getElementById("previews");
   let image = previews.getElementsByTagName("img");
+  
+  if($(".hidden-destroy").length){
+    $(".item-image-box").remove()
+    var fileIndex = [11,12,13,14,15,16,17,18,19,20]
+    $('.image-content__input-box').append(buildFileField(fileIndex[0]))
+    fileIndex.shift();
+    // 末尾の数に1足した数を追加する
+    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    $(".js-image-content__input-box").remove()
+    if(image.length == 1){
+      $(".image-content__input-box").css("width", "496px")
+    }
+    if(image.length == 2){
+      $(".image-content__input-box").css("width", "372px")
+    }
+    if(image.length == 3){
+      $(".image-content__input-box").css("width", "248px")
+    }
+    if(image.length == 4){
+      $(".image-content__input-box").css("width", "124px")
+    }
+    if(image.length == 5){
+      $(".image-content__input-box").css("top", "130px")
+      $(".image-content__input-box").css("width", "620px")
+    }
+    if(image.length == 6){
+      $(".image-content__input-box").css("top", "130px")
+      $(".image-content__input-box").css("width", "496px")
+    }
+    if(image.length == 7){
+      $(".image-content__input-box").css("top", "130px")
+      $(".image-content__input-box").css("width", "372px")
+    }
+    if(image.length == 8){
+      $(".image-content__input-box").css("top", "130px")
+      $(".image-content__input-box").css("width", "248px")
+    }
+    if(image.length == 9){
+      $(".image-content__input-box").css("top", "130px")
+      $(".image-content__input-box").css("width", "124px")
+    }
+    if(image.length == 10){
+      $(".item-image-box").remove();
+      $(`#js-hidden-input11`).css("display", "none")
+    }
+
+  }
 
   $('.image-content__input-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
@@ -38,6 +85,7 @@ $(function(){
     w = $(".item-image-box").outerWidth();
     width = w - 124;
     // 該当indexを持つimgタグがあれば取得して変数imgに入れる(画像変更の処理)
+    img_length = $("#previews").children().length
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
@@ -53,7 +101,7 @@ $(function(){
       $(".item-image-box").css("width", width)
       
       if(image.length == 5){
-        $(".item-image-box").css("width", "100%")
+        $(".item-image-box").css("width", "620px")
         $(".image-content__input-box").css("top", "130px")
         $("#previews").append(`<div class="js-image-content__input-box"></div>`)
       }
@@ -67,6 +115,9 @@ $(function(){
 
   $('#previews').on('click', '.js-remove', function() {
     const targetIndex = $(this).data('index');
+    const hiddenCheck = $(`input[data-index="${targetIndex}"]`)
+    // もしチェックボックスが存在すればチェックを入れる
+    hiddenCheck.prop('checked', true);
     w = $(".item-image-box").outerWidth();
     width = w + 124;
     $(".item-image-box").css("width", width)
