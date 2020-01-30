@@ -1,102 +1,109 @@
-.gray-sell
-  .fmarket-logo
-  = form_with(model: @item, local: true) do |f|
-    .white-sell
-      .header-content
-        商品の情報を入力
-      .image-content
-        .image-content__head
-          出品画像
-          %span.item-label-red 必須
-        %p 最大10枚までアップロードできます
-        .image-content__box#js-image-true 
-          #previews
-            - if @item.persisted?
-              - @item.item_images.each_with_index do |image, i|
-                %input.hidden-destroy{name: "item[item_images_attributes][#{i}][_destroy]", type: "checkbox", value: "#{image.id}", "data-index": "#{i}"}
-                %input.hidden-destroy{name: "item[item_images_attributes][#{i}][id]", type: "checkbox", value: "#{image.id}", "data-index": "#{i}"}
-                .js-edit-list{"data-index" => "#{i}"}
-                  = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
-                  %ul
-                    %li
-                      %label{for: "item_item_images_attributes_#{i}_image"} 編集
-                    %li.js-remove{"data-index": "#{i}"} 削除
-          .js-image-content__input-box
-          .image-content__input-box
-            .js-input#js-hidden-input0
-              = f.fields_for :item_images do |i|
-                .js-file_group{data:{index: "#{i.index}"}}
-                  = i.label :image, class: :"item-image-box" do
-                    ドラッグアンドドロップ 
-                    %br/ 
-                    またはクリックしてファイルをアップロード
-                  = i.file_field :image, class: :"js-file"
-      .item-name
-        .item-name__head
-          商品名
-          %span 必須
-        = f.text_field :name, placeholder: "商品名（必須 40文字まで)"
-        .item-name__text
-          商品の説明
-          %span 必須
-        = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-      .item-show
-        .item-show__left-head 商品の詳細
-        .item-show__categorie
-          .item-show__categorie--input-top{id: :"select-boxs" }
-            .item-show__categorie--input-top--select-box
-              カテゴリー
-              %span 必須
-            = f.select :category_id, @category_parent_array,{},{id: :"parent_category"}
-          .item-show__categorie--input-bottom
-            商品の状態
-            %span 必須
-          = f.collection_select :condition, AhCondition.all, :id, :name 
-      .item-show
-        .item-show__left-head 配送について
-        .item-show__categorie
-          .item-show__categorie--input-top
-            配送料の負担
-            %span 必須
-          = f.collection_select :shipping_charge, AhShippingCharge.all, :id, :name
-          .item-show__categorie--input-bottom
-            配送の方法
-            %span 必須
-          = f.collection_select :shipping_method, AhShippingMethod.all, :id, :name
-          .item-show__categorie--input-bottom
-            配送元の地域
-            %span 必須
-          = f.collection_select :ship_form, AhPrefecture.all, :id, :name
-          .item-show__categorie--input-bottom
-            配送までの日数
-            %span 必須
-          = f.collection_select :shipping_days, AhShippingDays.all, :id, :name
+%body
+  .body
+    #app
+      .gray-sell
+        .fmarket-logo
+          = link_to root_path do
+            = image_tag 'fmarket_logo_red.svg', class: "fmarket-logo__image"
+        = form_with(model: @item, local: true) do |f|
+          .white-sell
+            .header-content
+              商品の情報を入力
+            .image-content
+              .image-content__head
+                出品画像
+                %span.item-label-red 必須
+              %p 最大10枚までアップロードできます
+              .image-content__box#js-image-true 
+                #previews
+                  - if @item.persisted?
+                    - @item.item_images.each_with_index do |image, i|
+                      %input.hidden-destroy{name: "item[item_images_attributes][#{i}][_destroy]", type: "checkbox", value: "#{image.id}", "data-index": "#{i}"}
+                      %input.hidden-destroy{name: "item[item_images_attributes][#{i}][id]", type: "checkbox", value: "#{image.id}", "data-index": "#{i}"}
+                      .js-edit-list{"data-index" => "#{i}"}
+                        = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+                        %ul
+                          %li
+                            %label{for: "item_item_images_attributes_#{i}_image"} 編集
+                          %li.js-remove{"data-index": "#{i}"} 削除
+                .js-image-content__input-box
+                .image-content__input-box
+                  .js-input#js-hidden-input0
+                    = f.fields_for :item_images do |i|
+                      .js-file_group{data:{index: "#{i.index}"}}
+                        = i.label :image, class: :"item-image-box" do
+                          ドラッグアンドドロップ 
+                          %br/ 
+                          またはクリックしてファイルをアップロード
+                        = i.file_field :image, class: :"js-file"
+            .item-name
+              .item-name__head
+                商品名
+                %span.item-label-red 必須
+              = f.text_field :name, placeholder: "商品名（必須 40文字まで)"
+              .item-name__text
+                商品の説明
+                %span.item-label-red 必須
+              = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+            .item-show
+              .item-show__left-head 商品の詳細
+              .item-show__categorie
+                .item-show__categorie--input-top{id: :"select-boxs" }
+                  .item-show__categorie--input-top--select-box
+                    カテゴリー
+                    %span.item-label-red 必須
+                  = f.select :category_id, @category_parent_array,{},{id: :"parent_category"}
+                .item-show__categorie--input-bottom
+                  商品の状態
+                  %span.item-label-red 必須
+                = f.collection_select :condition, AhCondition.all, :id, :name 
+            .item-show
+              .item-show__left-head 配送について
+              .item-show__categorie
+                .item-show__categorie--input-top
+                  配送料の負担
+                  %span.item-label-red 必須
+                = f.collection_select :shipping_charge, AhShippingCharge.all, :id, :name
+                .item-show__categorie--input-bottom
+                  配送の方法
+                  %span.item-label-red 必須
+                = f.collection_select :shipping_method, AhShippingMethod.all, :id, :name
+                .item-show__categorie--input-bottom
+                  配送元の地域
+                  %span.item-label-red 必須
+                = f.collection_select :ship_form, AhPrefecture.all, :id, :name
+                .item-show__categorie--input-bottom
+                  配送までの日数
+                  %span.item-label-red 必須
+                = f.collection_select :shipping_days, AhShippingDays.all, :id, :name
 
-      .item-show
-        .item-show__left-head 販売価格(300〜9,999,999)
-        .item-show__sell-price
-          .item-show__sell-price--price-box
-            .item-show__sell-price--price-box--price
-              価格
-              %span 必須
-            ¥
-            = f.number_field :price
-          .item-show__sell-price--tax-box
-            .item-show__sell-price--tax-box--tax
-              販売手数料(10%)
-            .item-show__sell-price--tax-box--commission
-              &mdash;
-            /↑は"-"のエスケープコード
-          .item-show__sell-price--tax-box
-            .item-show__sell-price--tax-box--profit
-              販売利益
-            .item-show__sell-price--tax-box--profit{id: :"item-profit"}
-              &mdash;
-              /↑は"-"のエスケープコード
-      .item-submit
-        .item-submit__conditions
-          %p 禁止されている出品、行為を必ずご確認ください。
-          %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
-          %p また、出品をもちまして加盟店規約に同意したことになります。
-        = f.submit "変更する", class: "item-submit__submit"
-        = link_to "キャンセル", item_path
+            .item-show
+              .item-show__left-head 販売価格(300〜9,999,999)
+              .item-show__sell-price
+                .item-show__sell-price--price-box
+                  .item-show__sell-price--price-box--price
+                    価格
+                    %span.item-label-red 必須
+                  ¥
+                  = f.number_field :price
+                .item-show__sell-price--tax-box
+                  .item-show__sell-price--tax-box--tax
+                    販売手数料(10%)
+                  .item-show__sell-price--tax-box--commission
+                    &mdash;
+                  /↑は"-"のエスケープコード
+                .item-show__sell-price--tax-box
+                  .item-show__sell-price--tax-box--profit
+                    販売利益
+                  .item-show__sell-price--tax-box--profit{id: :"item-profit"}
+                    &mdash;
+                    /↑は"-"のエスケープコード
+            .item-submit
+              .item-submit__conditions
+                %p 禁止されている出品、行為を必ずご確認ください。
+                %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+                %p また、出品をもちまして加盟店規約に同意したことになります。
+              = f.submit "変更する", class: "item-submit__submit"
+              = link_to "キャンセル", item_path
+      = render partial: 'users/policy'
+

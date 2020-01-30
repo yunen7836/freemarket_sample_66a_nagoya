@@ -73,7 +73,6 @@ $(function(){
       $(".item-image-box").remove();
       $(`#js-hidden-input11`).css("display", "none")
     }
-
   }
 
   $('.image-content__input-box').on('change', '.js-file', function(e) {
