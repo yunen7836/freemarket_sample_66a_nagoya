@@ -16,7 +16,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @brand = Brand.find(@item.brand_id)
+    category = Category.find(@item.category_id)
+    @parent_category = Category.find((/\//.match("#{category.ancestry}")).post_match)
+    @parent_parent_category = Category.find(@parent_category.ancestry)
+    if @item.brand_id.present?
+      @brand = Brand.find(@item.brand_id)
+    end
   end
 
   def buy_confirmation

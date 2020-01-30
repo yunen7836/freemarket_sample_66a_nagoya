@@ -33,17 +33,20 @@
                   %td
                     = link_to do
                       %div
+                        = "#{@parent_parent_category.name}"
+                    = link_to do
+                      %i.fa.fa-chevron-right
+                      %div
+                        = "#{@parent_category.name}"
+                    = link_to do
+                      %i.fa.fa-chevron-right
+                      %div
                         = "#{@item.category.name}"
-                    = link_to do
-                      %i.fa.fa-chevron-right
-                      %div 小物
-                    = link_to do
-                      %i.fa.fa-chevron-right
-                      %div マフラー/ショール
-                %tr
-                  %th ブランド
-                  %td
-                    = link_to "#{@brand.name}"
+                - if @brand.present?
+                  %tr
+                    %th ブランド
+                    %td
+                      = link_to "#{@brand.name}"
                 %tr
                   %th 商品の状態
                   %td 
