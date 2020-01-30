@@ -10,8 +10,8 @@ var lastPage =parseInt($(".slide__img").length-1);
 
 
 function changePage(){
-                         $(".slide__img").fadeOut(1000);
-                         $(".slide__img").eq(page).fadeIn(1000);
+                         $(".slide__img").fadeOut(500);
+                         $(".slide__img").eq(page).fadeIn(200);
 };
 
 var Timer;
@@ -24,7 +24,7 @@ Timer =setInterval(function(){
                          page ++;
                          changePage();
           };
-     },5000);
+     },1500);
 }
 function stopTimer(){
 clearInterval(Timer);
