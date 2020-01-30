@@ -1,7 +1,10 @@
 %body
   .body
     #app
-      = render partial: 'items/header'
+      = render partial: 'items/header' 
+      - breadcrumb :search,@search_text
+      -# 下記を記述した箇所にパンくずリストが表示される。
+      = breadcrumbs semantic: true, separator: " &rsaquo; "
       .items
         .items__wrapper
 
