@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_parents
   private
   def set_parents
-    @parents = Category.where(ancestry: nil)
+    @js_parents = Category.where(ancestry: nil)
   end
 
   def basic_auth

@@ -15,7 +15,7 @@
             カテゴリーから探す
           .category_list.none
             .parents_list
-              - @parents.each do |parent|
+              - @js_parents.each do |parent|
                 = link_to "#{parent.name}", "#", class: "parent_category",id: "#{parent.id}"
             .children_list
             .grand_children_list
