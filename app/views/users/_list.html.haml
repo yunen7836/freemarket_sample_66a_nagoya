@@ -72,7 +72,8 @@
           お問い合わせ
           .float__test
             %i.fa.fa-angle-right.fa-2x
-      %p メルペイ
+      %p.mypage__nav__list__p
+        メルペイ
       %li.mypage__nav__list__h
         = link_to '' '#', class: "mypage__nav__list" do
           売上・振込申請
@@ -83,7 +84,8 @@
           ポイント
           .float__test
             %i.fa.fa-angle-right.fa-2x
-      %p 設定
+      %p.mypage__nav__list__p
+        設定
       %li.mypage__nav__list__h
         = link_to user_profile_show_path(current_user.id), class: "mypage__nav__list" do
           プロフィール
