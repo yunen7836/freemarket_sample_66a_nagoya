@@ -2,8 +2,12 @@
   .body
     #app
       = render partial: 'items/header'
+      -# config/breadcrumbs.rbに定義したmypageを呼び出し
+      - breadcrumb :card
+      -# 下記を記述した箇所にパンくずリストが表示される。
+      = breadcrumbs separator: " &rsaquo; "
       .credit__wrapper
-        = render partial: 'users/list' 
+        
         .credit
           .credit__content
             = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
@@ -90,6 +94,7 @@
                             カードの裏面の番号とは？ 
                   #card_token                  
                   = submit_tag "追加する", id: "token_submit"
+        = render partial: 'users/list' 
       %aside.aside
         .bottom
           .bottom__content
