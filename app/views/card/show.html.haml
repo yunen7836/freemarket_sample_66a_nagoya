@@ -2,6 +2,10 @@
   .body
     #app
       = render partial: 'items/header'
+      -# config/breadcrumbs.rbに定義したmypageを呼び出し
+      - breadcrumb :card
+      -# 下記を記述した箇所にパンくずリストが表示される。
+      = breadcrumbs separator: " &rsaquo; "
       .credit__wrapper
         = render partial: 'users/list' 
         .credit

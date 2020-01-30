@@ -1,13 +1,24 @@
 @media screen and (max-width: 1200px) {
   /* 横幅が320px以下の場合に適用するスタイル */
   .h__side { width: 800px;
-             margin: 40px 200px auto 0;
+             margin: 40px 200px 50px 0;
              float: right;
              
           }
           .hako1 {
             margin: 40px 200px auto 0;
           }
+          .right {
+            padding: 0 0 40px 40px;
+            float: right;
+            margin-right: 0px;
+        }
+        .credit {
+          margin-right: 200px;
+        }
+        .identifications {
+          margin-right: 200px!important;
+        }
 }
 .hako1 {
   float: right;
@@ -169,4 +180,27 @@ a {
       }
     }
   }
+}
+
+@media screen and (max-width: 1200px) {
+  /* 横幅が320px以下の場合に適用するスタイル */
+  .h__side { width: 800px;
+             margin: 40px 200px 50px 0;
+             float: right;
+             
+          }
+          .hako1 {
+            margin: 40px 200px auto 0;
+          }
+          .right {
+            padding: 0 0 40px 40px;
+            float: right;
+            margin-right: 0px;
+        }
+        .credit {
+          margin-right: 200px;
+        }
+        .identifications {
+          margin-right: 200px;
+        }
 }

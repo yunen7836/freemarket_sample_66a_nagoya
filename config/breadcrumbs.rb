@@ -16,3 +16,13 @@ crumb :logout do
   link "ログアウト", user_logout_path(current_user.id)
   parent :mypage
 end
+
+crumb :identification do
+  link "本人情報", user_identification_path(current_user.id)
+  parent :mypage
+end
+
+crumb :card do
+  link "支払方法", card_index_path(current_user.id)
+  parent :mypage
+end
